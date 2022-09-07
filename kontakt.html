@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8">
+        <title>Kontakta oss</title>
+    </head>
+    <body>
+        <h1>Ansökan </h1>
+        <p> <a href= "om.html">Tillbaka till oss</a></p>
+        <h2>Process</h2>
+        <p>
+            <ol>
+                <li>Du skickar in din ansökan</li>
+                <li>Ansökan ligger tills sig i 2 veckor</li>
+                <li>Vi behandlar din ansökan</li>
+                <li>Inom 3 dagar efter behandlad ansökan får du svar i form av röksignaler</li>
+            </ol>
+        </p>
+        <h2>Ansökan</h2>
+        <form action="http://webug.se/examples/webbplatsdesign/recieve/recieve_dugga.php" target="_blank" method="post">
+            <fieldset>
+                <legend>Personlig information:</legend>
+                    <label>Förnamn</label>
+                        <input type="text" name="firstname" placeholder="Ditt förnamn">
+                    <br>
+                        <label>Efternamn</label>
+                            <input type="text" name="lastname" placeholder="Ditt efternamn">
+                    <br>
+                        <label>Ålder</label>
+                            <input type="number" name="age" placeholder="Din ålder">
+                    <br>
+            </fieldset> 
+            <fieldset>
+                <legend> Din roll: </legend>
+                    <label>Är du eftertänksam?</label>
+                        <label>Ja</label> <input type="radio" name="thoughtful" value="ja">
+                        <label>Nej</label> <input type="radio" name="thoughtful" value="nej">
+                    <br>
+                        <label>Hur duktig är du?</label> <input type="range" min="1" max="11" value="50e" class="slider" name="skillful">
+                    <br>
+                        <label>Vilken roll vill du ha?</label>
+                        <select name="role">
+                            <optgroup>
+                                <option value="Frontend">Frontend</option>
+                                <option value="Backend">Backend</option>
+                                <option value="Backend">Administrativ</option>
+                            </optgroup>
+                        </select>
+                    <br>
+                        <label>Om dig:
+                            <br>
+                            <textarea name="about" rows="20" cols="50"></textarea>                        
+                        </label>
+            </fieldset> 
+            <fieldset>
+                <legend>Avslutningsvis</legend>
+                <input type="checkbox" name="savemypersonaldata" required>
+                <label> Jag godkänner att ni sparar mina uppgifter</label>
+            <br>
+                <input type="checkbox" name="newsletter" checked>
+                <label>Jag vill prenummerera på nyhetsbrev</label>
+            <br>
+                <input type="submit" name="send" value="Skicka formulär" required>
+            </fieldset>
+        </form>
+    </body> 
+</html>

@@ -6,7 +6,7 @@
     </head>
     <body>
         <h1>Ansökan </h1>
-        <p> <a href= "om.html">Tillbaka till oss</a></p>
+            <p> <a href= "om.html">Tillbaka till oss</a></p>
         <h2>Process</h2>
             <ol>
                 <li>Du skickar in din ansökan</li>
@@ -18,37 +18,71 @@
         <form action="http://webug.se/examples/webbplatsdesign/recieve/recieve_dugga.php" target="_blank" method="post">
             <fieldset>
                 <legend>Personlig information:</legend>
-                    <label>Förnamn</label>
-                        <input type="text" name="firstname" placeholder="Ditt förnamn"> <br>
-                        <label>Efternamn</label>
-                            <input type="text" name="lastname" placeholder="Ditt efternamn"> <br>
-                        <label>Ålder</label>
-                            <input type="number" name="age" placeholder="Din ålder"> <br>
+                <div>
+                    <label>Förnamn
+                        <input type="text" name="firstname" placeholder="Ditt förnamn" required>
+                    </label>
+                </div>
+                <div>
+                    <label>Efternamn
+                        <input type="text" name="lastname" placeholder="Ditt efternamn" required>
+                    </label>
+                </div>
+                <div>
+                    <label>Ålder
+                        <input type="number" name="age" placeholder="Din ålder" required>
+                    </label>
+                </div>
             </fieldset> 
             <fieldset>
                 <legend> Din roll: </legend>
-                    <label>Är du eftertänksam?</label>
-                        <label>Ja</label> <input type="radio" name="thoughtful" value="ja">
-                        <label>Nej</label> <input type="radio" name="thoughtful" value="nej"> <br>
-                        <label>Hur duktig är du?</label> <input type="range" min="1" max="11" value="5" class="slider" name="skillful"> <br>
-                        <label>Vilken roll vill du ha?</label>
+                <div>
+                    <label>Är du eftertänksam?
+                        <label>Ja
+                            <input type="radio" name="thoughtful" value="Ja">
+                        </label> 
+                        <label>Nej 
+                            <input type="radio" name="thoughtful" value="Nej">
+                        </label>
+                    </label>
+                </div>
+                <div>
+                    <label>Hur duktig är du? 
+                        <input type="range" min="1" max="11" value="5" class="slider" name="skillful">
+                    </label>
+                </div>
+                <div>
+                    <label>Vilken roll vill du ha?
                         <select name="role">
                             <option value="Frontend">Frontend</option>
                             <option value="Backend">Backend</option>
                             <option value="Backend">Administrativ</option>
-                        </select> <br>
-                        <label>Om dig:
-                            <br>
-                            <textarea name="about" rows="20" cols="50"></textarea>                        
-                        </label>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label>Om dig:
+                        <div>
+                            <textarea name="about" rows="20" cols="50" placeholder="Om dig"></textarea>
+                        </div>
+                    </label>
+                </div>
             </fieldset> 
             <fieldset>
                 <legend>Avslutningsvis</legend>
-                    <input type="checkbox" name="savemypersonaldata" required>
-                    <label> Jag godkänner att ni sparar mina uppgifter</label> <br>
+                <div>
+                    <label>
+                        <input type="checkbox" name="savemypersonaldata" required>
+                        Jag godkänner att ni sparar mina uppgifter
+                    </label>
+                </div>
+                <div>
+                    <label>
                         <input type="checkbox" name="newsletter" checked>
-                    <label>Jag vill prenummerera på nyhetsbrev</label> <br>
-                        <input type="submit" value="Skicka formulär">
+                        Jag vill prenummerera på nyhetsbrev
+                    </label>
+                </div>
+                    <input type="submit" value="Skicka formulär">
             </fieldset>
         </form>
     </body> 

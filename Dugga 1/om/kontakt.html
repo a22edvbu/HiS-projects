@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8">
+        <title>Kontakta oss</title>
+    </head>
+    <body>
+        <h1>Ansökan </h1>
+            <p> <a href= "om.html">Tillbaka till oss</a></p>
+        <h2>Process</h2>
+            <ol>
+                <li>Du skickar in din ansökan</li>
+                <li>Ansökan ligger tills sig i 2 veckor</li>
+                <li>Vi behandlar din ansökan</li>
+                <li>Inom 3 dagar efter behandlad ansökan får du svar i form av röksignaler</li>
+            </ol>
+        <h2>Ansökan</h2>
+        <form action="http://webug.se/examples/webbplatsdesign/recieve/recieve_dugga.php" target="_blank" method="post">
+            <fieldset>
+                <legend>Personlig information:</legend>
+                <div>
+                    <label>Förnamn
+                        <input type="text" name="firstname" placeholder="Ditt förnamn" required>
+                    </label>
+                </div>
+                <div>
+                    <label>Efternamn
+                        <input type="text" name="lastname" placeholder="Ditt efternamn" required>
+                    </label>
+                </div>
+                <div>
+                    <label>Ålder
+                        <input type="number" name="age" placeholder="Din ålder" required>
+                    </label>
+                </div>
+            </fieldset> 
+            <fieldset>
+                <legend> Din roll: </legend>
+                <div>
+                    <label>Är du eftertänksam?</label>
+                        <label>
+                            Ja
+                            <input type="radio" name="thoughtful" value="Ja">
+                        </label> 
+                        <label>
+                            Nej 
+                            <input type="radio" name="thoughtful" value="Nej">
+                        </label>
+                </div>
+                <div>
+                    <label>
+                        Hur duktig är du? 
+                        <input type="range" min="1" max="11" value="5" class="slider" name="skillful">
+                    </label>
+                </div>
+                <div>
+                    <label>Vilken roll vill du ha?
+                        <select name="role">
+                            <option value="Frontend">Frontend</option>
+                            <option value="Backend">Backend</option>
+                            <option value="Backend">Administrativ</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label for="om">
+                        Om dig:
+                    </label>
+                    <div>
+                        <textarea name="about" rows="20" cols="50" placeholder="Om dig" id="om"></textarea>
+                    </div>
+                </div>
+            </fieldset> 
+            <fieldset>
+                <legend>Avslutningsvis</legend>
+                <div>
+                    <label>
+                        <input type="checkbox" name="savemypersonaldata" required>
+                        Jag godkänner att ni sparar mina uppgifter
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="newsletter" checked>
+                        Jag vill prenummerera på nyhetsbrev
+                    </label>
+                </div>
+                    <input type="submit" value="Skicka formulär">
+            </fieldset>
+        </form>
+    </body> 
+</html>

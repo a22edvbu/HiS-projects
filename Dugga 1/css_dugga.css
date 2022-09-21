@@ -15,16 +15,24 @@ body {
 }
 
 
-#lanparty {
+#lanparty > figcaption {
     display: block;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    margin-top: -20px;
     text-align: center;
+    background-color: white;
 }
 
 #lanparty > img {
+    display: block;
     border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#lanparty {
+    position: relative;
 }
 
 #aboutClubhouse {
@@ -42,7 +50,7 @@ body {
 }
 
 #aboutClubhouse > h2 {
-    background-color: rgb(144, 207, 228);
+    background-color: #62b4f4;
     margin: 0px;
     text-align: center;
 }
@@ -72,11 +80,15 @@ header {
     position: static;
     text-align: center;
     padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgb(144, 207, 228);
 }   
-
+/*
 li > a:link {
-    display: inline-block;
+    float: right;
+    display: block;
+    overflow: auto;
     color: white;
     background-color: rgb(52, 185, 230);
     box-shadow: 2px 2px black;
@@ -88,14 +100,34 @@ li > a:link {
 li > a:hover {
     transition: width 2s red;
 }
+*/
+
+ul {
+    list-style-type: none;
+    padding: 5px;
+    overflow: hidden;
+    text-align: center;
+    margin-left: auto;
+}
+
+li {
+    float: left;
+    padding: 5px;
+}
+
+li a {
+    display: block;
+    color: white;
+    background-color: blue;
+    text-align: center;
+    padding:16px;
+    text-decoration: none;
+}
 
 h1 {
     font-family: 'Abril Fatface', cursive;
     display: block;
     color: white;
-    text-shadow: 2px 2px black;
-    height: 50px;
-    padding-left: 10px;
     background-color: rgb(144, 207, 228);
 }
 
@@ -114,14 +146,14 @@ h2 {
     padding: 5px;
 }
 
-
+/*
 label {
     text-align: center;
     display: block;
     font-size: 30px;
     font-weight: bold;
 }
-
+*/
 .adress {
     background-color: rgb(144, 207, 228);
     padding: 10px;
@@ -141,4 +173,13 @@ p
     border-style: double;
     border-radius: 5px;
     text-align: left;
+}
+
+#tema {
+    position: relative;
+    background-color: #62b4f4;
+    margin: auto;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
 }

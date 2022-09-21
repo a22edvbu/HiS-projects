@@ -3,43 +3,90 @@
 
 body {
     background-color: white;
+    padding: 0px;
+    margin: 0px;
 }
 
-
 #banner {
-    text-align: center;
     font-family: 'Lucida Handwriting', sans-serif;
+    color: white;
+    text-shadow: 3px 3px black;
     font-size: 50px;
 }
 
 
-.banner {
-    background-color: rgb(144, 207, 228);
+#lanparty {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
+#lanparty > img {
+    border-radius: 5px;
+}
+
+#aboutClubhouse {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    width: 40%;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+#aboutClubhouse > h2 {
+    background-color: rgb(144, 207, 228);
+    margin: 0px;
+    text-align: center;
+}
+
+/* 
 #kodarfredag {
     display: block;
     font-size: 30px;
     font-weight: bold;
-    padding-bottom: 20px;
 }
 
 #Hackaton {
     display: block;
     font-size: 30px;
     font-weight: bold;
-    padding-bottom: 20px;
 }
 
 #HIS_info {
     display: block;
     font-size: 30px;
     font-weight: bold;
-    padding-bottom: 20px;
 }
+*/
 
-nav {
-    background-color:white;
+header {
+    display: block;
+    position: static;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(144, 207, 228);
+}   
+
+li > a:link {
+    display: inline-block;
+    color: white;
+    background-color: rgb(52, 185, 230);
+    box-shadow: 2px 2px black;
+    margin: 10px;
+    font-size: 20px;
+    padding: 20px;
+    text-decoration: none;
+}
+li > a:hover {
+    transition: width 2s red;
 }
 
 h1 {
@@ -52,18 +99,46 @@ h1 {
     background-color: rgb(144, 207, 228);
 }
 
+/*
+h2 ~ p {
+    overflow: auto;
+    width: 40%;
+    height: 300px;
+    margin-left: 27%;
+}
+*/
+
+
+h2 {
+    background-color: rgb(144, 207, 228);
+    padding: 5px;
+}
+
+
+label {
+    text-align: center;
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.adress {
+    background-color: rgb(144, 207, 228);
+    padding: 10px;
+    font-size: 15px;
+}
+p
+
 .artikel {
     display: block;
     font-family: 'Roboto', sans-serif;
     background-color: rgb(144, 207, 228);
     width: 300px;
-    padding: 20px;
+    padding: 15px;
     margin: 30px;
-    margin-left: 50px;
+    margin-left: 40px;
     border: 3px solid rgb(76, 109, 121);
     border-style: double;
-}
-
-.adress {
-    background-color: rgb(144, 207, 228);
+    border-radius: 5px;
+    text-align: left;
 }

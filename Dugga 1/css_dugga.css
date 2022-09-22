@@ -7,6 +7,7 @@ body {
     margin: 0px;
 }
 
+                                            /* Sidhuvud */
 #banner {
     font-family: 'Lucida Handwriting', sans-serif;
     color: white;
@@ -14,13 +15,55 @@ body {
     font-size: 50px;
 }
 
-
-#lanparty > figcaption {
+header {
     display: block;
+    position: static;
+    text-align: center;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(144, 207, 228);
+}
+
+ul {
+    list-style-type: none;
+    padding: 5px;
+    overflow: hidden;
+    text-align: center;
+    margin-left: 40%;
+}
+
+li {
+    float: left;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+li a {
+    display: block;
+    color: white;
+    background-color: #1e85c1;
+    text-align: center;
+    padding:16px;
+    box-shadow: 2px 2px black   ;
+    text-decoration: none;
+    transition: 0.1s;
+}
+li a:hover{
+    background-color: #5faaf4;
+    box-shadow: 0px 0px black;
+    transition: 0.1s;
+}
+
+                                            /* Lokalen */
+#lanparty > figcaption {
+    display: inline;
     position: absolute;
     margin-top: -20px;
     text-align: center;
-    background-color: white;
+    transform:translate(50%);
+    background-color: rgba(255, 255, 255, 0.60);
 }
 
 #lanparty > img {
@@ -51,115 +94,115 @@ body {
 
 #aboutClubhouse > h2 {
     background-color: #62b4f4;
-    margin: 0px;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -0px;
     text-align: center;
 }
 
-/* 
-#kodarfredag {
+#whatWeDo {
     display: block;
-    font-size: 30px;
-    font-weight: bold;
 }
 
-#Hackaton {
-    display: block;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-#HIS_info {
-    display: block;
-    font-size: 30px;
-    font-weight: bold;
-}
-*/
-
-header {
-    display: block;
-    position: static;
-    text-align: center;
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
+h2 {
     background-color: rgb(144, 207, 228);
-}   
-/*
-li > a:link {
-    float: right;
+    padding: 5px;
     display: block;
-    overflow: auto;
-    color: white;
-    background-color: rgb(52, 185, 230);
-    box-shadow: 2px 2px black;
+}
+
+#whatWeDo > div {
+    display: flex;
+    justify-content: center;
+}
+
+#tema {
+    background-color: #62b4f4;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
     margin: 10px;
-    font-size: 20px;
-    padding: 20px;
-    text-decoration: none;
-}
-li > a:hover {
-    transition: width 2s red;
-}
-*/
-
-ul {
-    list-style-type: none;
-    padding: 5px;
-    overflow: hidden;
+    background-image: linear-gradient(to bottom right, yellow, blue);
     text-align: center;
-    margin-left: auto;
+    transition: 0.1s;
 }
 
-li {
-    float: left;
-    padding: 5px;
+#tema:hover {
+    box-shadow: 2px 2px 2px black;
+    transition: 0.1s;
 }
 
-li a {
-    display: block;
-    color: white;
-    background-color: blue;
+#fadder {
+    display: flex;
+    transition: 0.07s;
+    background-color: #62b4f4;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 50% 50% 50% 10px;
+    margin: 10px;
+    background: url(sheep_150x150.jpg);
+    background-size: contain;
+}
+#fadder:hover {
+    border-radius: 50% 10px 50% 50%;
+    transition: 0.07s;
+}
+
+
+#prog {
+    display: flex;
+    transition: 0.07s;
+    background-color: #62b4f4;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 50% 50% 10px 50%;
+    margin: 10px;
+    background: url(sheep_150x150.jpg);
+    background-size: contain;
+}
+#prog:hover {
+    border-radius: 10px 50% 50% 50%;
+    transition: 0.07s;
+}
+
+#his {
+    background-color: #62b4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 50%;
+    margin: 10px;
     text-align: center;
-    padding:16px;
-    text-decoration: none;
 }
 
+section > small {
+    margin-left: 10px;
+}
+
+                                            /* Evenemang */
 h1 {
     font-family: 'Abril Fatface', cursive;
     display: block;
     color: white;
     background-color: rgb(144, 207, 228);
+    text-shadow: 3px 3px black;
 }
 
-/*
-h2 ~ p {
-    overflow: auto;
-    width: 40%;
-    height: 300px;
-    margin-left: 27%;
-}
-*/
-
-
-h2 {
-    background-color: rgb(144, 207, 228);
-    padding: 5px;
-}
-
-/*
-label {
-    text-align: center;
-    display: block;
-    font-size: 30px;
-    font-weight: bold;
-}
-*/
 .adress {
     background-color: rgb(144, 207, 228);
     padding: 10px;
     font-size: 15px;
 }
-p
 
 .artikel {
     display: block;
@@ -170,16 +213,16 @@ p
     margin: 30px;
     margin-left: 40px;
     border: 3px solid rgb(76, 109, 121);
-    border-style: double;
-    border-radius: 5px;
+    border-style: solid;
     text-align: left;
 }
 
-#tema {
+.artikelTitel {
+    font-size: 25px;
+}
+
+footer {
+    display: block;
     position: relative;
-    background-color: #62b4f4;
-    margin: auto;
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
+    background-color: rgb(144, 207, 228);
 }

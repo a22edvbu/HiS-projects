@@ -7,7 +7,7 @@ body {
     margin: 0px;
 }
 
-/*#region Sidhuvud*/
+/* #region Sidhuvud */
 #banner {
     font-family: 'Lucida Handwriting', sans-serif;
     color: white;
@@ -57,9 +57,9 @@ li a:hover{
     transition: 0.1s;
 }
 
-/*#endregion*/
+/* #endregion */
 
-                                            /* Lokalen */
+/* #region Lokalen */
 #lanparty > figcaption {
     display: flex;
     position: absolute;
@@ -231,8 +231,9 @@ tr:nth-child(even){
 tfoot {
     text-align: center;
 }
+/* #endregion */
 
-                                            /* Evenemang */
+/* #region Evenemang */
 h1 {
     font-family: 'Abril Fatface', cursive;
     display: block;
@@ -263,12 +264,10 @@ h1 {
     display: block;
 }
 
-footer {
-    display: block;
-    position: relative;
-    background-color: #90cfe4;
-}
-    
+/* #endregion */
+
+/* #region Nyheter*/
+
 article {
     display: block;
     background-color: lightgrey;
@@ -301,3 +300,12 @@ article > figure > figcaption {
     width: 140px;
     padding: 5px;
 }
+/* #endregion */
+
+/* #region Footer */
+footer {
+    display: block;
+    position: relative;
+    background-color: #90cfe4;
+}
+/* #endregion */

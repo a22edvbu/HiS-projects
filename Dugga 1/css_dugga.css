@@ -8,6 +8,7 @@ body {
 }
 
 /* #region Sidhuvud */
+
 #banner {
     font-family: 'Lucida Handwriting', sans-serif;
     color: white;
@@ -60,6 +61,7 @@ li a:hover{
 /* #endregion */
 
 /* #region Lokalen */
+
 #lanparty > figcaption {
     display: flex;
     position: absolute;
@@ -234,6 +236,7 @@ tfoot {
 /* #endregion */
 
 /* #region Evenemang */
+
 h1 {
     font-family: 'Abril Fatface', cursive;
     display: block;
@@ -287,7 +290,6 @@ article > h2 {
 }
 
 article > figure > img {
-    position: absolute ;
     float: left;
     height: 150px;
     width: 150px;
@@ -297,12 +299,15 @@ article > figure > figcaption {
     position: absolute;
     display: inline-block;
     background-color: #FFFFFF66;
+    margin-left: -150px;
     width: 140px;
     padding: 5px;
 }
+
 /* #endregion */
 
 /* #region Footer */
+
 footer {
     display: block;
     position: relative;

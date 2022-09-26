@@ -7,7 +7,7 @@ body {
     margin: 0px;
 }
 
-                                            /* Sidhuvud */
+/*#region Sidhuvud*/
 #banner {
     font-family: 'Lucida Handwriting', sans-serif;
     color: white;
@@ -22,7 +22,7 @@ header {
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(144, 207, 228);
+    background-color: #90cfe4;
 }
 
 ul {
@@ -43,7 +43,7 @@ li {
 li a {
     display: block;
     color: white;
-    background-color: #1e85c1;
+    background-color: #5f9eb2;
     text-align: center;
     padding:16px;
     box-shadow: 2px 2px black   ;
@@ -51,18 +51,23 @@ li a {
     transition: 0.1s;
 }
 li a:hover{
-    background-color: #5faaf4;
+    background-color: #c3ffff;
+    text-shadow: 2px 2px 6px black;
     box-shadow: 0px 0px black;
     transition: 0.1s;
 }
 
+/*#endregion*/
+
                                             /* Lokalen */
 #lanparty > figcaption {
-    display: inline;
+    display: flex;
     position: absolute;
+    width: 100%;                 /* Placeholder */
+    justify-content: center;
     margin-top: -20px;
     text-align: center;
-    transform:translate(50%);
+    align-items: center;
     background-color: rgba(255, 255, 255, 0.60);
 }
 
@@ -93,7 +98,7 @@ li a:hover{
 }
 
 #aboutClubhouse > h2 {
-    background-color: #62b4f4;
+    background-color: #90cfe4;
     margin-left: -15px;
     margin-right: -15px;
     margin-top: -0px;
@@ -105,7 +110,7 @@ li a:hover{
 }
 
 h2 {
-    background-color: rgb(144, 207, 228);
+    background-color: #90cfe4;
     padding: 5px;
     display: block;
 }
@@ -113,10 +118,10 @@ h2 {
 #whatWeDo > div {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #tema {
-    background-color: #62b4f4;
     display: flex;
     position: relative;
     justify-content: center;
@@ -124,8 +129,8 @@ h2 {
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    margin: 10px;
-    background-image: linear-gradient(to bottom right, yellow, blue);
+    margin: 20px;
+    background-image: linear-gradient(to bottom right, red, yellow, green, blue);
     text-align: center;
     transition: 0.1s;
 }
@@ -138,13 +143,12 @@ h2 {
 #fadder {
     display: flex;
     transition: 0.07s;
-    background-color: #62b4f4;
     justify-content: center;
     align-items: center;
     height: 200px;
     width: 200px;
     border-radius: 50% 50% 50% 10px;
-    margin: 10px;
+    margin: 20px;
     background: url(sheep_150x150.jpg);
     background-size: contain;
 }
@@ -157,13 +161,12 @@ h2 {
 #prog {
     display: flex;
     transition: 0.07s;
-    background-color: #62b4f4;
     justify-content: center;
     align-items: center;
     height: 200px;
     width: 200px;
     border-radius: 50% 50% 10px 50%;
-    margin: 10px;
+    margin: 20px;
     background: url(sheep_150x150.jpg);
     background-size: contain;
 }
@@ -173,7 +176,7 @@ h2 {
 }
 
 #his {
-    background-color: #62b4f4;
+    background-color:#5f9eb266;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -181,12 +184,52 @@ h2 {
     width: 150px;
     border-radius: 50%;
     margin-top: 50%;
-    margin: 10px;
+    margin: 20px;
     text-align: center;
+    transition: 0.07s;
+}
+#his:hover {
+    background-color: #5f9eb2;
+    transition: 0.07s;
 }
 
 section > small {
     margin-left: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    text-align: left;
+    justify-content: center;
+    margin-bottom: 30px;
+    table-layout: fixed;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+tbody {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+thead {
+    text-align: center;
+    font-size: 20px;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(even){
+    background-color: #c3ffff;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+tfoot {
+    text-align: center;
 }
 
                                             /* Evenemang */
@@ -194,20 +237,14 @@ h1 {
     font-family: 'Abril Fatface', cursive;
     display: block;
     color: white;
-    background-color: rgb(144, 207, 228);
+    background-color: #90cfe4;
     text-shadow: 3px 3px black;
-}
-
-.adress {
-    background-color: rgb(144, 207, 228);
-    padding: 10px;
-    font-size: 15px;
 }
 
 .artikel {
     display: block;
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(144, 207, 228);
+    background-color: #90cfe4;
     width: 300px;
     padding: 15px;
     margin: 30px;
@@ -219,10 +256,48 @@ h1 {
 
 .artikelTitel {
     font-size: 25px;
+    display: block;
+}
+
+.artikelStyrelsen {
+    display: block;
 }
 
 footer {
     display: block;
     position: relative;
-    background-color: rgb(144, 207, 228);
+    background-color: #90cfe4;
+}
+    
+article {
+    display: block;
+    background-color: lightgrey;
+    width: 50%;
+    margin: 50px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0);
+}
+
+article > h2 {
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -0px;
+    padding-left: 15px;
+}
+
+article > figure > img {
+    position: absolute ;
+    float: left;
+    height: 150px;
+    width: 150px;
+}
+
+article > figure > figcaption {
+    position: absolute;
+    display: inline-block;
+    background-color: #FFFFFF66;
+    width: 140px;
+    padding: 5px;
 }

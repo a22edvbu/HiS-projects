@@ -318,6 +318,20 @@ article > figure > figcaption {
     padding: 5px;
     border-radius: 0px 0px 6px 6px;
 }
+
+.author {
+    position: relative;
+    font-style: italic;
+    left: 78%;
+    bottom: 0px;
+}
+.date {
+    position: relative;
+    font-style: italic;
+    left: 78%;
+    bottom: 0px;
+}
+
 .fab {
     background-color: #90cfe4;
     position: fixed;

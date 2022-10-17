@@ -1,0 +1,50 @@
+body {
+    background-color: #424242;
+}
+
+/*#region Header */
+    
+    #banner {
+        font-size: 60px;
+        text-align: center;
+        color: white;
+        text-shadow: 0 0 3px lime, 0 0 5px lime;
+    }
+
+    header {
+        background-color: #6d6d6d;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 5px;
+        overflow: hidden;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    li {
+        float: left;
+        font-size: 20px;
+    }
+    
+    li a {
+        display: block;
+        color: white;
+        background-color: #5f9eb2;
+        text-align: center;
+        padding:16px;
+        box-shadow: 2px 2px black   ;
+        text-decoration: none;
+        transition: 0.1s;
+    }
+    li a:hover{
+        background-color: #c3ffff;
+        text-shadow: 2px 2px 6px black;
+        box-shadow: 0px 0px black;
+        transition: 0.1s;
+    }
+
+/*#endregion*/

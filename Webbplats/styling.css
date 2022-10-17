@@ -1,18 +1,14 @@
 body {
-    background-color: #424242;
+    background-color: black;
 }
 
 /*#region Header */
-    
+ 
     #banner {
         font-size: 60px;
         text-align: center;
-        color: white;
-        text-shadow: 0 0 3px lime, 0 0 5px lime;
-    }
-
-    header {
-        background-color: #6d6d6d;
+        color: #494949;
+        text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
     }
 
     ul {
@@ -21,22 +17,22 @@ body {
         overflow: hidden;
         text-align: center;
         display: flex;
-        align-items: center;
         justify-content: center;
     }
     
     li {
         float: left;
         font-size: 20px;
+        box-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
     }
     
     li a {
         display: block;
-        color: white;
-        background-color: #5f9eb2;
+        color: black;
+        background-color: #494949;
         text-align: center;
         padding:16px;
-        box-shadow: 2px 2px black   ;
+        text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
         text-decoration: none;
         transition: 0.1s;
     }
@@ -45,6 +41,165 @@ body {
         text-shadow: 2px 2px 6px black;
         box-shadow: 0px 0px black;
         transition: 0.1s;
+    }
+
+/*#endregion*/
+
+/*#region Utvalt*/
+
+    article {
+        display: block;
+        background-color: #494949;
+        width: 25%;
+        margin: auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0);
+    }
+
+/*#endregion*/
+
+/*#region Startsida*/
+
+    h1 {
+        background-color: #d8d52b;
+        text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
+        text-align: center;
+    }
+    
+    h2 {
+        color: white;
+    }
+
+    p {
+        color: white;
+    }
+
+    #lokaler {
+        display: block;
+    }
+
+    #lokaler > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #gazPro {
+        display: flex;
+        transition: 0.07s;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        width: 400px;
+        margin: 50px;
+        border: 1px solid grey;
+        background: url(bilder/gas_flare.png);
+        background-size: contain;
+    }
+    #gazPro:hover {
+        height: 500px;
+        width: 500px;
+        margin: 0;
+        filter: blur(1px);
+        filter: opacity(50%);
+        transition: 0.07s;
+    }
+
+    #gazBar {
+        display: flex;
+        transition: 0.07s;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        width: 400px;
+        margin: 50px;
+        border: 1px solid grey;
+        border-radius: 2px;
+        background: url(bilder/gazBar.png);
+        background-size: contain;
+    }
+    #gazBar:hover {
+        height: 500px;
+        width: 500px;
+        margin: 0;
+        filter: blur(1px);
+        filter: opacity(50%);
+        transition: 0.07s;
+    }
+
+    #gazdrink {
+        display: flex;
+        color: white;
+        transition: 0.07s;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        width: 200px;
+        margin: 50px;
+        border: 1px solid grey;
+        border-radius: 2px;
+        background-color: black;
+        background-size: contain;
+    }
+    #gazdrinkFreed {
+        display: flex;
+        color: white;
+        transition: 0.07s;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        width: 200px;
+        margin: 50px;
+        border: 1px solid grey;
+        border-radius: 2px;
+        background-color: black;
+        background-size: contain;
+    }
+    #gazdrink87 {
+        display: flex;
+        color: white;
+        transition: 0.07s;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        width: 200px;
+        margin: 50px;
+        border: 1px solid grey;
+        border-radius: 2px;
+        background-color: black;
+        background-size: contain;
+    }
+    #gazdrinkMidgrade {
+        display: flex;
+        color: white;
+        transition: 0.07s;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        width: 200px;
+        margin: 50px;
+        border: 1px solid grey;
+        border-radius: 2px;
+        background-color: black;
+        background-size: contain;
+    }
+    #gazdrinkPremium {
+        display: flex;
+        color: white;
+        transition: 0.07s;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        width: 200px;
+        margin: 50px;
+        border: 1px solid grey;
+        border-radius: 2px;
+        background-color: black;
+        background-size: contain;
     }
 
 /*#endregion*/

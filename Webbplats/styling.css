@@ -7,6 +7,8 @@ body {
     #banner {
         font-size: 60px;
         text-align: center;
+        font-size: 100px;
+        display: flexbox;
         color: #494949;
         text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
     }
@@ -72,10 +74,25 @@ body {
     
     h2 {
         color: white;
+        text-align: center;
     }
 
     p {
         color: white;
+    }
+
+    article {
+        display: block;
+    }
+
+    article img {
+        display: absolute;
+        height: 400px;
+        width: 400px;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #lokaler {
@@ -133,7 +150,7 @@ body {
 
     #gazdrink {
         display: flex;
-        color: white;
+        color: black;
         transition: 0.5s;
         justify-content: center;
         align-items: center;
@@ -142,7 +159,7 @@ body {
         margin: 50px;
         border: 1px solid grey;
         border-radius: 2px;
-        background-color: black;
+        background: url(bilder/gaZoline_Drink_template.png);
         background-size: contain;
     }
     #gazdrink:hover {
@@ -155,7 +172,7 @@ body {
     }
     #gazdrinkFreed {
         display: flex;
-        color: white;
+        color: black;
         transition: 0.5s;
         justify-content: center;
         align-items: center;
@@ -164,7 +181,7 @@ body {
         margin: 50px;
         border: 1px solid grey;
         border-radius: 2px;
-        background-color: black;
+        background: url(bilder/gaZoline_Drink_template.png);
         background-size: contain;
     }
     #gazdrinkFreed:hover {
@@ -177,7 +194,7 @@ body {
     }
     #gazdrink87 {
         display: flex;
-        color: white;
+        color: black;
         transition: 0.5s;
         justify-content: center;
         align-items: center;
@@ -186,7 +203,7 @@ body {
         margin: 50px;
         border: 1px solid grey;
         border-radius: 2px;
-        background-color: black;
+        background: url(bilder/gaZoline_Drink_template.png);
         background-size: contain;
     }
     #gazdrink87:hover {
@@ -199,7 +216,7 @@ body {
     }
     #gazdrinkMidgrade {
         display: flex;
-        color: white;
+        color: black;
         transition: 0.5s;
         justify-content: center;
         align-items: center;
@@ -208,7 +225,7 @@ body {
         margin: 50px;
         border: 1px solid grey;
         border-radius: 2px;
-        background-color: black;
+        background: url(bilder/gaZoline_Drink_template.png);
         background-size: contain;
     }
     #gazdrinkMidgrade:hover {
@@ -221,7 +238,7 @@ body {
     }
     #gazdrinkPremium {
         display: flex;
-        color: white;
+        color: black;
         transition: 0.5s;
         justify-content: center;
         align-items: center;
@@ -230,7 +247,7 @@ body {
         margin: 50px;
         border: 1px solid grey;
         border-radius: 2px;
-        background-color: black;
+        background: url(bilder/gaZoline_Drink_template.png);
         background-size: contain;
     }
     #gazdrinkPremium:hover {
@@ -244,6 +261,25 @@ body {
     
 
 /*#endregion*/
+
+/*#region Om oss */
+
+    #omOss {
+        display: block;
+        margin: 100px auto;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        border: 1px solid gray;
+        width: 50%;
+        height: 500px;
+    }
+
+    #omOss p {
+        color: gray;
+    }
+
+/*#endregion */
 
 /*#region Kontaktformulär*/
 

@@ -90,7 +90,7 @@ body {
 
     #gazPro {
         display: flex;
-        transition: 0.07s;
+        transition: 0.5s;
         justify-content: center;
         align-items: center;
         height: 400px;
@@ -106,12 +106,12 @@ body {
         margin: 0;
         filter: blur(1px);
         filter: opacity(50%);
-        transition: 0.07s;
+        transition: 0.5s;
     }
 
     #gazBar {
         display: flex;
-        transition: 0.07s;
+        transition: 0.5s;
         justify-content: center;
         align-items: center;
         height: 400px;
@@ -128,13 +128,13 @@ body {
         margin: 0;
         filter: blur(1px);
         filter: opacity(50%);
-        transition: 0.07s;
+        transition: 0.5s;
     }
 
     #gazdrink {
         display: flex;
         color: white;
-        transition: 0.07s;
+        transition: 0.5s;
         justify-content: center;
         align-items: center;
         height: 200px;
@@ -144,11 +144,19 @@ body {
         border-radius: 2px;
         background-color: black;
         background-size: contain;
+    }
+    #gazdrink:hover {
+        height: 210px;
+        width: 210px;
+        margin: 0;
+        filter: blur(1px);
+        filter: opacity(50%);
+        transition: 0.5s;
     }
     #gazdrinkFreed {
         display: flex;
         color: white;
-        transition: 0.07s;
+        transition: 0.5s;
         justify-content: center;
         align-items: center;
         height: 200px;
@@ -158,11 +166,19 @@ body {
         border-radius: 2px;
         background-color: black;
         background-size: contain;
+    }
+    #gazdrinkFreed:hover {
+        height: 210px;
+        width: 210px;
+        margin: 0;
+        filter: blur(1px);
+        filter: opacity(50%);
+        transition: 0.5s;
     }
     #gazdrink87 {
         display: flex;
         color: white;
-        transition: 0.07s;
+        transition: 0.5s;
         justify-content: center;
         align-items: center;
         height: 200px;
@@ -172,11 +188,19 @@ body {
         border-radius: 2px;
         background-color: black;
         background-size: contain;
+    }
+    #gazdrink87:hover {
+        height: 210px;
+        width: 210px;
+        margin: 0;
+        filter: blur(1px);
+        filter: opacity(50%);
+        transition: 0.5s;
     }
     #gazdrinkMidgrade {
         display: flex;
         color: white;
-        transition: 0.07s;
+        transition: 0.5s;
         justify-content: center;
         align-items: center;
         height: 200px;
@@ -187,10 +211,18 @@ body {
         background-color: black;
         background-size: contain;
     }
+    #gazdrinkMidgrade:hover {
+        height: 210px;
+        width: 210px;
+        margin: 0;
+        filter: blur(1px);
+        filter: opacity(50%);
+        transition: 0.5s;
+    }
     #gazdrinkPremium {
         display: flex;
         color: white;
-        transition: 0.07s;
+        transition: 0.5s;
         justify-content: center;
         align-items: center;
         height: 200px;
@@ -200,6 +232,40 @@ body {
         border-radius: 2px;
         background-color: black;
         background-size: contain;
+    }
+    #gazdrinkPremium:hover {
+        height: 210px;
+        width: 210px;
+        margin: 0;
+        filter: blur(1px);
+        filter: opacity(50%);
+        transition: 0.5s;
+    }
+    
+
+/*#endregion*/
+
+/*#region Kontaktformulär*/
+
+    fieldset {
+        border: none;
+        color: gray;
+    }
+
+    #personligInfo {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        padding: 50px;
+        margin: 50px;
+    }
+
+    input {
+        border: none;
+        background: black;
+        margin: 30px;
+        margin-left: 0px;
+        border-bottom: 1px solid gray;
     }
 
 /*#endregion*/

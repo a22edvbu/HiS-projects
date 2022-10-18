@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="sv"> 
+    <head>
+        <meta charset="UTF-8" />
+        <title> GaZoline Kontakt</title>
+        <link rel="stylesheet" href="styling.css">
+    </head>
+
+    <body>
+        <header>
+            <div id="banner">GaZoline Energy</div>
+            <nav>
+              <ul>
+                <li><a href="startsida.html">Hem</a></li>
+                <li><a href="">Nyheter</a></li>
+                <li><a href="information.html">Om oss</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+              </ul>
+            </nav>
+          </header>
+        <h1> Kontakta oss </h1>
+        <form action="http://webug.se/examples/webbplatsdesign/recieve/recieve_dugga.php" target="_blank" method="post">
+            <fieldset id="personligInfo">
+                <legend>Personlig information:</legend>
+                <div>
+                    <label id="fname">Förnamn
+                        <input id="fnameInput" type="text" name="firstname" placeholder="Ditt förnamn" required>
+                    </label>
+                </div>
+                <div>
+                    <label id="lname">Efternamn
+                        <input type="text" name="lastname" placeholder="Ditt efternamn" required>
+                    </label>
+                </div>
+                <div>
+                    <label id="email">Mejl
+                        <input type="text" name="email" placeholder="Din Mejl" required>
+                    </label>
+                </div>
+                <div>
+                    <label id="telefon">Mobiltelefon
+                        <input type="number" name="telefon" placeholder="Mobiltelefon" required>
+                    </label>
+                </div>
+                <div>
+                    <label id="adress">Adress
+                        <input type="text" name="adress" placeholder="Adress" required>
+                    </label>
+                </div>
+                <div>
+                    <label id="postnum">Postnummer
+                        <input type="text" name="Postnum" placeholder="Postnummer, stad" required>
+                    </label>
+                </div>
+            </fieldset> 
+            <fieldset>
+                <legend> Ställ en fråga: </legend>
+                <div>
+                    <label for="om">
+                        Fråga:
+                    </label>
+                    <div>
+                        <textarea name="question" rows="20" cols="50" placeholder="Fråga" id="gazQuestion"></textarea>
+                    </div>
+                </div>
+            </fieldset> 
+            <fieldset>
+                <legend>Avslutningsvis</legend>
+                <div>
+                    <label>
+                        <input type="checkbox" name="savemypersonaldata" required>
+                        Jag godkänner att ni sparar mina uppgifter
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="newsletter" checked>
+                        Jag vill prenummerera på nyhetsbrev
+                    </label>
+                </div>
+                    <input type="submit" value="Skicka formulär">
+            </fieldset>
+        </form>
+    </body>
+</html>

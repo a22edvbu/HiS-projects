@@ -20,6 +20,7 @@ body {
         text-align: center;
         display: flex;
         justify-content: center;
+        position: sticky;
     }
     
     li {
@@ -47,29 +48,13 @@ body {
 
 /*#endregion*/
 
-/*#region Utvalt*/
-
-    article {
-        display: block;
-        background-color: #494949;
-        width: 25%;
-        margin: auto;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        padding: 10px;
-        border: 1px solid black;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0);
-    }
-
-/*#endregion*/
-
 /*#region Startsida*/
 
     h1 {
         background-color: #d8d52b;
         text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
         text-align: center;
+        padding: 5px;
     }
     
     h2 {
@@ -80,19 +65,39 @@ body {
     p {
         color: white;
     }
-
     article {
-        display: block;
-    }
-
-    article img {
-        display: absolute;
-        height: 400px;
-        width: 400px;
-        justify-content: center;
         align-items: center;
-        margin-left: auto;
-        margin-right: auto;
+    }
+    
+
+    .articles {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: center;
+    }
+    .article1 {
+        background-color: #494949;
+        width: 500px;
+        height: auto;
+        padding: 10px;  
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0);
+    }
+    .article2 {
+        background-color: #494949;
+        padding: 10px;  
+        width: 500px;
+        height: auto;
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0);
+    }
+    .article2 > figure > img {
+        display: absolute;
+        height: 200px;
+        width: 200px;
+        margin: 0 auto;
     }
 
     #lokaler {
@@ -262,6 +267,21 @@ body {
 
 /*#endregion*/
 
+/*#region Information */
+
+    table {
+        color: gray;
+        margin: 0 auto;
+    }    
+    thead {
+        font-size: 20px;
+    }
+    th {
+        padding: 10px;
+    }
+
+/*#endregion */
+
 /*#region Om oss */
 
     #omOss {
@@ -283,25 +303,42 @@ body {
 
 /*#region Kontaktformulär*/
 
+    form {
+        color: gray;
+        border: 1px solid gray;
+        display: block;
+        text-align: center;
+    }
     fieldset {
         border: none;
-        color: gray;
-    }
-
-    #personligInfo {
-        width: 300px;
-        height: 300px;
-        display: flex;
-        padding: 50px;
-        margin: 50px;
-    }
-
-    input {
-        border: none;
-        background: black;
-        margin: 30px;
-        margin-left: 0px;
-        border-bottom: 1px solid gray;
+        padding: 20px;
     }
 
 /*#endregion*/
+
+/*#region Footer */
+
+    footer {
+        display: block;
+        position: relative;
+        background-color: #d8d52b;
+        padding: 10px;
+    }
+
+    footer > div {
+        color: black;
+    }
+
+    footer > div > a {
+        text-decoration: none;
+    }
+
+    footer > div > a:hover {
+        color: red;
+    }
+
+    footer > div > address {
+        font-style: italic;
+    }
+
+/*#endregion */

@@ -11,6 +11,7 @@ body {
         display: flexbox;
         color: #494949;
         text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
+        margin: 100px;
     }
 
     ul {
@@ -40,9 +41,10 @@ body {
         transition: 0.1s;
     }
     li a:hover{
-        background-color: #c3ffff;
-        text-shadow: 2px 2px 6px black;
+        background-color: black;
+        text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
         box-shadow: 0px 0px black;
+        color: white;
         transition: 0.1s;
     }
 
@@ -68,37 +70,6 @@ body {
     article {
         align-items: center;
     }
-    
-
-    .articles {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        justify-content: center;
-    }
-    .article1 {
-        background-color: #494949;
-        width: 500px;
-        height: auto;
-        padding: 10px;  
-        border: 1px solid black;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0);
-    }
-    .article2 {
-        background-color: #494949;
-        padding: 10px;  
-        width: 500px;
-        height: auto;
-        border: 1px solid black;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0);
-    }
-    .article2 > figure > img {
-        display: absolute;
-        height: 200px;
-        width: 200px;
-        margin: 0 auto;
-    }
 
     #lokaler {
         display: block;
@@ -112,15 +83,14 @@ body {
 
     #gazPro {
         display: flex;
+        position: relative;
         transition: 0.5s;
         justify-content: center;
         align-items: center;
-        height: 400px;
-        width: 400px;
+        height: auto;
+        width: 25%;
         margin: 50px;
         border: 1px solid grey;
-        background: url(bilder/gas_flare.png);
-        background-size: contain;
     }
     #gazPro:hover {
         height: 500px;
@@ -129,6 +99,9 @@ body {
         filter: blur(1px);
         filter: opacity(50%);
         transition: 0.5s;
+    }
+    #gazProInfo {
+        position: absolute;
     }
 
     #gazBar {
@@ -270,14 +243,70 @@ body {
 /*#region Information */
 
     table {
-        color: gray;
+        border: 1px solid gray;
+        color: darkgray;
         margin: 0 auto;
+        padding: 20px;
     }    
     thead {
         font-size: 20px;
     }
     th {
         padding: 10px;
+    }
+    td {
+        text-align: center;
+    }
+
+    .articles {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: center;
+    }
+    .article1 {
+        background-color: #494949;
+        width: 300px;
+        height: auto;
+        padding: 10px;  
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0);
+    }
+    .article2 {
+        background-color: #494949;
+        position: relative;
+        padding: 10px;  
+        width: 300px;
+        height: auto;
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0);
+    }
+    .article3 {
+        background-color: #494949;
+        position: relative;
+        padding: 10px;  
+        width: 300px;
+        height: auto;
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0);
+    }
+    figure {
+        margin: 0 auto;
+    }
+    figure img {
+        position: relative;
+        height: 200px;
+        width: 200px;
+    }
+
+    figure figcaption {
+        position: absolute;
+        width: 200px;
+        font-size: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin-top: -30px;
     }
 
 /*#endregion */
@@ -335,10 +364,6 @@ body {
 
     footer > div > a:hover {
         color: red;
-    }
-
-    footer > div > address {
-        font-style: italic;
     }
 
 /*#endregion */

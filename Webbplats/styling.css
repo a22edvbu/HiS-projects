@@ -87,21 +87,22 @@ body {
         transition: 0.5s;
         justify-content: center;
         align-items: center;
-        height: auto;
-        width: 25%;
-        margin: 50px;
+        height: 400px;
+        width: 400px;
+        margin: 0 auto;
         border: 1px solid grey;
+        background-size: contain;
     }
     #gazPro:hover {
-        height: 500px;
-        width: 500px;
-        margin: 0;
         filter: blur(1px);
         filter: opacity(50%);
         transition: 0.5s;
+        background-size: contain;
     }
-    #gazProInfo {
+    #gazPro figcaption {
         position: absolute;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin-bottom: -350px;
     }
 
     #gazBar {
@@ -111,7 +112,7 @@ body {
         align-items: center;
         height: 400px;
         width: 400px;
-        margin: 50px;
+        margin: 0 auto;
         border: 1px solid grey;
         border-radius: 2px;
         background: url(bilder/gazBar.png);
@@ -292,16 +293,16 @@ body {
         border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0, 0, 0);
     }
-    figure {
+    .article3bild {
         margin: 0 auto;
     }
-    figure img {
+    .article3bild img {
         position: relative;
         height: 200px;
         width: 200px;
     }
 
-    figure figcaption {
+    .article3bild figcaption {
         position: absolute;
         width: 200px;
         font-size: 10px;

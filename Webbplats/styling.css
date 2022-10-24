@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 body {
     background-color: black;
 }
@@ -8,13 +10,14 @@ body {
         font-size: 60px;
         text-align: center;
         font-size: 100px;
+        font-family: 'Staatliches', cursive;
         display: flexbox;
         color: #494949;
-        text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
+        text-shadow: 0 0 5px #d8d52b, 0 0 40px #d8d52b;
         margin: 100px;
     }
 
-    ul {
+    #Header > ul {
         list-style-type: none;
         padding: 5px;
         overflow: hidden;
@@ -24,13 +27,14 @@ body {
         position: sticky;
     }
     
-    li {
+    #Header > ul > li {
         float: left;
         font-size: 20px;
+        font-family: 'Staatliches', cursive;
         box-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
     }
     
-    li a {
+    #Header > ul > li > a {
         display: block;
         color: black;
         background-color: #494949;
@@ -40,7 +44,7 @@ body {
         text-decoration: none;
         transition: 0.1s;
     }
-    li a:hover{
+    #Header > ul > li > a:hover{
         background-color: black;
         text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
         box-shadow: 0px 0px black;
@@ -56,16 +60,20 @@ body {
         background-color: #d8d52b;
         text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
         text-align: center;
+        font-family: 'Staatliches', cursive;
+        font-size: 40px;
         padding: 5px;
     }
     
     h2 {
         color: white;
         text-align: center;
+        font-family: 'Staatliches', cursive;
     }
 
     p {
         color: white;
+        font-family: 'Staatliches', cursive;
     }
     article {
         align-items: center;
@@ -75,13 +83,18 @@ body {
         display: block;
     }
 
-    #lokaler > div {
+    /* #lokaler > div {
         display: flex;
         justify-content: center;
         align-items: center;
     }
+    */
 
-    #gazPro {
+    #lokalFlexContainer {
+        display: flex;
+        justify-content: center;
+    }
+    .gazPro {
         display: flex;
         position: relative;
         transition: 0.5s;
@@ -89,155 +102,185 @@ body {
         align-items: center;
         height: 400px;
         width: 400px;
-        margin: 0 auto;
         border: 1px solid grey;
-        background-size: contain;
     }
-    #gazPro:hover {
-        filter: blur(1px);
-        filter: opacity(50%);
+    .gazPro:hover {
+        filter: brightness(0.5);
+        opacity: 1;
         transition: 0.5s;
-        background-size: contain;
     }
-    #gazPro figcaption {
+    .gazPro:hover figcaption {
+        filter: none;
+        opacity: 1;
+        transition: 0.5s;
+    }
+    .gazPro figcaption {
         position: absolute;
+        opacity: 0;
         background-color: rgba(255, 255, 255, 0.5);
         margin-bottom: -350px;
     }
 
-    #gazBar {
+    .gazBar {
         display: flex;
+        position: relative;
         transition: 0.5s;
         justify-content: center;
         align-items: center;
         height: 400px;
         width: 400px;
-        margin: 0 auto;
         border: 1px solid grey;
-        border-radius: 2px;
-        background: url(bilder/gazBar.png);
-        background-size: contain;
     }
-    #gazBar:hover {
-        height: 500px;
-        width: 500px;
-        margin: 0;
-        filter: blur(1px);
-        filter: opacity(50%);
+    .gazBar:hover {
+        filter: brightness(0.5);
+        opacity: 1;
         transition: 0.5s;
+    }
+    .gazBar:hover figcaption {
+        filter: none;
+        opacity: 1;
+        transition: 0.5s;
+    }
+    .gazBar figcaption {
+        position: absolute;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin-bottom: -350px;
     }
 
-    #gazdrink {
+    #gazdrinkContainer {
         display: flex;
-        color: black;
-        transition: 0.5s;
         justify-content: center;
-        align-items: center;
-        height: 200px;
-        width: 200px;
-        margin: 50px;
-        border: 1px solid grey;
-        border-radius: 2px;
-        background: url(bilder/gaZoline_Drink_template.png);
-        background-size: contain;
+    }
+    #gazdrinkLicense {
+        display: inline;
+        color: black;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+    #gazdrink {
+        position: relative;
+        transition: 0.5s;
     }
     #gazdrink:hover {
-        height: 210px;
-        width: 210px;
-        margin: 0;
-        filter: blur(1px);
-        filter: opacity(50%);
+        filter: brightness(0.5);
+        transition: 0.5s;
+    }
+    #gazdrink figcaption {
+        position: absolute;
+        margin-top: -30px;
+        padding: 5px;
+        font-size: 7px;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: 0.5s;
+    }
+    #gazdrink:hover figcaption {
+        opacity: 1;
         transition: 0.5s;
     }
     #gazdrinkFreed {
-        display: flex;
-        color: black;
+        position: relative;
         transition: 0.5s;
-        justify-content: center;
-        align-items: center;
-        height: 200px;
-        width: 200px;
-        margin: 50px;
-        border: 1px solid grey;
-        border-radius: 2px;
-        background: url(bilder/gaZoline_Drink_template.png);
-        background-size: contain;
     }
     #gazdrinkFreed:hover {
-        height: 210px;
-        width: 210px;
-        margin: 0;
-        filter: blur(1px);
-        filter: opacity(50%);
+        filter: brightness(0.5);
+        transition: 0.5s;
+    }
+    #gazdrinkFreed figcaption {
+        position: absolute;
+        margin-top: -30px;
+        padding: 5px;
+        font-size: 7px;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: 0.5s;
+    }
+    #gazdrinkFreed:hover figcaption {
+        opacity: 1;
         transition: 0.5s;
     }
     #gazdrink87 {
-        display: flex;
-        color: black;
+        position: relative;
         transition: 0.5s;
-        justify-content: center;
-        align-items: center;
-        height: 200px;
-        width: 200px;
-        margin: 50px;
-        border: 1px solid grey;
-        border-radius: 2px;
-        background: url(bilder/gaZoline_Drink_template.png);
-        background-size: contain;
     }
     #gazdrink87:hover {
-        height: 210px;
-        width: 210px;
-        margin: 0;
-        filter: blur(1px);
-        filter: opacity(50%);
+        filter: brightness(0.5);
+        transition: 0.5s;
+    }
+    #gazdrink87 figcaption {
+        position: absolute;
+        margin-top: -30px;
+        padding: 5px;
+        font-size: 7px;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: 0.5s;
+    }
+    #gazdrink87:hover figcaption {
+        opacity: 1;
         transition: 0.5s;
     }
     #gazdrinkMidgrade {
-        display: flex;
-        color: black;
+        position: relative;
         transition: 0.5s;
-        justify-content: center;
-        align-items: center;
-        height: 200px;
-        width: 200px;
-        margin: 50px;
-        border: 1px solid grey;
-        border-radius: 2px;
-        background: url(bilder/gaZoline_Drink_template.png);
-        background-size: contain;
     }
     #gazdrinkMidgrade:hover {
-        height: 210px;
-        width: 210px;
-        margin: 0;
-        filter: blur(1px);
-        filter: opacity(50%);
+        filter: brightness(0.5);
+        transition: 0.5s;
+    }
+    #gazdrinkMidgrade figcaption {
+        position: absolute;
+        margin-top: -30px;
+        padding: 5px;
+        font-size: 7px;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: 0.5s;
+    }
+    #gazdrinkMidgrade:hover figcaption {
+        opacity: 1;
         transition: 0.5s;
     }
     #gazdrinkPremium {
-        display: flex;
-        color: black;
+        position: relative;
         transition: 0.5s;
-        justify-content: center;
-        align-items: center;
-        height: 200px;
-        width: 200px;
-        margin: 50px;
-        border: 1px solid grey;
-        border-radius: 2px;
-        background: url(bilder/gaZoline_Drink_template.png);
-        background-size: contain;
     }
     #gazdrinkPremium:hover {
-        height: 210px;
-        width: 210px;
-        margin: 0;
-        filter: blur(1px);
-        filter: opacity(50%);
+        filter: brightness(0.5);
         transition: 0.5s;
     }
-    
+    #gazdrinkPremium figcaption {
+        position: absolute;
+        margin-top: -30px;
+        padding: 5px;
+        font-size: 7px;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: 0.5s;
+    }
+    #gazdrinkPremium:hover figcaption {
+        opacity: 1;
+        transition: 0.5s;
+    }
+
+    .gazLeaderboardsHA {
+        display: block;
+        width: 400px;
+        border-radius: 5px;
+        box-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        padding-bottom: 5px;
+        padding-top: 2px;
+        font-family: 'Staatliches', cursive;
+    }
+    .gazLeaderboardsHA > ol {
+        color: white;
+        font-size: 20px;
+    }
+    .gazLeaderboardsHA > ol > li {
+        margin: 5px;
+    }
 
 /*#endregion*/
 
@@ -259,52 +302,96 @@ body {
         text-align: center;
     }
 
-    .articles {
-        display: grid;
-        grid-template-columns: auto auto auto;
+    .articleContainer {
+        display: flex;
         justify-content: center;
     }
     .article1 {
         background-color: #494949;
+        margin: 20px;
         width: 300px;
         height: auto;
         padding: 10px;  
-        border: 1px solid black;
+        transition: 0.5s;
         border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0, 0, 0);
+    }
+    .article1:hover {
+        transition: 0.5s;
+        box-shadow: 0 0 3px #d8d52b, 0 0 10px #d8d52b;;
+        background-color: black;
     }
     .article2 {
         background-color: #494949;
         position: relative;
+        margin: 20px;
         padding: 10px;  
         width: 300px;
         height: auto;
+        transition: 0.5s;
         border: 1px solid black;
         border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0, 0, 0);
+    }
+    .article2 > figure > img {
+        position: relative;
+        justify-content: center;
+        height: 200px;
+        width: 200px;
+    }
+    .article2 > figure > figcaption {
+        position: absolute;
+        width: 200px;
+        font-size: 10px;
+        padding: 2px;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin-top: -30px;
+        transition: 0.5s;
+    }
+    .article2:hover {
+        transition: 0.5s;
+        box-shadow: 0 0 3px #d8d52b, 0 0 10px #d8d52b;;
+        background-color: black;
+    }
+    
+    .article2:hover figcaption{
+        opacity: 1;
+        transition: 0.5s;
     }
     .article3 {
         background-color: #494949;
         position: relative;
+        margin: 20px;
         padding: 10px;  
         width: 300px;
         height: auto;
+        transition: 0.5s;
         border: 1px solid black;
         border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0, 0, 0);
     }
-    .article3bild {
-        margin: 0 auto;
-    }
-    .article3bild img {
+    .article3 > figure > img {
         position: relative;
+        justify-content: center;
         height: 200px;
         width: 200px;
     }
+    .article3:hover {
+        transition: 0.5s;
+        box-shadow: 0 0 3px #d8d52b, 0 0 10px #d8d52b;;
+        background-color: black;
+    }
+    
+    .article3:hover figcaption{
+        opacity: 1;
+        transition: 0.5s;
+    }
 
-    .article3bild figcaption {
+    .article3 figcaption {
         position: absolute;
         width: 200px;
+        opacity: 0;
         font-size: 10px;
         background-color: rgba(255, 255, 255, 0.5);
         margin-top: -30px;
@@ -317,16 +404,23 @@ body {
     #omOss {
         display: block;
         margin: 100px auto;
+        overflow: auto;
         justify-content: center;
         align-items: center;
         background-color: black;
         border: 1px solid gray;
+        border-radius: 5px;
         width: 50%;
         height: 500px;
     }
 
+    #omOss h1 {
+        margin-top: 0;
+    }
+
     #omOss p {
         color: gray;
+        padding: 10px;
     }
 
 /*#endregion */
@@ -351,6 +445,7 @@ body {
     footer {
         display: block;
         position: relative;
+        font-family: 'Staatliches', cursive;
         background-color: #d8d52b;
         padding: 10px;
     }

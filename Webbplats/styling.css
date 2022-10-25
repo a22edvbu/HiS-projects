@@ -309,7 +309,7 @@ body {
     .article1 {
         background-color: #494949;
         margin: 20px;
-        width: 300px;
+        width: 400px;
         height: auto;
         padding: 10px;  
         transition: 0.5s;
@@ -326,7 +326,7 @@ body {
         position: relative;
         margin: 20px;
         padding: 10px;  
-        width: 300px;
+        width: 400px;
         height: auto;
         transition: 0.5s;
         border: 1px solid black;
@@ -364,7 +364,7 @@ body {
         position: relative;
         margin: 20px;
         padding: 10px;  
-        width: 300px;
+        width: 400px;
         height: auto;
         transition: 0.5s;
         border: 1px solid black;
@@ -394,7 +394,7 @@ body {
         opacity: 0;
         font-size: 10px;
         background-color: rgba(255, 255, 255, 0.5);
-        margin-top: -30px;
+        margin-top: -40px;
     }
 
 /*#endregion */
@@ -427,17 +427,96 @@ body {
 
 /*#region Kontaktformulär*/
 
-    form {
+    #gazFormContainer {
         color: gray;
         border: 1px solid gray;
-        display: block;
-        text-align: center;
+        border-radius: 5px;
+        margin: 50px auto;
+        font-family: 'Staatliches', cursive;
+        width: 1000px;
     }
     fieldset {
         border: none;
         padding: 20px;
     }
+    #gazPersonalInfo1, #gazPersonalInfo2 {
+        display: flex;
+        justify-content: center;
+        margin: 25px;
+    }
+    #gazPersonalInfo1 input, #gazPersonalInfo2 input {
+        font-size: 15px;
+        padding: 5px;
+        margin: 15px;
+        width: 250px;
+        color: gray;
+        background-color: black;
+        border: none;
+        border-bottom: 1px solid #494949;
+        transition: width 0.4s ease-in-out;
+    }
+    #gazPersonalInfo1 input:focus, #gazPersonalInfo2 input:focus {
+        outline: none;
+        border-bottom: 1px solid gray;
+    }
+    
+    #gazText {
+        margin: 57px;
+    }
+    #gazText textarea {
+        font-size: 15px;
+        padding: 10px;
+        width: 825px;
+        height: 15px;
+        color: gray;
+        background-color: black;
+        border: none;
+        border-bottom: 1px solid #494949;
+        transition: 0.4s;
+        resize: none;
+    }
+    #gazText textarea:focus {
+        outline: none;
+        height: 200px;
+        border: 1px solid #494949;
+        border-radius: 5px;
+    }
+    #gazText legend {
+        margin-left: -25px;
+    }
+    #gazSend legend {
+        margin-left: 25px;
+    }
+    #gazSend input[type=checkbox] {
+        margin-left: 57px;
+        background-color: black;
+    }
+    #gazSend input[type=submit] {
+        font-size: 15px;
+        font-family: 'Staatliches', cursive;
+        color: black;
+        background-color: #494949;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 20px;
+        margin-left: 25px;
+        justify-content: center;
+        margin-left: 0 auto;
+        text-align: center;
+        text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
+        box-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
+        text-decoration: none;
+        transition: 0.1s;
+    }
+    #gazSend input[type=submit]:hover {
+        background-color: black;
+        text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
+        box-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
+        color: white;
+        transition: 0.1s;
 
+    }
 /*#endregion*/
 
 /*#region Footer */

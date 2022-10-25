@@ -19,54 +19,53 @@
           </nav>
         </header>
         <h1> Kontakta oss </h1>
-        <form action="http://webug.se/examples/webbplatsdesign/recieve/recieve_dugga.php" target="_blank" method="post">
-            <fieldset id="personligInfo1">
+        <form id="gazFormContainer" action="http://webug.se/examples/webbplatsdesign/recieve/recieve.php" target="_blank" method="post">
+            <fieldset id="gazPersonalInfo1">
                 <legend>Personlig information:</legend>
                 <div>
-                    <label id="fname">Förnamn
-                        <input id="fnameInput" type="text" name="firstname" placeholder="Ditt förnamn" required>
+                    <label id="gazFname">
+                        <input id="fnameInput" type="text" name="Firstname" placeholder="Ditt förnamn" required>
                     </label>
                 </div>
                 <div>
-                    <label id="lname">Efternamn
-                        <input type="text" name="lastname" placeholder="Ditt efternamn" required>
+                    <label id="gazLname">
+                        <input type="text" name="Lastname" placeholder="Ditt efternamn" required>
                     </label>
                 </div>
                 <div>
-                    <label id="email">Mejl
-                        <input type="text" name="email" placeholder="Din Mejl" required>
+                    <label id="gazEmail">
+                        <input type="text" name="Email" placeholder="E-postadress" required>
                     </label>
                 </div>
             </fieldset>
-            <fieldset id="personligInfo2">
+            <fieldset id="gazPersonalInfo2">
                 <div>
-                    <label id="telefon">Mobiltelefon
-                        <input type="number" name="telefon" placeholder="Mobiltelefon" required>
+                    <label id="gazPhone">
+                        <input type="number" name="Phone" placeholder="Mobiltelefon" required>
                     </label>
                 </div>
                 <div>
-                    <label id="adress">Adress
-                        <input type="text" name="adress" placeholder="Adress" required>
+                    <label id="gazAdress">
+                        <input type="text" name="Adress" placeholder="Adress" required>
                     </label>
                 </div>
                 <div>
-                    <label id="postnum">Postnummer
+                    <label id="gazPostnum">
                         <input type="text" name="Postnum" placeholder="Postnummer, stad" required>
                     </label>
                 </div>
             </fieldset>
-            <fieldset>
-                <legend> Ställ en fråga: </legend>
+            <fieldset id="gazText">
+                <legend> Meddelande: </legend>
                 <div>
                     <label for="om">
-                        Fråga:
                     </label>
                     <div>
-                        <textarea name="question" rows="20" cols="50" placeholder="Fråga" id="gazQuestion"></textarea>
+                        <textarea name="Text" rows="20" cols="50" placeholder="Ditt meddelande"></textarea>
                     </div>
                 </div>
             </fieldset> 
-            <fieldset>
+            <fieldset id="gazSend">
                 <legend>Avslutningsvis</legend>
                 <div>
                     <label>

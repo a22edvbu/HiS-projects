@@ -11,7 +11,8 @@ body {
         text-align: center;
         font-size: 100px;
         font-family: 'Staatliches', cursive;
-        display: flexbox;
+        justify-content: center;
+        display: flex;
         color: #494949;
         text-shadow: 0 0 5px #d8d52b, 0 0 40px #d8d52b;
         margin: 100px;
@@ -263,7 +264,7 @@ body {
         transition: 0.5s;
     }
 
-    .gazLeaderboardsHA {
+    .gazLeaderboardsHA, .gazLeaderboardsSpeed {
         display: block;
         width: 400px;
         border-radius: 5px;
@@ -274,12 +275,15 @@ body {
         padding-top: 2px;
         font-family: 'Staatliches', cursive;
     }
-    .gazLeaderboardsHA > ol {
+    .gazLeaderboardsHA > ol, .gazLeaderboardsSpeed > ol {
         color: white;
         font-size: 20px;
     }
-    .gazLeaderboardsHA > ol > li {
+    .gazLeaderboardsHA > ol > li, .gazLeaderboardsSpeed > ol > li {
         margin: 5px;
+    }
+    .gazLeaderboardsHA p, .gazLeaderboardsSpeed p {
+        font-size: 25px;
     }
 
 /*#endregion*/
@@ -502,7 +506,6 @@ body {
         margin-top: 20px;
         margin-left: 25px;
         justify-content: center;
-        margin-left: 0 auto;
         text-align: center;
         text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
         box-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;

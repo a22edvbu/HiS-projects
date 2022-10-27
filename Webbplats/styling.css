@@ -18,7 +18,7 @@ body {
         margin: 100px;
     }
 
-    #Header > ul {
+    #Header  {
         list-style-type: none;
         padding: 5px;
         overflow: hidden;
@@ -28,14 +28,13 @@ body {
         position: sticky;
     }
     
-    #Header > ul > li {
-        float: left;
+    #Header  > li {
         font-size: 20px;
         font-family: 'Staatliches', cursive;
         box-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
     }
     
-    #Header > ul > li > a {
+    #Header  > li > a {
         display: block;
         color: black;
         background-color: #494949;
@@ -45,7 +44,7 @@ body {
         text-decoration: none;
         transition: 0.1s;
     }
-    #Header > ul > li > a:hover{
+    #Header  > li > a:hover{
         background-color: black;
         text-shadow: 0 0 3px #d8d52b, 0 0 5px #d8d52b;
         box-shadow: 0px 0px black;
@@ -284,6 +283,7 @@ body {
     }
     .gazLeaderboardsHA p, .gazLeaderboardsSpeed p {
         font-size: 25px;
+        margin-left: 30px;
     }
 
 /*#endregion*/
@@ -292,6 +292,7 @@ body {
 
     table {
         border: 1px solid gray;
+        font-family: 'Staatliches', cursive;
         color: darkgray;
         margin: 0 auto;
         padding: 20px;

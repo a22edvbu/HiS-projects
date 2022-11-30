@@ -1,16 +1,9 @@
-<<<<<<< HEAD
 ﻿  Roulette.cpp
 \\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 \\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-\\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(110,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-\\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(9,9): warning C4101: 'winPrize': unreferenced local variable
-\\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(116): error C4700: uninitialized local variable 'spinRandTest' used
-=======
-﻿  Roulette.cpp
-\\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-\\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-\\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(128,31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-\\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(143,31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-\\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(174,20): warning C4552: '-': result of expression not used
+\\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(126,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+\\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(32,13): warning C4101: 'winColor': unreferenced local variable
+\\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(30,13): warning C4101: 'spinRandNumber': unreferenced local variable
+\\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(26,13): warning C4101: 'winPrize': unreferenced local variable
+\\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\Roulette\Roulette.cpp(31,13): warning C4101: 'winNumber': unreferenced local variable
   Roulette.vcxproj -> \\StudentNAS1\StudentHome\2022\a22edvbu\Desktop\Projects\Hogskolan-i-Skovde-pirvate-projects\C++\Roulette\x64\Debug\Roulette.exe
->>>>>>> 294d7e994635f65bc13419904fbcb639d6ccb385

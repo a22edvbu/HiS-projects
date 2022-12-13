@@ -36,7 +36,7 @@ int main()
     wallet -= bet;
     cout << wallet << endl;
     slotGame();
-    cout << slotResult() << endl;
+    //cout << slotResult() << endl;
     while (wallet < 100) {
     }
     return 0;

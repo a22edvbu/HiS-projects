@@ -1,0 +1,9 @@
+﻿  RouletteFinal.cpp
+C:\Users\IkGuz\OneDrive\Documents\GitHub\Hogskolan-i-Skovde-pirvate-projects\C++\RouletteFinal\RouletteFinal\RouletteFinal.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\IkGuz\OneDrive\Documents\GitHub\Hogskolan-i-Skovde-pirvate-projects\C++\RouletteFinal\RouletteFinal\RouletteFinal.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\IkGuz\OneDrive\Documents\GitHub\Hogskolan-i-Skovde-pirvate-projects\C++\RouletteFinal\RouletteFinal\RouletteFinal.cpp(114,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\IkGuz\OneDrive\Documents\GitHub\Hogskolan-i-Skovde-pirvate-projects\C++\RouletteFinal\RouletteFinal\RouletteFinal.cpp(27,13): warning C4101: 'winColor': unreferenced local variable
+C:\Users\IkGuz\OneDrive\Documents\GitHub\Hogskolan-i-Skovde-pirvate-projects\C++\RouletteFinal\RouletteFinal\RouletteFinal.cpp(25,13): warning C4101: 'spinRandNumber': unreferenced local variable
+C:\Users\IkGuz\OneDrive\Documents\GitHub\Hogskolan-i-Skovde-pirvate-projects\C++\RouletteFinal\RouletteFinal\RouletteFinal.cpp(21,13): warning C4101: 'winPrize': unreferenced local variable
+C:\Users\IkGuz\OneDrive\Documents\GitHub\Hogskolan-i-Skovde-pirvate-projects\C++\RouletteFinal\RouletteFinal\RouletteFinal.cpp(26,13): warning C4101: 'winNumber': unreferenced local variable
+  RouletteFinal.vcxproj -> C:\Users\IkGuz\OneDrive\Documents\GitHub\Hogskolan-i-Skovde-pirvate-projects\C++\RouletteFinal\x64\Debug\RouletteFinal.exe

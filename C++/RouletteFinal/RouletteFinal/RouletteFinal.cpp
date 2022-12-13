@@ -36,7 +36,7 @@ int main()
 
 
         cout << "------------- Welcome to GaZoline Energy bar and casino! -------------\n";
-        cout << "You have " << wallet << " kr worth of chips.\n";                                            // Definerar regler osv.
+        cout << "You have " << wallet << " kr worth of chips.\n";                                            // Definierar regler osv.
         cout << "You can place bets worth 100, 300 or 500 kr to win amazing prices!\n";
 
         while (bet != 100 && bet != 300 && bet != 500) {
@@ -56,36 +56,38 @@ int main()
         /*  Här får spelaren bestämma vad de vill satsa på.
             Valen är mellan ett nummer mellan 1 - 36 eller en svart eller röd färg.
 
-            Mina while loops fastnade där även om jag satte vilkoret på att loopa så länge valColor != Black.
+            Mina while loops fastnade där även om jag satte villkoret  på att loopa så länge valColor != Black.
             Tanken var att när användaren skriver in "Black" att iterationen slutar då valColor = "Black", men det funkar inte.
             Funkar när jag gav valColor och valNumber ett värde på 0 och satte iterationens vilkor på != 0 */
 
-        cout << "Do you want ot bet on a color or a number?\n";
+        cout << "Do you want to bet on a color or a number?\n";
         cin >> valType;
 
-        if (valType == "Color" || valType == "color" || valType == "COLOR") {       // val mellan färg eller nummer
-            while (valColor == "0") {
-                cout << "You're betting on a " << valType << ". Do you want to bet on red or black?\n";
-                cin >> valColor;
+        if (valType == "Color" || valType == "color" || valType == "COLOR") {       // val av färg
+            cout << "You're betting on a " << valType << ". Do you want to bet on red or black?\n";
+            cin >> valColor;
 
-                if (valColor == "Black" || valColor == "black" || valColor == "BLACK") {
-                    cout << "You've placed a bet on " << bet << " kr on " << valColor << endl;
-                }
-                else if (valColor == "Red" || valColor == "red" || valColor == "RED") {
-                    cout << "You've placed a bet on " << bet << " kr on " << valColor << endl;
-                }
-                else if (valColor != "Black" || valColor != "black" || valColor != "BLACK" || valColor != "Red" || valColor != "red" || valColor != "RED") {
-                    cout << "You have to choose between red or black to place a bet.\n";
-                }
-            }
             if (valColor == "Black" || valColor == "black" || valColor == "BLACK") {
-                valColor = "Black";
+                cout << "You've placed a bet on " << bet << " kr on " << valColor << endl;
+                valColor = "Black";     // valColor tilldelas "Black" för att göra det smidigare att jämföra resultatet senare i koden
             }
             else if (valColor == "Red" || valColor == "red" || valColor == "RED") {
-                valColor = "Red";
+                cout << "You've placed a bet on " << bet << " kr on " << valColor << endl;
+                valColor = "Red";       // valColor tilldelas "Red" för att göra det smidigare att jämföra resultatet senare i koden
             }
+            else if (valColor != "Black" || valColor != "black" || valColor != "BLACK" || valColor != "Red" || valColor != "red" || valColor != "RED") {
+                cout << "You have to choose between red or black to place a bet.\n";
+                return 0;
+            }
+            /*
+            if (valColor == "Black" || valColor == "black" || valColor == "BLACK") {
+                valColor = "Black";     // valColor tilldelas "Black" för att göra det smidigare att jämföra resultatet senare i koden
+            }
+            else if (valColor == "Red" || valColor == "red" || valColor == "RED") {
+                valColor = "Red";       // valColor tilldelas "Red" för att göra det smidigare att jämföra resultatet senare i koden
+            } */
         }
-        else if (valType == "Number" || valType == "number" || valType == "Number") {
+        else if (valType == "Number" || valType == "number" || valType == "Number") {       // val mellan 
             while (valNumber <= 1 || valNumber >= 36) {
                 cout << "Place a bet on a number between 1-36.\n";
                 cin >> valNumber;
@@ -101,6 +103,7 @@ int main()
         else
         {
             cout << "You have to pick a number or a color.\n";
+            return 0;
         }
 
         /* Här sker självaste roulettespelet där koden nedan, beroende på om spelaren valt att satsa på en färg eller ett nummer, ger ett slumpvalt resultat.
@@ -118,7 +121,7 @@ int main()
             cout << "You have to press Y to play.";
         }
 
-        if (spinRand % 2 == 0) {
+        if (spinRand % 2 == 0) {        // Väljer jämna tal
             spinRandColor = "Black";
         }
         else {
@@ -131,14 +134,14 @@ int main()
         if (spinRand == valNumber || spinRandColor == valColor) {	// jämför det genererade talet med valNumber för att avgöra vinst eller ej.
             cout << "------------- YOU WON -------------\n";
             if (spinRand == valNumber) {        // vinst med nummer
-                cout << bet << " kr has been depossited to your wallet with a 10x win bonus!\n";
                 bet *= 10;
                 wallet += bet;
+                cout << bet << " kr has been deposited to your wallet!\n";
             }
             else {      // Vinst med färg
-                cout << bet << " kr has been deposited to your wallet with a 2x win bonus!\n";
                 bet *= 2;
                 wallet += bet;
+                cout << bet << " kr has been deposited to your wallet!\n";
             }
         }
         else {
@@ -148,7 +151,7 @@ int main()
         }
         cout << "Your current balance: " << wallet << " kr" << endl;
 
-        while (replay != 1) {
+        while (replay != 1) {       // Valet att spela igen
             cout << "Do you want to play again? Y/N \n";
             cin >> replayQuestion;
             if (replayQuestion == 'Y' || replayQuestion == 'y') {
@@ -163,7 +166,7 @@ int main()
         }
     }
 
-    cout << "You have insufficient funds. Please refil to play again.\n";
+    cout << "You have insufficient funds.\n";
 
     return 0;
 }

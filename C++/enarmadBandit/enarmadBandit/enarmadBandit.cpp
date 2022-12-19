@@ -33,15 +33,30 @@ int main()
             cout << "--!!! You have to invest 100 kr or more to play. !!!--\n";
         }
     }
-    //cout << slotResult() << endl;
-    while (wallet >= 100) {
+    char replay;
+    while (wallet >= 100 || replay == 'N') {
         cout << "Wallet: " << wallet << endl;
         int bet = betting();
         wallet -= bet;
         cout << wallet << endl;
         int totalWins = slotGame();
         int winMutli = winModifier(totalWins);
-        cout << winMutli << endl;
+        int winAmount = bet * winMutli;
+        wallet += winAmount;
+        cout << "Total winnings: " << winAmount << endl;
+        cout << "Would you like to play again? Y/N: ";
+        cin >> replay;
+        while (replay == 'n' || replay == 'N') {
+            if (replay == 'y' || replay == 'Y') {
+                replay = 'Y';
+            }
+            else if (replay == 'n' || replay == 'N') {
+                return 0;
+            }
+            else {
+                cout << "!!! Invalid input !!!\n";
+            }
+        }
     }
     cout << "!!! You've ran out of money !!!\n";
     return 0;

@@ -9,31 +9,22 @@ char slotRand() {
 }
 char slotResult(char grid[3][3]) {
 	int totalWins = 0;
-	int totalLoss = 0;
 	for (int i = 0; i < 3; i++) {
 		if (grid[0][0+i] == grid[1][0+i] && grid[1][0+i] == grid[2][0+i]) {
 			totalWins++;
-			cout << "You've won V\n";
 		}
 		if (grid[0+i][0] == grid[0+i][1] && grid[0+i][1] == grid[0+i][2]) {
 			totalWins++;
-			cout << "You've won ->\n";
 		}
-		//if (grid[0][0] != grid[0][1] && grid[0][1] != grid[0][2]) {
 		else {
-			totalLoss++;
-			cout << "You've lost\n";
 		}
 	}
 	if (grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]) {
 		totalWins++;
-		cout << "You've won on diagonal 1\n";
 	}
 	if (grid[0][2] == grid[1][1] && grid[1][1] == grid[2][0]) {
 		totalWins++;
-		cout << "You've won on diagonal 2\n";
 	}
-	cout << "You've won " << totalWins << " and lost " << totalLoss << " so far.\n";
 	return totalWins;
 }
 int slotGame() {

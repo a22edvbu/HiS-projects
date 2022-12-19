@@ -25,10 +25,18 @@ char slotResult(char grid[3][3]) {
 			cout << "You've lost\n";
 		}
 	}
+	if (grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]) {
+		totalWins++;
+		cout << "You've won on diagonal 1\n";
+	}
+	if (grid[0][2] == grid[1][1] && grid[1][1] == grid[2][0]) {
+		totalWins++;
+		cout << "You've won on diagonal 2\n";
+	}
 	cout << "You've won " << totalWins << " and lost " << totalLoss << " so far.\n";
-	return 0;
+	return totalWins;
 }
-void slotGame() {
+int slotGame() {
 	srand(time(0));
 	char grid[3][3];
 	for (int i = 0; i < 3; i++) { // loopar 3 ggr
@@ -40,5 +48,5 @@ void slotGame() {
 		cout << endl;
 	}
 	cout << "---------" << endl;
-	slotResult(grid);
+	return slotResult(grid);
 }

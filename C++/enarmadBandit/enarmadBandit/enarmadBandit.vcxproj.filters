@@ -26,5 +26,8 @@
     <ClInclude Include="slots.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="winMods.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

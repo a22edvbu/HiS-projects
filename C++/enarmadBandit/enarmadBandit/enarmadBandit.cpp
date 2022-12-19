@@ -2,6 +2,7 @@
 #include <ctime>
 #include "betting.h"
 #include "slots.h"
+#include "winMods.h"
 using namespace std;
 
 int main()
@@ -38,7 +39,9 @@ int main()
         int bet = betting();
         wallet -= bet;
         cout << wallet << endl;
-        slotGame();
+        int totalWins = slotGame();
+        int winMutli = winModifier(totalWins);
+        cout << winMutli << endl;
     }
     cout << "!!! You've ran out of money !!!\n";
     return 0;

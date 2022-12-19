@@ -32,12 +32,14 @@ int main()
             cout << "--!!! You have to invest 100 kr or more to play. !!!--\n";
         }
     }
-    int bet = betting();
-    wallet -= bet;
-    cout << wallet << endl;
-    slotGame();
     //cout << slotResult() << endl;
-    while (wallet < 100) {
+    while (wallet >= 100) {
+        cout << "Wallet: " << wallet << endl;
+        int bet = betting();
+        wallet -= bet;
+        cout << wallet << endl;
+        slotGame();
     }
+    cout << "!!! You've ran out of money !!!\n";
     return 0;
 }

@@ -4,7 +4,7 @@
 #include "slots.h"
 using namespace std;
 
-int winModifier(int totalWins) {
+int winModifier(int totalWins) {		// denna funktion ger den totala summan av rätta rader med en vinstmodifier som adderas med spelarens sats för att skapa vinstsumman. 
 	int winMulti = 0;
 	switch (totalWins) {
 	case 0: 
@@ -38,7 +38,7 @@ int winModifier(int totalWins) {
 	if (winMulti >= 1) {
 		cout << "Congrats! You've won with " << totalWins << " and won " << winMulti << " times your bet!\n";
 	}
-	else {
+	else {		
 		cout << "Sorry, you didn't win this time.\n";
 	}
 	return winMulti;

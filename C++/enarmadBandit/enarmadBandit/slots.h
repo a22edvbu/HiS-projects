@@ -33,7 +33,7 @@ int slotGame() {
 	for (int i = 0; i < 3; i++) { // for loop som loopar 3 ggr per kolumn.
 		cout << "---------" << endl;
 		for (int j = 0; j < 3; j++) { // denna loop loopar 3 ggr varje gång den första for loopen loopas för att generera raderna.
-			grid[i][j] = slotRand();	// Kallar på funktionen slotRand för att få ett slumpat spelfält.
+			grid[i][j] = slotRand()		;	// Kallar på funktionen slotRand för att få ett slumpat spelfält.
 			cout << "|" << grid[i][j] << "|";
 		}
 		cout << endl;

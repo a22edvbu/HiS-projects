@@ -38,7 +38,6 @@ int main()
         cout << "Wallet: " << wallet << endl;
         int bet = betting();        // Här kallas funktionen betting() för att ett värde ska kunna ges till variablen bet.
         wallet -= bet;
-        cout << wallet << endl;
         int totalWins = slotGame();            // slotGame() är funktionen som utför själva spelet och ger totalWins värdet på den totala summan av rätta rader i spelet.
         int winMutli = winModifier(totalWins);  // winModifier() jämför antalet rätta rader för att ge ett tal som multipliceras med spelarens sats.
         int winAmount = bet * winMutli;

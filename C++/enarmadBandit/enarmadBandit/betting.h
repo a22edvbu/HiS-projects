@@ -8,6 +8,7 @@ int betting() {
 
 	while (bet != 100 && bet != 300 && bet != 500) {		// Loopar så länge spelaren satsar på annat förutom 100, 300 eller 500.
 		cout << "How much would you like to bet?\n";
+		cout << "Please bet 100, 300 or 500kr.\n";
 		cin >> bet;
 		if (bet == 100 || bet == 300 || bet == 500) {		
 			cout << "Your bet is: " << bet << "kr" << endl;		// Visar spelaren vad de satsar.

@@ -38,7 +38,7 @@ int winModifier(int totalWins) {		// denna funktion ger den totala summan av rät
 	if (winMulti >= 1) {
 		cout << "Congrats! You've won with " << totalWins << " and won " << winMulti << " times your bet!\n";
 	}
-	else {		
+	else {
 		cout << "Sorry, you didn't win this time.\n";
 	}
 	return winMulti;

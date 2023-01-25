@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>A SPA Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+        /* ----- Javascript for SPA - Single Page Application logic ----- */
+        // Help function that shows page with id page+p and hides all other pages
+        function showPage(p) {
+            // Step 1 - Hide all pages
+            pageArr = document.getElementsByClassName("page");
+            for (let i = 0; i < pageArr.length; i++) {
+                let page = pageArr[i];
+                page.style.display = "none";
+            }
+            // Step 2 - Show the selected page
+            document.getElementById("page" + p).style.display = "block";
+ 
+            // Step 3 - Make all navbar buttons inactive 
+            let btnArr = document.getElementsByClassName("navbar-btn");
+            for (let i = 0; i < btnArr.length; i++) {
+                let btn = btnArr[i];
+                btn.classList.remove("active");
+            }
+ 
+            // Step 4 - Make page all navbar buttons with class nav+p active
+            btnArr = document.getElementsByClassName("nav" + p);
+            for (let i = 0; i < btnArr.length; i++) {
+                let btn = btnArr[i];
+                btn.classList.add("active");
+            }
+        }
+        /* -----  ----- */
+ 
+        // Init function. Here we can put code that is needed to initialize our prototype.
+        function initPrototype() {
+            // For example, when using sound or sensors this becomes important.
+            console.log("==> Prototype init started.");
+ 
+            // Show the landingpage/startpage
+            showPage(1);
+        }
+    </script>
+    <style>
+        /* 
+            CSS can and should be changed to fit your design profile.
+        */
+        .prototype-start-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(50, 50, 50, 0.5);
+            z-index: 1000;
+        }
+        
+       
+    </style>
+ 
+    </style>
+</head>
+ 
+<body onload="showPage(0);">
+    <div id="page0" class="page">
+        <div class="prototype-start-page">
+            <button class="btn btn-success" type="button" onclick="initPrototype();">Start prototype</button>
+        </div>
+    </div>
+    <div id="page1" class="page">
+        <!-- navbar -->
+        <!-- page content -->
+        <div class="strindContainer">
+            <div class="Header">
+                <img src="Media\sekelskiftsstockholm_Crop.jpg" alt="Sekelskiftet Stockholm" class="img-fluid">
+                <div id="strindTitel">
+                    <h1>StrindbergAppen</h1>
+                    <p> Appen om Agustus Strindberg</p>
+                </div>
+            </div>
+            
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Strindbergappen</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" onclick="showPage(1);">Hem</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage(2);">Bilder</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage(3);">Verk</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage(4);">Om oss</a>
+                  </li>
+                </ul>
+              </div>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> 
+            </div>
+          </nav>
+            <div class="row">
+                <div class="col">
+                 <img src="Media\August_Strindberg_by_Robert_Roesler_about_1881-2.jpg" alt="Augustus Strindberg" class="img-fluid">
+                 <div id="omStrindberg">
+                    <h2>Augustus Strindberg</h2>
+                    <p>Johan August Strindberg föddes i Sundhetskollegiets hus på Riddarholmen i 
+                        Stockholm den 22 januari 1849. Strindberg var det tredje barnet av åtta i sin 
+                        faders första äktenskap. Efter det rivna födelsehuset har Strindberg döpt 
+                        pjäsen Brända Tomten. År 1851 flyttade familjen till Klarakvarteren och 1856 
+                        till Norrtullsgatan 14.
+                        
+                        Strindbergs far Carl Oscar Strindberg var ångbåtskommissionär och ansvarig för 
+                        godstrafiken på Mälaren och Göta kanal. Modern Eleonora Ulrika Norling var före 
+                        detta värdshusflicka, som hade arbetat på Liljeholmens värdshus. Före 
+                        giftermålet arbetade hon som hushållerska åt Carl Oscar, därav titeln 
+                        Tjänstekvinnans son, men hemmet var inte så proletärt som Strindberg ville få 
+                        det att framstå. Carl Oscar gifte sig med henne 1847. Hennes fromhet hade stark 
+                        påverkan på författaren. Strindbergs faster Lisette Strindberg var gift med 
+                        ångbåtspionjären Samuel Owen.
+                        
+                        Som barn var Strindberg lugn och tystlåten. Fadern var sträng och Strindberg 
+                        växte upp i ett hem som präglades av disciplin, gudfruktighet och kulturellt 
+                        intresse. Under barndomen ägnade han sig åt läsning, naturvetenskapliga studier 
+                        och blomsterodling. År 1856 började han på Klara skola. Den 30 december 1861 
+                        skrev Strindberg ett brev om vännen Flodcrantz som gick igenom isen på 
+                        Brunnsviken och drunknade. Natten mellan 19 och 20 mars 1862 avled modern och 
+                        Strindberg skrev ett brev om det till sin bror Oscar den 22 mars. Strindberg 
+                        hade ett dåligt förhållande till sin fader, vilket försämrades ytterligare 
+                        efter moderns död. Året efter gifte fadern om sig med den trettio år yngre 
+                        Emilia Charlotta Peterson som var familjens tjugotvååriga husmamsell 
+                        (hushållerska) och som Strindberg kom att avsky. I efterhand har dock bilden 
+                        av Emilia ändrats. Hon fyllde väl rollen som styvmamma framförallt för Augusts 
+                        systrar.
+                        
+                        Strindberg tog studentexamen vid privatläroverket Stockholms lyceum 1867. Efter 
+                        avslutad skolgång började han på Uppsala universitet men slutade efter bara en 
+                        halv termin eftersom han vantrivdes och hade ont om pengar. Därefter försörjde 
+                        han sig en tid som folkskollärare och därefter informator samtidigt som han 
+                        studerade till läkare. Han försökte sig därefter på att bli skådespelare och 
+                        blev statist vid Dramatiska teatern, men bestämde sig 1870 för att återvända 
+                        till Uppsala. Det var under studietiden där som Strindberg påbörjade sitt 
+                        författarskap.</p>
+                    </div>
+              </div>
+                </div>
+                
+        </div>
+    </div>
+    <div id="page2" class="page">
+        <!-- navbar -->
+        <nav class="navbar">
+            <button class="nav1 navbar-btn btn btn-primary active" type="button" onclick="showPage(1);">Go to page 1</button>
+            <button class="nav2 navbar-btn btn btn-primary" type="button" onclick="showPage(2);">Go to page2</button>
+            <button class="nav3 navbar-btn btn btn-primary" type="button" onclick="showPage(3);">Go to page3</button>
+        </nav>
+        <!-- page content -->
+        <h1>Example page 2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maxime expedita culpa? Nostrum
+            perspiciatis perferendis dolore atque fuga inventore blanditiis! Minus mollitia dolorum nesciunt in magni
+            necessitatibus minima porro officia.
+            Corrupti fuga maiores aut eligendi id quasi necessitatibus. A nihil, repellendus quia dolores magnam
+            temporibus cum molestiae debitis. Eveniet, dolor voluptates? Officiis rerum aliquid repellendus quia dolore
+            omnis optio cum.
+            Beatae illum est et sint hic magnam, dignissimos quos excepturi nihil harum minus deserunt odio deleniti
+            praesentium eum adipisci fuga sequi porro, dolore cupiditate eligendi rerum distinctio reiciendis?
+            Blanditiis, incidunt.</p>
+    </div>
+ 
+    <div id="page3" class="page">
+        <!-- navbar -->
+        <nav class="navbar">
+            <button class="nav1 navbar-btn btn btn-primary active" type="button" onclick="showPage(1);">Go to page 1</button>
+            <button class="nav2 navbar-btn btn btn-primary" type="button" onclick="showPage(2);">Go to page2</button>
+            <button class="nav3 navbar-btn btn btn-primary" type="button" onclick="showPage(3);">Go to page3</button>
+        </nav>
+        <!-- page content -->
+        <h1>Example page 3</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae explicabo tempora ullam cumque, obcaecati
+            aut sed inventore excepturi, voluptatibus ratione laborum incidunt quod. Cum quis eos adipisci consequatur
+            ipsa. Sed!
+            Voluptatum voluptas sunt tenetur porro maiores veritatis, ipsam libero? Nesciunt ea quas iusto ducimus
+            suscipit eos quibusdam. Doloremque cum fugiat, tempora qui temporibus delectus. Fuga quaerat accusamus non
+            iusto delectus.
+            Esse a sit et nobis ducimus sint, porro, quod accusamus exercitationem voluptatum placeat sed. Soluta,
+            blanditiis aliquam consectetur rem aliquid itaque tempore ea corporis recusandae? Dignissimos sit expedita
+            commodi quibusdam.
+            Illo voluptates culpa assumenda recusandae explicabo ab pariatur? Temporibus qui dolorum expedita culpa
+            animi eligendi pariatur fuga dolorem ipsum, alias hic unde, nulla tenetur odio saepe enim aut ratione
+            laboriosam!</p>
+    </div>
+</body>
+ 
+</html> 

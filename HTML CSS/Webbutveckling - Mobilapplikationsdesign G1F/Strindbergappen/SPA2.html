@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>A SPA Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function showPage(p) {
+            pageArr = document.getElementsByClassName("page");
+            for (let i = 0; i < pageArr.length; i++) {
+                let page = pageArr[i];
+                page.style.display = "none";
+            }
+            document.getElementById("page" + p).style.display = "grid";
+            let btnArr = document.getElementsByClassName("navbar__btn");
+            for (let i = 0; i < btnArr.length; i++) {
+                let btn = btnArr[i];
+                btn.classList.remove("navbar__btn--active");
+            }
+            btnArr = document.getElementsByClassName("nav" + p);
+            for (let i = 0; i < btnArr.length; i++) {
+                let btn = btnArr[i];
+                btn.classList.add("navbar__btn--active");
+            }
+        }
+        function initPrototype() {
+            console.log("==> Prototype init started.");
+            showPage(1);
+        }
+    </script>
+    <style>
+        .prototype-start-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(50, 50, 50, 0.5);
+            z-index: 1000;
+        }
+        .navbar {
+            padding: 16px;
+            background-color: gainsboro;
+        }
+        .navbar__btn {
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+            border: 0;
+            margin: 2px;
+            padding: 8px 5px;
+            cursor: default;
+            font-weight: 400;
+        }
+        .navbar__btn:hover {
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-color: #fff;
+            text-decoration-thickness: 5px;
+        }
+        .navbar__btn--primary {
+            background-color: #5A5;
+            color: #fff;
+        }
+        .navbar__btn--active {
+            background-color: #8F8 !important;
+            color: #000;
+        }
+
+        html, body {
+            margin: 0;
+        }
+
+        .strindbergContainer {
+            display: grid;
+            grid-template-areas:
+                'header header'
+                'img info';  
+            gap: 5px;
+        }
+
+        .Stycke1 {grid-area: header;}
+        .Stycke2 {grid-area: img;}
+        .Stycke3 {grid-area: info;}
+
+        #miljobild {
+            text-align: center;
+        }
+
+        #omText {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 0px;
+            padding: 5px;
+        }
+
+    </style>
+</head>
+ 
+<body onload="showPage(0);">
+    <div id="page0" class="page">
+        <div class="prototype-start-page">
+            <button class="navbar__btn navbar__btn--primary" type="button" onclick="initPrototype();">Start prototype</button>
+        </div>
+    </div>
+    <div id="page1" class="page">
+        <nav class="navbar">
+            <button class="nav1 navbar__btn navbar__btn--primary navbar__btn--active" type="button" onclick="showPage(1);">Go to page 1</button>
+            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(2);">Go to page2</button>
+            <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Go to page3</button>
+        </nav>
+        <main class="strindbergContainer">
+            <div class="Stycke1" id="miljobild">
+                <h1>StrindbergAppen</h1>
+                    <p> Appen för sanna Strindbergsfans</p>
+                <picture>
+                    <img src="Media\sekelskiftsstockholm_Crop.jpg" alt="" style="max-width: 100%;">
+                </picture>
+            </div>
+            <div class="Stycke2" >
+                <picture id="omBild">
+                    <img src="Media\August_Strindberg_[683]x[960].jpg" alt="" style="max-width: auto;">
+                </picture>
+            </div>
+                <article>
+                    <div class="Stycke3" id="omText">
+                        <h2>August Strindberg</h2>
+                        <p>
+                            <p> August Strindberg föddes i Sundhetskollegiets hus på Riddarholmen i 
+                            Stockholm den 22 januari 1849. Strindberg var det tredje barnet av åtta i sin 
+                            faders första äktenskap. Efter det rivna födelsehuset har Strindberg döpt 
+                            pjäsen Brända Tomten. År 1851 flyttade familjen till Klarakvarteren och 1856 
+                            till Norrtullsgatan 14. </p>
+
+                            <p> Strindbergs far Carl Oscar Strindberg var ångbåtskommissionär och ansvarig för 
+                            godstrafiken på Mälaren och Göta kanal. Modern Eleonora Ulrika Norling var före 
+                            detta värdshusflicka, som hade arbetat på Liljeholmens värdshus. Före 
+                            giftermålet arbetade hon som hushållerska åt Carl Oscar, därav titeln 
+                            Tjänstekvinnans son, men hemmet var inte så proletärt som Strindberg ville få 
+                            det att framstå. Carl Oscar gifte sig med henne 1847. Hennes fromhet hade stark 
+                            påverkan på författaren. Strindbergs faster Lisette Strindberg var gift med 
+                            ångbåtspionjären Samuel Owen.</p>
+
+                            <p> barn var Strindberg lugn och tystlåten. Fadern var sträng och Strindberg 
+                            växte upp i ett hem som präglades av disciplin, gudfruktighet och kulturellt 
+                            intresse. Under barndomen ägnade han sig åt läsning, naturvetenskapliga studier 
+                            och blomsterodling. År 1856 började han på Klara skola. Den 30 december 1861 
+                            skrev Strindberg ett brev om vännen Flodcrantz som gick igenom isen på 
+                            Brunnsviken och drunknade. Natten mellan 19 och 20 mars 1862 avled modern och 
+                            Strindberg skrev ett brev om det till sin bror Oscar den 22 mars. Strindberg 
+                            hade ett dåligt förhållande till sin fader, vilket försämrades ytterligare 
+                            efter moderns död. Året efter gifte fadern om sig med den trettio år yngre 
+                            Emilia Charlotta Peterson som var familjens tjugotvååriga husmamsell 
+                            (hushållerska) och som Strindberg kom att avsky. I efterhand har dock bilden 
+                            av Emilia ändrats. Hon fyllde väl rollen som styvmamma framförallt för Augusts 
+                            systrar. </p>
+
+                            <p> tog studentexamen vid privatläroverket Stockholms lyceum 1867. Efter 
+                            avslutad skolgång började han på Uppsala universitet men slutade efter bara en 
+                            halv termin eftersom han vantrivdes och hade ont om pengar. Därefter försörjde 
+                            han sig en tid som folkskollärare och därefter informator samtidigt som han 
+                            studerade till läkare. Han försökte sig därefter på att bli skådespelare och 
+                            blev statist vid Dramatiska teatern, men bestämde sig 1870 för att återvända 
+                            till Uppsala. Det var under studietiden där som Strindberg påbörjade sitt 
+                            författarskap.</p>
+                        </p>
+                        </div>
+                </article>
+            <div class="Stycke4"><h1>4</h1></div>
+        </main>
+    </div>
+ 
+    <div id="page2" class="page">
+        <!-- navbar -->
+        <nav class="navbar">
+            <button class="nav1 navbar__btn navbar__btn--primary navbar__btn--active" type="button"onclick="showPage(1);">Go to page 1</button>
+            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(2);">Go to page2</button>
+            <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Go to page3</button>
+        </nav>
+        <!-- page content -->
+        <h1>Example page 2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maxime expedita culpa? Nostrum
+            perspiciatis perferendis dolore atque fuga inventore blanditiis! Minus mollitia dolorum nesciunt in magni
+            necessitatibus minima porro officia.
+            Corrupti fuga maiores aut eligendi id quasi necessitatibus. A nihil, repellendus quia dolores magnam
+            temporibus cum molestiae debitis. Eveniet, dolor voluptates? Officiis rerum aliquid repellendus quia dolore
+            omnis optio cum.
+            Beatae illum est et sint hic magnam, dignissimos quos excepturi nihil harum minus deserunt odio deleniti
+            praesentium eum adipisci fuga sequi porro, dolore cupiditate eligendi rerum distinctio reiciendis?
+            Blanditiis, incidunt.</p>
+    </div>
+ 
+    <div id="page3" class="page">
+        <!-- page content -->
+        <h1>Example page 3</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae explicabo tempora ullam cumque, obcaecati
+            aut sed inventore excepturi, voluptatibus ratione laborum incidunt quod. Cum quis eos adipisci consequatur
+            ipsa. Sed!
+            Voluptatum voluptas sunt tenetur porro maiores veritatis, ipsam libero? Nesciunt ea quas iusto ducimus
+            suscipit eos quibusdam. Doloremque cum fugiat, tempora qui temporibus delectus. Fuga quaerat accusamus non
+            iusto delectus.
+            Esse a sit et nobis ducimus sint, porro, quod accusamus exercitationem voluptatum placeat sed. Soluta,
+            blanditiis aliquam consectetur rem aliquid itaque tempore ea corporis recusandae? Dignissimos sit expedita
+            commodi quibusdam.
+            Illo voluptates culpa assumenda recusandae explicabo ab pariatur? Temporibus qui dolorum expedita culpa
+            animi eligendi pariatur fuga dolorem ipsum, alias hic unde, nulla tenetur odio saepe enim aut ratione
+            laboriosam!</p>
+        <!-- navbar -->
+        <nav class="navbar">
+            <button class="nav1 navbar__btn navbar__btn--primary navbar__btn--active" type="button" onclick="showPage(1);">Go to page 1</button>
+            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(2);">Go to page2</button>
+            <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Go to page3</button>
+        </nav>
+    </div>
+</body>
+ 
+</html>

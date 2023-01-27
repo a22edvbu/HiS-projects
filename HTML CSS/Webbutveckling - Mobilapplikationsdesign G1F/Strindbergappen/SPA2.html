@@ -28,6 +28,14 @@
             console.log("==> Prototype init started.");
             showPage(1);
         }
+        function dropdown() {
+        var x = document.getElementById("myDropdown");
+        if (x.className === "navbar") {
+          x.className += " responsive";
+        } else {
+          x.className = "navbar";
+        }
+    }
     </script>
     <style>
         .prototype-start-page {
@@ -44,10 +52,15 @@
         }
         .navbar {
             padding: 16px;
-            margin: 0 auto;
+            overflow: hidden;
+            border-style: none none solid none;
+            display: inline;
+            position: relative;
+            text-align: center;
         }
+        
         .navbar__btn {
-            border-radius: 5px;
+            border-radius: 20px;
             text-align: center;
             display: inline-block;
             border: 0;
@@ -57,62 +70,193 @@
             font-weight: 400;
         }
         .navbar__btn:hover {
-            text-decoration-line: underline;
-            text-decoration-style: solid;
-            text-decoration-color: #fff;
-            text-decoration-thickness: 5px;
+            background-color:rgb(198, 198, 198);
+            color: black;   
         }
         .navbar__btn--primary {
-            margin-left: 10px;
-            margin-right: 10px;
-            background-color: #5A5;
+            margin-left: 2px;
+            margin-right: 2px;
+            padding: 20px;
+            background-color: rgb(137, 137, 137);
             color: #fff;
         }
         .navbar__btn--active {
-            background-color: #8F8 !important;
+            background-color: rgb(179, 179, 179) !important;
             color: #000;
+            box-shadow: 0px 4px black;
         }
 
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+        
         html, body {
             margin: 0;
+            background-color: rgb(255, 255, 255);
+            font-family: 'Roboto', sans-serif;
         }
 
         .strindbergContainer {
             display: grid;
             grid-template-areas:
                 'header header'
-                'img info';  
+                'img info'
+                'chapter chapter'
+                ;  
             gap: 15px;
         }
-
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
         .Stycke1 {grid-area: header;}
         .Stycke2 {grid-area: img;}
         .Stycke3 {grid-area: info;}
+        .Stycke4 {grid-area: chapter;}
 
+        .Stycke1>picture>figcaption {
+            position: absolute;
+            text-align: center;
+            float: right;
+            background-color: rgba(0, 0, 0, 0.2);
+            top: 95%;
+        }
         #miljobild {
+            position: relative;
             text-align: center;
             font-size: 20px;
+            max-width: auto;
         }
         #miljobild > h1 {
             font-size: 70px;
         }
 
-        #omBild {
+        .Stycke2 {
             border-radius: 20px;
+        }
+        #omBild {
+            position: relative;
+        }
+        #omBild>figcaption {
+            position: absolute;
+            padding: 2px;
+            top: -25px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            margin: 0 auto;
         }
 
         #omText {
             color: white;
-            background-color: rgba(0, 0, 0, 0.5);
-            height: 920px;
+            background-color: rgb(137, 137, 137);
             padding: 20px;
             font-size: 20px;
             border-radius: 20px;
         }
         #omText > h2  {
             font-size: 50px;
+            text-align: center;
         }
 
+        #bookChapter {
+            background-color: rgb(222, 215, 185);
+            height: auto;
+            padding: 20px;
+            font-size: 20px;
+            border-radius: 20px;
+            color: black;
+            font-family: 'Brush Script MT', cursive;
+        }
+        #bookChapter > h2 {
+            font-size: 50px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        .WIP {
+            text-align: center;
+            margin: 25% auto;
+            justify-content: center;
+            background-color:rgb(137, 137, 137);
+            padding: 20px;
+            border-radius: 20px;
+            color: white;
+        }
+        .omApp {
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 30px;
+            width: 75%;
+            justify-content: center;
+            background-color:rgb(137, 137, 137);
+            padding: 10px;
+            border-radius: 20px;
+            color: white;
+        }
+        .verkBtn {
+            background-color:rgb(137, 137, 137);
+            border: none;
+            border-radius: 20px;
+            color: white;
+            padding: 15px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .verkBtn:hover {
+            background-color:rgb(198, 198, 198);
+            color: black;
+        }
+        @media screen and (orientation: portrait){
+            .ellipsis {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .ellipsisNone {
+                display: none;
+            }
+        }
+        @media only screen and (max-width: 900px) {
+            .strindbergContainer {
+                grid-template-areas:
+                'header'
+                'img'
+                'info'
+                'chapter'
+                'verk';  
+            }
+            .Stycke1>picture>figcaption {
+                font-size: 10px;
+            }
+            .Stycke2 {
+                grid-area: img;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .Stycke3 {
+                grid-area: info;
+            }
+            .Stycke4 {
+                grid-area: chapter;
+            }
+            #miljobild > h1 {
+                font-size: 40px;
+            }
+            
+            #omBild>figcaption {
+                font-size: 10px;
+            }
+            #omText{
+                font-size: 15px;
+                grid-area: info;
+            }
+            #omText > h2 {
+                font-size: 30px;
+            }
+            #bookChapter {
+                font-size: 15px;
+            }
+        }
     </style>
 </head>
  
@@ -124,112 +268,192 @@
     </div>
     <div id="page1" class="page">
         <nav class="navbar">
-            <button class="nav1 navbar__btn navbar__btn--primary navbar__btn--active" type="button" onclick="showPage(1);">Hem</button>
-            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(2);">Verk</button>
-            <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Bilder</button>
-            <button class="nav4 navbar__btn navbar__btn--primary" type="button" onclick="showPage(4);">Om oss</button>
+            <button class="nav1 navbar__btn navbar__btn--primary navbar__btn--active" type="button" onclick="showPage(1);">Stringbergsappen</button>
+            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Bilder på August Strindberg</button>
+            <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Betygsätt Strindberg</button>
+            <button class="nav9 navbar__btn navbar__btn--primary" type="button" onclick="showPage(2);">Om Strindbergsappen</button>
         </nav>
         <main class="strindbergContainer">
-            <div class="Stycke1" id="miljobild">
-                <h1>StrindbergAppen</h1>
+            <div class="Stycke1 card" id="miljobild">
+                <h1>Strindbergsappen</h1>
                     <p> Appen för sanna Strindbergsfans</p>
                 <picture>
-                    <img src="Media\sekelskiftsstockholm_Crop.jpg" alt="" style="max-width: 100%;">
+                    <source media="(max-width: 400px)" srcset="Media\sekelskiftsstockholm_small.jpg 400w" alt="" style="width: auto;">
+                    <source media="(max-width: 1000px)" srcset="Media\sekelskiftsstockholm_medium.jpg 1000w" alt="" style="width: auto;">
+                    <source media="(min-width: 801px)" srcset="Media\sekelskiftsstockholm_large.jpg 801w" style="width: auto;">
+                    <figcaption>Birger Jarlsgatan från Hamngatan vid sekelskiftet (Fotograf: Sjöberg, Bror Hjalmar (1859-1934). Utbildningsförvaltningen </figcaption>
+                    <img src="Media\sekelskiftsstockholm_large.jpg" style="width: 100%;"> 
                 </picture>
             </div>
-            <div class="Stycke2" >
+            <div class="Stycke2 card">
                 <picture id="omBild">
-                    <img src="Media\August_Strindberg_[683]x[960].jpg" alt="" style="max-width: auto; border-radius: 20px;">
+                    <source media="(max-width: 900px)" srcset="Media\August_Strindberg_[342]x[480].jpg 900w" alt="" >
+                    <source media="(resolution: 2dppx)" srcset="Media\August_Strindberg_[1365]x[1920].jpg" alt="" >
+                    <figcaption> August Strindberg portätt </figcaption>
+                    <img src="Media\August_Strindberg_[683]x[960].jpg" alt="" style="max-width: 100%; border-radius: 20px;">
                 </picture>
             </div>
-                <article>
-                    <div class="Stycke3" id="omText">
-                        <h2>August Strindberg</h2>
-                        <p>
-                            <p> August Strindberg föddes i Sundhetskollegiets hus på Riddarholmen i 
-                            Stockholm den 22 januari 1849. Strindberg var det tredje barnet av åtta i sin 
-                            faders första äktenskap. Efter det rivna födelsehuset har Strindberg döpt 
-                            pjäsen Brända Tomten. År 1851 flyttade familjen till Klarakvarteren och 1856 
-                            till Norrtullsgatan 14. </p>
+            <div class="Text" style="min-width: 0; min-height: 0;">
+                <div class="Stycke3 Text card" id="omText">
+                    <h2>August Strindberg</h2>
+                    <p class="ellipsis"> August Strindberg föddes i Sundhetskollegiets hus på Riddarholmen i 
+                    Stockholm den 22 januari 1849. Strindberg var det tredje barnet av åtta i sin 
+                    faders första äktenskap. Efter det rivna födelsehuset har Strindberg döpt 
+                    pjäsen Brända Tomten. År 1851 flyttade familjen till Klarakvarteren och 1856 
+                    till Norrtullsgatan 14. </p>
+                    <p class="ellipsisNone"> Strindbergs far Carl Oscar Strindberg var ångbåtskommissionär och ansvarig för 
+                    godstrafiken på Mälaren och Göta kanal. Modern Eleonora Ulrika Norling var före 
+                    detta värdshusflicka, som hade arbetat på Liljeholmens värdshus. Före 
+                    giftermålet arbetade hon som hushållerska åt Carl Oscar, därav titeln 
+                    Tjänstekvinnans son, men hemmet var inte så proletärt som Strindberg ville få 
+                    det att framstå. Carl Oscar gifte sig med henne 1847. Hennes fromhet hade stark 
+                    påverkan på författaren. Strindbergs faster Lisette Strindberg var gift med 
+                    ångbåtspionjären Samuel Owen.</p>
+                    <p class="ellipsisNone"> barn var Strindberg lugn och tystlåten. Fadern var sträng och Strindberg 
+                    växte upp i ett hem som präglades av disciplin, gudfruktighet och kulturellt 
+                    intresse. Under barndomen ägnade han sig åt läsning, naturvetenskapliga studier 
+                    och blomsterodling. År 1856 började han på Klara skola. Den 30 december 1861 
+                    skrev Strindberg ett brev om vännen Flodcrantz som gick igenom isen på 
+                    Brunnsviken och drunknade. Natten mellan 19 och 20 mars 1862 avled modern och 
+                    Strindberg skrev ett brev om det till sin bror Oscar den 22 mars. Strindberg 
+                    hade ett dåligt förhållande till sin fader, vilket försämrades ytterligare 
+                    efter moderns död. Året efter gifte fadern om sig med den trettio år yngre 
+                    Emilia Charlotta Peterson som var familjens tjugotvååriga husmamsell 
+                    (hushållerska) och som Strindberg kom att avsky. I efterhand har dock bilden 
+                    av Emilia ändrats. Hon fyllde väl rollen som styvmamma framförallt för Augusts 
+                    systrar. </p>
+                    <p class="ellipsisNone"> tog studentexamen vid privatläroverket Stockholms lyceum 1867. Efter 
+                    avslutad skolgång började han på Uppsala universitet men slutade efter bara en 
+                    halv termin eftersom han vantrivdes och hade ont om pengar. Därefter försörjde 
+                    han sig en tid som folkskollärare och därefter informator samtidigt som han 
+                    studerade till läkare. Han försökte sig därefter på att bli skådespelare och 
+                    blev statist vid Dramatiska teatern, men bestämde sig 1870 för att återvända 
+                    till Uppsala. Det var under studietiden där som Strindberg påbörjade sitt 
+                    författarskap.</p>
+                    <p>Texten är hämtad från Wikipedia CC BY-SA 3.0</p>
+                </div>
+            </div>
+            <div class="Stycke4 card" id="bookChapter">
+                <h2>Fler verk från Strindberg</h2>
+                <div class="verkGroup">
+                    <button class="verkBtn1 verkBtn" type="button" onclick="showPage(3);">Röda rummet</button>
+                    <button class="verkBtn2 verkBtn" type="button" onclick="showPage(3);">Mäster Olof</button>
+                    <button class="verkBtn3 verkBtn" type="button" onclick="showPage(3);">Hemsöborna. Skärkarlsliv</button>
+                    <button class="verkBtn4 verkBtn" type="button" onclick="showPage(3);">Tjänstekvinnans son</button>
+                    <button class="verkBtn5 verkBtn" type="button" onclick="showPage(3);">En dåres försvarstal</button>
+                </div>
+                <p>
+                    <p>FÖRSTA KAPITLET.</p>
 
-                            <p> Strindbergs far Carl Oscar Strindberg var ångbåtskommissionär och ansvarig för 
-                            godstrafiken på Mälaren och Göta kanal. Modern Eleonora Ulrika Norling var före 
-                            detta värdshusflicka, som hade arbetat på Liljeholmens värdshus. Före 
-                            giftermålet arbetade hon som hushållerska åt Carl Oscar, därav titeln 
-                            Tjänstekvinnans son, men hemmet var inte så proletärt som Strindberg ville få 
-                            det att framstå. Carl Oscar gifte sig med henne 1847. Hennes fromhet hade stark 
-                            påverkan på författaren. Strindbergs faster Lisette Strindberg var gift med 
-                            ångbåtspionjären Samuel Owen.</p>
+                    <p>Stockholm i fågelperspektiv.</p>
 
-                            <p> barn var Strindberg lugn och tystlåten. Fadern var sträng och Strindberg 
-                            växte upp i ett hem som präglades av disciplin, gudfruktighet och kulturellt 
-                            intresse. Under barndomen ägnade han sig åt läsning, naturvetenskapliga studier 
-                            och blomsterodling. År 1856 började han på Klara skola. Den 30 december 1861 
-                            skrev Strindberg ett brev om vännen Flodcrantz som gick igenom isen på 
-                            Brunnsviken och drunknade. Natten mellan 19 och 20 mars 1862 avled modern och 
-                            Strindberg skrev ett brev om det till sin bror Oscar den 22 mars. Strindberg 
-                            hade ett dåligt förhållande till sin fader, vilket försämrades ytterligare 
-                            efter moderns död. Året efter gifte fadern om sig med den trettio år yngre 
-                            Emilia Charlotta Peterson som var familjens tjugotvååriga husmamsell 
-                            (hushållerska) och som Strindberg kom att avsky. I efterhand har dock bilden 
-                            av Emilia ändrats. Hon fyllde väl rollen som styvmamma framförallt för Augusts 
-                            systrar. </p>
+                    <p>Det var en afton i början av maj. Den lilla
+                    trädgården på Mosebacke hade ännu icke blivit öppnad för
+                    allmänheten, och rabatterna voro ej uppgrävda;
+                    snödropparna hade arbetat sig upp genom fjolårets
+                    lövsamlingar och höllo just på att sluta sin korta
+                    verksamhet för att lämna plats åt de ömtåligare
+                    saffransblommorna, vilka tagit skydd under ett ofruktsamt
+                    päronträd; syrenerna väntade på sydlig vind för att
+                    få gå i blom, men lindarna bjödo ännu kärleksfilter
+                    i sina obrustna knoppar åt bofinkarna, som börjat
+                    bygga sina lavklädda bon mellan stam och gren;
+                    ännu hade ingen mänskofot trampat sandgångarna
+                    sedan sista vinterns snö gått bort, och därför levdes
+                    ett obesvärat liv därinne av både djur och blommor.
+                    Gråsparvarna höllo på att samla upp skräp, som de
+                    sedan gömde under takpannorna på navigationsskolans
+                    hus; de drogos om spillror av rakethylsor från
+                    sista höstfyrverkeriet, de plockade halmen från unga
+                    träd som året förut sluppit ur skolan på Rosendal
+                    – och allting sågo de! De hittade barège-lappar i
+                    bersåer och kunde mellan stickorna på en bänkfot
+                    draga fram hårtappar efter hundar, som icke slagits
+                    där sedan Josefinadagen i fjol. Där var ett liv och
+                    ett kiv.</p>
 
-                            <p> tog studentexamen vid privatläroverket Stockholms lyceum 1867. Efter 
-                            avslutad skolgång började han på Uppsala universitet men slutade efter bara en 
-                            halv termin eftersom han vantrivdes och hade ont om pengar. Därefter försörjde 
-                            han sig en tid som folkskollärare och därefter informator samtidigt som han 
-                            studerade till läkare. Han försökte sig därefter på att bli skådespelare och 
-                            blev statist vid Dramatiska teatern, men bestämde sig 1870 för att återvända 
-                            till Uppsala. Det var under studietiden där som Strindberg påbörjade sitt 
-                            författarskap.</p>
-                        </p>
-                        </div>
-                </article>
+                    <p>Men solen stod över Liljeholmen och sköt hela
+                    kvastar av strålar mot öster; de gingo genom rökarna
+                    från Bergsund, de ilade fram över Riddarfjärden,
+                    klättrade upp till korset på Riddarholmskyrkan,
+                    kastade sig över till Tyskans branta tak, lekte med
+                    vimplarna på skeppsbrobåtarna, illuminerade i
+                    fönstren på stora Sjötullen, eklärerade Lidingöskogarna
+                    och tonade bort i ett rosenfärgat moln, långt, långt
+                    ut i fjärran, där havet ligger. Och därifrån kom
+                    vinden, och hon gjorde samma färd tillbaka genom
+                    Vaxholm, förbi fästningen, förbi Sjötullen, utmed
+                    Siklaön, gick in bakom Hästholmen och tittade på
+                    sommarnöjena; ut igen, fortsatte och kom in i
+                    Danviken, blev skrämd och rusade av utmed södra
+                    stranden, kände lukten av kol, tjära och trän, törnade
+                    mot Stadsgården, for uppför Mosebacke, in i
+                    trädgården och slog emot en vägg. I detsamma
+                    öppnades väggen av en piga, som just rivit bort
+                    klistringen på innanfönstren; ett förfärligt os av
+                    stekflott, ölskvättar, granris och sågspån störtade ut och
+                    fördes långt bort av vinden, som nu, medan köksan
+                    drog in den friska luften genom näsan, passade på
+                    att gripa fönstervadden, som var beströdd med
+                    paljetter och berberisbär och törnrosblad, och började
+                    en ringdans utefter gångarna, i vilken snart
+                    gråsparvarna och bofinkarna deltogo, då de sålunda sågo
+                    sina bosättningsbekymmer till stor del undanröjda.</p>
+
+                    <p>Emellertid fortsatte köksan sitt arbete med
+                    innanfönstren, och inom några minuter hade dörren från
+                    källarsalen till verandan blivit öppnad och ut i
+                    trädgården trädde en ung herre, enkelt men fint klädd.</p>
+                </p>
+            </div>
         </main>
     </div>
  
     <div id="page2" class="page">
         <!-- navbar -->
         <nav class="navbar">
-            <button class="nav1 navbar__btn navbar__btn--primary navbar__btn--active" type="button"onclick="showPage(1);">Go to page 1</button>
-            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(2);">Go to page2</button>
-            <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Go to page3</button>
+            <button class="nav1 navbar__btn navbar__btn--primary" type="button" onclick="showPage(1);">Hem</button>
         </nav>
-        <!-- page content -->
-        <h1>Example page 2</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maxime expedita culpa? Nostrum
-            perspiciatis perferendis dolore atque fuga inventore blanditiis! Minus mollitia dolorum nesciunt in magni
-            necessitatibus minima porro officia.
-            Corrupti fuga maiores aut eligendi id quasi necessitatibus. A nihil, repellendus quia dolores magnam
-            temporibus cum molestiae debitis. Eveniet, dolor voluptates? Officiis rerum aliquid repellendus quia dolore
-            omnis optio cum.
-            Beatae illum est et sint hic magnam, dignissimos quos excepturi nihil harum minus deserunt odio deleniti
-            praesentium eum adipisci fuga sequi porro, dolore cupiditate eligendi rerum distinctio reiciendis?
-            Blanditiis, incidunt.</p>
+        <div class="omApp card">
+            <h1>Om Strindbergappen</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maxime expedita culpa? Nostrum
+                perspiciatis perferendis dolore atque fuga inventore blanditiis! Minus mollitia dolorum nesciunt in magni
+                necessitatibus minima porro officia.
+                Corrupti fuga maiores aut eligendi id quasi necessitatibus. A nihil, repellendus quia dolores magnam
+                temporibus cum molestiae debitis. Eveniet, dolor voluptates? Officiis rerum aliquid repellendus quia dolore
+                omnis optio cum.
+                Beatae illum est et sint hic magnam, dignissimos quos excepturi nihil harum minus deserunt odio deleniti
+                praesentium eum adipisci fuga sequi porro, dolore cupiditate eligendi rerum distinctio reiciendis?
+                Blanditiis, incidunt.</p>
+            
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maxime expedita culpa? Nostrum
+                perspiciatis perferendis dolore atque fuga inventore blanditiis! Minus mollitia dolorum nesciunt in magni
+                necessitatibus minima porro officia.
+                Corrupti fuga maiores aut eligendi id quasi necessitatibus. A nihil, repellendus quia dolores magnam
+                temporibus cum molestiae debitis. Eveniet, dolor voluptates? Officiis rerum aliquid repellendus quia dolore
+                omnis optio cum.</p>
+            
+            <p>Beatae illum est et sint hic magnam, dignissimos quos excepturi nihil harum minus deserunt odio deleniti
+                praesentium eum adipisci fuga sequi porro, dolore cupiditate eligendi rerum distinctio reiciendis?
+                Blanditiis, incidunt.</p>
+
+            <P>Skapad av Edvin</P>
+            
+            <p>Miljöbilden <a href="https://stockholmskallan.stockholm.se/post/18717" target="_blank">"Sekelskiftets Stockhokm</a>" tillhör fotografen Sjöberg, Bror Hjalmar (1859-1934), skapad 1902 - 1910. <a href="https://wiki.creativecommons.org/wiki/Best_practices_for_attribution" target="_blank"> Licens</a>
+            </p>
+            <p>August Strindberg. <a href="https://upload.wikimedia.org/wikipedia/commons/8/89/August_Strindberg_by_Robert_Roesler_about_1881-2.jpg" target="_blank">Källa</a></p>
+        </div>
     </div>
  
     <div id="page3" class="page">
-        <!-- page content -->
-        <h1>Example page 3</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae explicabo tempora ullam cumque, obcaecati
-            aut sed inventore excepturi, voluptatibus ratione laborum incidunt quod. Cum quis eos adipisci consequatur
-            ipsa. Sed!
-            Voluptatum voluptas sunt tenetur porro maiores veritatis, ipsam libero? Nesciunt ea quas iusto ducimus
-            suscipit eos quibusdam. Doloremque cum fugiat, tempora qui temporibus delectus. Fuga quaerat accusamus non
-            iusto delectus.
-            Esse a sit et nobis ducimus sint, porro, quod accusamus exercitationem voluptatum placeat sed. Soluta,
-            blanditiis aliquam consectetur rem aliquid itaque tempore ea corporis recusandae? Dignissimos sit expedita
-            commodi quibusdam.
-            Illo voluptates culpa assumenda recusandae explicabo ab pariatur? Temporibus qui dolorum expedita culpa
-            animi eligendi pariatur fuga dolorem ipsum, alias hic unde, nulla tenetur odio saepe enim aut ratione
-            laboriosam!</p>
-        <!-- navbar -->
         <nav class="navbar">
-            <button class="nav1 navbar__btn navbar__btn--primary navbar__btn--active" type="button" onclick="showPage(1);">Go to page 1</button>
-            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(2);">Go to page2</button>
-            <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Go to page3</button>
+            <button class="nav1 navbar__btn navbar__btn--primary" type="button" onclick="showPage(1);">Hem</button>
         </nav>
+        <!-- page content -->
+        <div class="WIP card">
+            <h1> Vi beklagar</h1>
+            <h1> Denna sida är under konstruktion!</h1>
+        </div>
     </div>
 </body>
  

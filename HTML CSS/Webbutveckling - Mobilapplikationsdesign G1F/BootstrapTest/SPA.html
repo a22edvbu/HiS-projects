@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>A SPA Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
     <script>
         /* ----- Javascript for SPA - Single Page Application logic ----- */
         // Help function that shows page with id page+p and hides all other pages
@@ -20,14 +28,14 @@
             }
             // Step 2 - Show the selected page
             document.getElementById("page" + p).style.display = "block";
- 
+
             // Step 3 - Make all navbar buttons inactive 
             let btnArr = document.getElementsByClassName("navbar-btn");
             for (let i = 0; i < btnArr.length; i++) {
                 let btn = btnArr[i];
                 btn.classList.remove("active");
             }
- 
+
             // Step 4 - Make page all navbar buttons with class nav+p active
             btnArr = document.getElementsByClassName("nav" + p);
             for (let i = 0; i < btnArr.length; i++) {
@@ -36,12 +44,12 @@
             }
         }
         /* -----  ----- */
- 
+
         // Init function. Here we can put code that is needed to initialize our prototype.
         function initPrototype() {
             // For example, when using sound or sensors this becomes important.
             console.log("==> Prototype init started.");
- 
+
             // Show the landingpage/startpage
             showPage(1);
         }
@@ -63,110 +71,185 @@
             z-index: 1000;
         }
         
-       
     </style>
- 
+    
     </style>
 </head>
- 
+
 <body onload="showPage(0);">
     <div id="page0" class="page">
         <div class="prototype-start-page">
             <button class="btn btn-success" type="button" onclick="initPrototype();">Start prototype</button>
         </div>
     </div>
+    
     <div id="page1" class="page">
         <!-- navbar -->
         <!-- page content -->
-        <div class="strindContainer">
-            <div class="Header">
-                <img src="Media\sekelskiftsstockholm_Crop.jpg" alt="Sekelskiftet Stockholm" class="img-fluid">
-                <div id="strindTitel">
-                    <h1>StrindbergAppen</h1>
-                    <p> Appen om Agustus Strindberg</p>
-                </div>
-            </div>
-            
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Strindbergappen</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" onclick="showPage(1);">Hem</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="showPage(2);">Bilder</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="showPage(3);">Verk</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="showPage(4);">Om oss</a>
-                  </li>
-                </ul>
-              </div>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form> 
-            </div>
-          </nav>
-            <div class="row">
-                <div class="col">
-                 <img src="Media\August_Strindberg_by_Robert_Roesler_about_1881-2.jpg" alt="Augustus Strindberg" class="img-fluid">
-                 <div id="omStrindberg">
-                    <h2>Augustus Strindberg</h2>
-                    <p>Johan August Strindberg föddes i Sundhetskollegiets hus på Riddarholmen i 
-                        Stockholm den 22 januari 1849. Strindberg var det tredje barnet av åtta i sin 
-                        faders första äktenskap. Efter det rivna födelsehuset har Strindberg döpt 
-                        pjäsen Brända Tomten. År 1851 flyttade familjen till Klarakvarteren och 1856 
-                        till Norrtullsgatan 14.
-                        
-                        Strindbergs far Carl Oscar Strindberg var ångbåtskommissionär och ansvarig för 
-                        godstrafiken på Mälaren och Göta kanal. Modern Eleonora Ulrika Norling var före 
-                        detta värdshusflicka, som hade arbetat på Liljeholmens värdshus. Före 
-                        giftermålet arbetade hon som hushållerska åt Carl Oscar, därav titeln 
-                        Tjänstekvinnans son, men hemmet var inte så proletärt som Strindberg ville få 
-                        det att framstå. Carl Oscar gifte sig med henne 1847. Hennes fromhet hade stark 
-                        påverkan på författaren. Strindbergs faster Lisette Strindberg var gift med 
-                        ångbåtspionjären Samuel Owen.
-                        
-                        Som barn var Strindberg lugn och tystlåten. Fadern var sträng och Strindberg 
-                        växte upp i ett hem som präglades av disciplin, gudfruktighet och kulturellt 
-                        intresse. Under barndomen ägnade han sig åt läsning, naturvetenskapliga studier 
-                        och blomsterodling. År 1856 började han på Klara skola. Den 30 december 1861 
-                        skrev Strindberg ett brev om vännen Flodcrantz som gick igenom isen på 
-                        Brunnsviken och drunknade. Natten mellan 19 och 20 mars 1862 avled modern och 
-                        Strindberg skrev ett brev om det till sin bror Oscar den 22 mars. Strindberg 
-                        hade ett dåligt förhållande till sin fader, vilket försämrades ytterligare 
-                        efter moderns död. Året efter gifte fadern om sig med den trettio år yngre 
-                        Emilia Charlotta Peterson som var familjens tjugotvååriga husmamsell 
-                        (hushållerska) och som Strindberg kom att avsky. I efterhand har dock bilden 
-                        av Emilia ändrats. Hon fyllde väl rollen som styvmamma framförallt för Augusts 
-                        systrar.
-                        
-                        Strindberg tog studentexamen vid privatläroverket Stockholms lyceum 1867. Efter 
-                        avslutad skolgång började han på Uppsala universitet men slutade efter bara en 
-                        halv termin eftersom han vantrivdes och hade ont om pengar. Därefter försörjde 
-                        han sig en tid som folkskollärare och därefter informator samtidigt som han 
-                        studerade till läkare. Han försökte sig därefter på att bli skådespelare och 
-                        blev statist vid Dramatiska teatern, men bestämde sig 1870 för att återvända 
-                        till Uppsala. Det var under studietiden där som Strindberg påbörjade sitt 
-                        författarskap.</p>
-                    </div>
-              </div>
+                <a class="navbar-brand  " href="#">Strindbergappen</a> <!-- Header -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" onclick="showPage(1);">Hem</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showPage(2);">Bilder</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showPage(3);">Verk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showPage(4);">Om oss</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
                 </div>
-                
+            </div>
+        </nav>
+        <div class="Header text-center">
+            <img src="Media\sekelskiftsstockholm_Crop.jpg" alt="Sekelskiftet Stockholm" class="img-fluid">
+            <div id="strindTitel">
+                <p class="display-1">StrindbergAppen</p>
+                <p> Appen om Agustus Strindberg</p>
+            </div>
         </div>
+        <div class="container overflow-hidden">
+            <div class="row gy-5">
+                <div class="col">
+
+                </div>
+            </div>
+            <div class="row"> <!-- Row 2 -->
+                <div class="col">
+                    <img src="Media\August_Strindberg_by_Robert_Roesler_about_1881-2.jpg" alt="Augustus Strindberg"
+                        class="img-fluid rounded">
+                </div>
+                <div class="col card shadow-sm">
+                    <h2 class="card-title">Augustus Strindberg</h2>
+                    <p>Johan August Strindberg föddes i Sundhetskollegiets hus på Riddarholmen i
+                        Stockholm den 22 januari 1849. Strindberg var det tredje barnet av åtta i sin
+                        faders första äktenskap. Efter det rivna födelsehuset har Strindberg döpt
+                        pjäsen Brända Tomten. År 1851 flyttade familjen till Klarakvarteren och 1856
+                        till Norrtullsgatan 14. </p>
+
+                    <p>Strindbergs far Carl Oscar Strindberg var ångbåtskommissionär och ansvarig för
+                        godstrafiken på Mälaren och Göta kanal. Modern Eleonora Ulrika Norling var före
+                        detta värdshusflicka, som hade arbetat på Liljeholmens värdshus. Före
+                        giftermålet arbetade hon som hushållerska åt Carl Oscar, därav titeln
+                        Tjänstekvinnans son, men hemmet var inte så proletärt som Strindberg ville få
+                        det att framstå. Carl Oscar gifte sig med henne 1847. Hennes fromhet hade stark
+                        påverkan på författaren. Strindbergs faster Lisette Strindberg var gift med
+                        ångbåtspionjären Samuel Owen.</p>
+
+                    <p>Som barn var Strindberg lugn och tystlåten. Fadern var sträng och Strindberg
+                        växte upp i ett hem som präglades av disciplin, gudfruktighet och kulturellt
+                        intresse. Under barndomen ägnade han sig åt läsning, naturvetenskapliga studier
+                        och blomsterodling. År 1856 började han på Klara skola. Den 30 december 1861
+                        skrev Strindberg ett brev om vännen Flodcrantz som gick igenom isen på
+                        Brunnsviken och drunknade. Natten mellan 19 och 20 mars 1862 avled modern och
+                        Strindberg skrev ett brev om det till sin bror Oscar den 22 mars. Strindberg
+                        hade ett dåligt förhållande till sin fader, vilket försämrades ytterligare
+                        efter moderns död. Året efter gifte fadern om sig med den trettio år yngre
+                        Emilia Charlotta Peterson som var familjens tjugotvååriga husmamsell
+                        (hushållerska) och som Strindberg kom att avsky. I efterhand har dock bilden
+                        av Emilia ändrats. Hon fyllde väl rollen som styvmamma framförallt för Augusts
+                        systrar.</p>
+
+                    <p>Strindberg tog studentexamen vid privatläroverket Stockholms lyceum 1867. Efter
+                        avslutad skolgång började han på Uppsala universitet men slutade efter bara en
+                        halv termin eftersom han vantrivdes och hade ont om pengar. Därefter försörjde
+                        han sig en tid som folkskollärare och därefter informator samtidigt som han
+                        studerade till läkare. Han försökte sig därefter på att bli skådespelare och
+                        blev statist vid Dramatiska teatern, men bestämde sig 1870 för att återvända
+                        till Uppsala. Det var under studietiden där som Strindberg påbörjade sitt
+                        författarskap.</p>
+                </div>
+            </div>
+        <div class="row mt-3"> <!-- Row 3 -->
+            <div class="col">
+                <div class="col card p-3">
+                    <h2 class="card-title">FÖRSTA KAPITLET.</h2>
+
+                    <h3>Stockholm i fågelperspektiv.</h3>
+
+                    <p>Det var en afton i början av maj. Den lilla
+                        trädgården på Mosebacke hade ännu icke blivit öppnad för
+                        allmänheten, och rabatterna voro ej uppgrävda;
+                        snödropparna hade arbetat sig upp genom fjolårets
+                        lövsamlingar och höllo just på att sluta sin korta
+                        verksamhet för att lämna plats åt de ömtåligare
+                        saffransblommorna, vilka tagit skydd under ett ofruktsamt
+                        päronträd; syrenerna väntade på sydlig vind för att
+                        få gå i blom, men lindarna bjödo ännu kärleksfilter
+                        i sina obrustna knoppar åt bofinkarna, som börjat
+                        bygga sina lavklädda bon mellan stam och gren;
+                        ännu hade ingen mänskofot trampat sandgångarna
+                        sedan sista vinterns snö gått bort, och därför levdes
+                        ett obesvärat liv därinne av både djur och blommor.
+                        Gråsparvarna höllo på att samla upp skräp, som de
+                        sedan gömde under takpannorna på navigationsskolans
+                        hus; de drogos om spillror av rakethylsor från
+                        sista höstfyrverkeriet, de plockade halmen från unga
+                        träd som året förut sluppit ur skolan på Rosendal
+                        – och allting sågo de! De hittade barège-lappar i
+                        bersåer och kunde mellan stickorna på en bänkfot
+                        draga fram hårtappar efter hundar, som icke slagits
+                        där sedan Josefinadagen i fjol. Där var ett liv och
+                        ett kiv.</p>
+
+                    <p>Men solen stod över Liljeholmen och sköt hela
+                        kvastar av strålar mot öster; de gingo genom rökarna
+                        från Bergsund, de ilade fram över Riddarfjärden,
+                        klättrade upp till korset på Riddarholmskyrkan,
+                        kastade sig över till Tyskans branta tak, lekte med
+                        vimplarna på skeppsbrobåtarna, illuminerade i
+                        fönstren på stora Sjötullen, eklärerade Lidingöskogarna
+                        och tonade bort i ett rosenfärgat moln, långt, långt
+                        ut i fjärran, där havet ligger. Och därifrån kom
+                        vinden, och hon gjorde samma färd tillbaka genom
+                        Vaxholm, förbi fästningen, förbi Sjötullen, utmed
+                        Siklaön, gick in bakom Hästholmen och tittade på
+                        sommarnöjena; ut igen, fortsatte och kom in i
+                        Danviken, blev skrämd och rusade av utmed södra
+                        stranden, kände lukten av kol, tjära och trän, törnade
+                        mot Stadsgården, for uppför Mosebacke, in i
+                        trädgården och slog emot en vägg. I detsamma
+                        öppnades väggen av en piga, som just rivit bort
+                        klistringen på innanfönstren; ett förfärligt os av
+                        stekflott, ölskvättar, granris och sågspån störtade ut och
+                        fördes långt bort av vinden, som nu, medan köksan
+                        drog in den friska luften genom näsan, passade på
+                        att gripa fönstervadden, som var beströdd med
+                        paljetter och berberisbär och törnrosblad, och började
+                        en ringdans utefter gångarna, i vilken snart
+                        gråsparvarna och bofinkarna deltogo, då de sålunda sågo
+                        sina bosättningsbekymmer till stor del undanröjda.</p>
+
+                    <p>Emellertid fortsatte köksan sitt arbete med
+                        innanfönstren, och inom några minuter hade dörren från
+                        källarsalen till verandan blivit öppnad och ut i
+                        trädgården trädde en ung herre, enkelt men fint klädd.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    </div>
     </div>
     <div id="page2" class="page">
         <!-- navbar -->
         <nav class="navbar">
-            <button class="nav1 navbar-btn btn btn-primary active" type="button" onclick="showPage(1);">Go to page 1</button>
+            <button class="nav1 navbar-btn btn btn-primary active" type="button" onclick="showPage(1);">Go to page
+                1</button>
             <button class="nav2 navbar-btn btn btn-primary" type="button" onclick="showPage(2);">Go to page2</button>
             <button class="nav3 navbar-btn btn btn-primary" type="button" onclick="showPage(3);">Go to page3</button>
         </nav>
@@ -182,11 +265,12 @@
             praesentium eum adipisci fuga sequi porro, dolore cupiditate eligendi rerum distinctio reiciendis?
             Blanditiis, incidunt.</p>
     </div>
- 
+
     <div id="page3" class="page">
         <!-- navbar -->
         <nav class="navbar">
-            <button class="nav1 navbar-btn btn btn-primary active" type="button" onclick="showPage(1);">Go to page 1</button>
+            <button class="nav1 navbar-btn btn btn-primary active" type="button" onclick="showPage(1);">Go to page
+                1</button>
             <button class="nav2 navbar-btn btn btn-primary" type="button" onclick="showPage(2);">Go to page2</button>
             <button class="nav3 navbar-btn btn btn-primary" type="button" onclick="showPage(3);">Go to page3</button>
         </nav>
@@ -204,7 +288,40 @@
             Illo voluptates culpa assumenda recusandae explicabo ab pariatur? Temporibus qui dolorum expedita culpa
             animi eligendi pariatur fuga dolorem ipsum, alias hic unde, nulla tenetur odio saepe enim aut ratione
             laboriosam!</p>
+
+
+        <div class="row">
+            <div class="col">
+                <div id="carouselExampleIndicators" class="carousel slide">
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="Media\6770866051_fb7969c2a0_c.jpg" class="d-block img-thumbnail img-fluid"
+                                alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Media\6769988393_0444051746_c.jpg" class="d-block img-thumbnail img-fluid"
+                                alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Media\Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg"
+                                class="d-block img-thumbnail img-fluid" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
- 
-</html> 
+
+</html>

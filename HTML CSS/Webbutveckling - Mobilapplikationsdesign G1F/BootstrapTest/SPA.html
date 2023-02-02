@@ -54,6 +54,7 @@
             showPage(1);
         }
     </script>
+
     <style>
         /* 
             CSS can and should be changed to fit your design profile.
@@ -93,11 +94,12 @@
     <div id="page1" class="page">
         <!-- navbar -->
         <!-- page content -->
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg shadow">
             <div class="container-fluid">
                 <a class="navbar-brand fontcolor-white" href="#">Strindbergappen</a> <!-- Header -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler shadow" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
+                    aria-label="Toggle navigation" style="background-color: #9d46ff;">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
@@ -110,10 +112,11 @@
                             <a class="nav-link fontcolor-white" href="#" onclick="showPage(2);">Bilder</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fontcolor-white" href="#" onclick="showPage(3);">Verk</a>
+                            <a class="nav-link fontcolor-white" href="#" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">Verk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fontcolor-white" href="#" onclick="showPage(4);">Om oss</a>
+                            <a class="nav-link fontcolor-white" href="#" onclick="showPage(3);">Om oss</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -124,29 +127,61 @@
                 </div>
             </div>
         </nav>
-        <div class="Header text-center">
-            <img src="Media\sekelskiftsstockholm_Crop.jpg" alt="Sekelskiftet Stockholm" class="img-fluid">
-            <div class="strindTitel">
-                <p class="display-1">StrindbergAppen</p>
-                <p> Appen om Agustus Strindberg</p>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header text-white" style="background-color: #0087a2;">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Ursäkta</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Denna sida är under konstruktion.
+                        TBA
+                    </div>
+                    <div class="modal-footer" style="background-color: #0087a2;">
+                        <button type="button" class="btn btn-secondary text-black" data-bs-dismiss="modal"
+                            style="background-color: #62eaff;">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container overflow-hidden">
-            <div class="row"> <!-- Row 2 -->
-                <div class="col">
-                    <img src="Media\August_Strindberg_by_Robert_Roesler_about_1881-2.jpg" alt="Augustus Strindberg"
-                        class="img-fluid rounded">
+        <div class="Header text-center">
+            <figure class="position-relative">
+                <img src="Media\sekelskiftsstockholm_Crop.jpg" alt="Sekelskiftet Stockholm" class="img-fluid">
+                <div class="position-absolute top-0 start-0 p-1" style="background-color: #ffffff7b;">Birger Jarlsgatan
+                    från Hamngatan vid sekelskiftet (Fotograf: Sjöberg, Bror Hjalmar (1859-1934).
+                    Utbildningsförvaltningen</div>
+            </figure>
+            <div class="strindTitel text-white pb-1" style="background-color: #6200ea;">
+                <p class="display-1 w-100 pb-3" style="background-color: #9d46ff;">StrindbergAppen</p>
+                <p> Appen om August Strindberg</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mt-3"> <!-- Row 2 -->
+                <div class="col-lg">
+                    <div class="position-relative">
+                        <img src="Media\August_Strindberg_by_Robert_Roesler_about_1881-2.jpg" alt="Augustus Strindberg"
+                            class="img-fluid rounded">
+                        <div class="position-absolute top-0 start-0 m-1 p-1" style="background-color: #ffffff7b;">August
+                            Strindberg, <a
+                                href="https://upload.wikimedia.org/wikipedia/commons/8/89/August_Strindberg_by_Robert_Roesler_about_1881-2.jpg"
+                                target="_blank">Wikipedia</a> <a
+                                href="https://wiki.creativecommons.org/wiki/Best_practices_for_attribution"
+                                target="_blank"> CC BY-SA 3.0</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col card shadow-sm">
-                    <h2 class="card-header text-white" style="background-color: #9d46ff;">Augustus Strindberg</h2>
-                    <div class="card-text">
-                        <p>Johan August Strindberg föddes i Sundhetskollegiets hus på Riddarholmen i
+                <div class="col card no-margin w-100">
+                    <h2 class="card-header no-margin text-white w-100" style="background-color: #6200ea;">August
+                        Strindberg</h2>
+                    <div>
+                        <p> Johan August Strindberg föddes i Sundhetskollegiets hus på Riddarholmen i
                             Stockholm den 22 januari 1849. Strindberg var det tredje barnet av åtta i sin
                             faders första äktenskap. Efter det rivna födelsehuset har Strindberg döpt
                             pjäsen Brända Tomten. År 1851 flyttade familjen till Klarakvarteren och 1856
-                            till Norrtullsgatan 14. </p>
-
-                        <p>Strindbergs far Carl Oscar Strindberg var ångbåtskommissionär och ansvarig för
+                            till Norrtullsgatan 14.</p>
+                        <p> Strindbergs far Carl Oscar Strindberg var ångbåtskommissionär och ansvarig för
                             godstrafiken på Mälaren och Göta kanal. Modern Eleonora Ulrika Norling var före
                             detta värdshusflicka, som hade arbetat på Liljeholmens värdshus. Före
                             giftermålet arbetade hon som hushållerska åt Carl Oscar, därav titeln
@@ -154,8 +189,7 @@
                             det att framstå. Carl Oscar gifte sig med henne 1847. Hennes fromhet hade stark
                             påverkan på författaren. Strindbergs faster Lisette Strindberg var gift med
                             ångbåtspionjären Samuel Owen.</p>
-
-                        <p>Som barn var Strindberg lugn och tystlåten. Fadern var sträng och Strindberg
+                        <p> Som barn var Strindberg lugn och tystlåten. Fadern var sträng och Strindberg
                             växte upp i ett hem som präglades av disciplin, gudfruktighet och kulturellt
                             intresse. Under barndomen ägnade han sig åt läsning, naturvetenskapliga studier
                             och blomsterodling. År 1856 började han på Klara skola. Den 30 december 1861
@@ -168,8 +202,7 @@
                             (hushållerska) och som Strindberg kom att avsky. I efterhand har dock bilden
                             av Emilia ändrats. Hon fyllde väl rollen som styvmamma framförallt för Augusts
                             systrar.</p>
-
-                        <p>Strindberg tog studentexamen vid privatläroverket Stockholms lyceum 1867. Efter
+                        <p> Strindberg tog studentexamen vid privatläroverket Stockholms lyceum 1867. Efter
                             avslutad skolgång började han på Uppsala universitet men slutade efter bara en
                             halv termin eftersom han vantrivdes och hade ont om pengar. Därefter försörjde
                             han sig en tid som folkskollärare och därefter informator samtidigt som han
@@ -177,77 +210,87 @@
                             blev statist vid Dramatiska teatern, men bestämde sig 1870 för att återvända
                             till Uppsala. Det var under studietiden där som Strindberg påbörjade sitt
                             författarskap.</p>
+                        <p>Texten är hämtad från Wikipedia CC BY-SA 3.0</p>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <h2>Citat från boken "Röda Rummet"</h2>
+                <div>
+                    <p>
+                        Det var en afton i början av maj. Den lilla trädgården på Mosebacke hade ännu inte blivit öppnad för allmänheten, och rabatterna voro ej uppgrävda; snödropparne hade arbetat sig upp genom fjolårets lövsamlingar och höllo just på att sluta sin korta verksamhet för att lämna plats åt de ömtåligare saffransblommorna, vilka tagit skydd under ett ofruktsamt päronträd; syrenerna väntade på sydlig vind för att få gå i blom, men lindarne bjöd ännu kärleksfilter i sina obrustna knoppar åt bofinkarne, som börjat bygga sina lavklädda bon mellan stam och gren/.../.
+                    </p>
+                </div>
+            </div>  
             <div class="row mt-3"> <!-- Row 3 -->
                 <div class="col">
-                    <div class="col card p-3">
-                        <h2 class="card-title">FÖRSTA KAPITLET.</h2>
+                    <div class="col card">
+                        <h2 class="card-header text-white" style="background-color: #0a00b6;">FÖRSTA KAPITLET</h2>
 
-                        <h3>Stockholm i fågelperspektiv.</h3>
+                        <h3 class="p-2 text-white" style="background-color: #6200ea;">Stockholm i fågelperspektiv</h3>
 
-                        <p>Det var en afton i början av maj. Den lilla
-                            trädgården på Mosebacke hade ännu icke blivit öppnad för
-                            allmänheten, och rabatterna voro ej uppgrävda;
-                            snödropparna hade arbetat sig upp genom fjolårets
-                            lövsamlingar och höllo just på att sluta sin korta
-                            verksamhet för att lämna plats åt de ömtåligare
-                            saffransblommorna, vilka tagit skydd under ett ofruktsamt
-                            päronträd; syrenerna väntade på sydlig vind för att
-                            få gå i blom, men lindarna bjödo ännu kärleksfilter
-                            i sina obrustna knoppar åt bofinkarna, som börjat
-                            bygga sina lavklädda bon mellan stam och gren;
-                            ännu hade ingen mänskofot trampat sandgångarna
-                            sedan sista vinterns snö gått bort, och därför levdes
-                            ett obesvärat liv därinne av både djur och blommor.
-                            Gråsparvarna höllo på att samla upp skräp, som de
-                            sedan gömde under takpannorna på navigationsskolans
-                            hus; de drogos om spillror av rakethylsor från
-                            sista höstfyrverkeriet, de plockade halmen från unga
-                            träd som året förut sluppit ur skolan på Rosendal
-                            – och allting sågo de! De hittade barège-lappar i
-                            bersåer och kunde mellan stickorna på en bänkfot
-                            draga fram hårtappar efter hundar, som icke slagits
-                            där sedan Josefinadagen i fjol. Där var ett liv och
-                            ett kiv.</p>
+                        <div class="p-2" style="background-color: white;">
+                            <p>Det var en afton i början av maj. Den lilla
+                                trädgården på Mosebacke hade ännu icke blivit öppnad för
+                                allmänheten, och rabatterna voro ej uppgrävda;
+                                snödropparna hade arbetat sig upp genom fjolårets
+                                lövsamlingar och höllo just på att sluta sin korta
+                                verksamhet för att lämna plats åt de ömtåligare
+                                saffransblommorna, vilka tagit skydd under ett ofruktsamt
+                                päronträd; syrenerna väntade på sydlig vind för att
+                                få gå i blom, men lindarna bjödo ännu kärleksfilter
+                                i sina obrustna knoppar åt bofinkarna, som börjat
+                                bygga sina lavklädda bon mellan stam och gren;
+                                ännu hade ingen mänskofot trampat sandgångarna
+                                sedan sista vinterns snö gått bort, och därför levdes
+                                ett obesvärat liv därinne av både djur och blommor.
+                                Gråsparvarna höllo på att samla upp skräp, som de
+                                sedan gömde under takpannorna på navigationsskolans
+                                hus; de drogos om spillror av rakethylsor från
+                                sista höstfyrverkeriet, de plockade halmen från unga
+                                träd som året förut sluppit ur skolan på Rosendal
+                                – och allting sågo de! De hittade barège-lappar i
+                                bersåer och kunde mellan stickorna på en bänkfot
+                                draga fram hårtappar efter hundar, som icke slagits
+                                där sedan Josefinadagen i fjol. Där var ett liv och
+                                ett kiv.</p>
 
-                        <p>Men solen stod över Liljeholmen och sköt hela
-                            kvastar av strålar mot öster; de gingo genom rökarna
-                            från Bergsund, de ilade fram över Riddarfjärden,
-                            klättrade upp till korset på Riddarholmskyrkan,
-                            kastade sig över till Tyskans branta tak, lekte med
-                            vimplarna på skeppsbrobåtarna, illuminerade i
-                            fönstren på stora Sjötullen, eklärerade Lidingöskogarna
-                            och tonade bort i ett rosenfärgat moln, långt, långt
-                            ut i fjärran, där havet ligger. Och därifrån kom
-                            vinden, och hon gjorde samma färd tillbaka genom
-                            Vaxholm, förbi fästningen, förbi Sjötullen, utmed
-                            Siklaön, gick in bakom Hästholmen och tittade på
-                            sommarnöjena; ut igen, fortsatte och kom in i
-                            Danviken, blev skrämd och rusade av utmed södra
-                            stranden, kände lukten av kol, tjära och trän, törnade
-                            mot Stadsgården, for uppför Mosebacke, in i
-                            trädgården och slog emot en vägg. I detsamma
-                            öppnades väggen av en piga, som just rivit bort
-                            klistringen på innanfönstren; ett förfärligt os av
-                            stekflott, ölskvättar, granris och sågspån störtade ut och
-                            fördes långt bort av vinden, som nu, medan köksan
-                            drog in den friska luften genom näsan, passade på
-                            att gripa fönstervadden, som var beströdd med
-                            paljetter och berberisbär och törnrosblad, och började
-                            en ringdans utefter gångarna, i vilken snart
-                            gråsparvarna och bofinkarna deltogo, då de sålunda sågo
-                            sina bosättningsbekymmer till stor del undanröjda.</p>
+                            <p>Men solen stod över Liljeholmen och sköt hela
+                                kvastar av strålar mot öster; de gingo genom rökarna
+                                från Bergsund, de ilade fram över Riddarfjärden,
+                                klättrade upp till korset på Riddarholmskyrkan,
+                                kastade sig över till Tyskans branta tak, lekte med
+                                vimplarna på skeppsbrobåtarna, illuminerade i
+                                fönstren på stora Sjötullen, eklärerade Lidingöskogarna
+                                och tonade bort i ett rosenfärgat moln, långt, långt
+                                ut i fjärran, där havet ligger. Och därifrån kom
+                                vinden, och hon gjorde samma färd tillbaka genom
+                                Vaxholm, förbi fästningen, förbi Sjötullen, utmed
+                                Siklaön, gick in bakom Hästholmen och tittade på
+                                sommarnöjena; ut igen, fortsatte och kom in i
+                                Danviken, blev skrämd och rusade av utmed södra
+                                stranden, kände lukten av kol, tjära och trän, törnade
+                                mot Stadsgården, for uppför Mosebacke, in i
+                                trädgården och slog emot en vägg. I detsamma
+                                öppnades väggen av en piga, som just rivit bort
+                                klistringen på innanfönstren; ett förfärligt os av
+                                stekflott, ölskvättar, granris och sågspån störtade ut och
+                                fördes långt bort av vinden, som nu, medan köksan
+                                drog in den friska luften genom näsan, passade på
+                                att gripa fönstervadden, som var beströdd med
+                                paljetter och berberisbär och törnrosblad, och började
+                                en ringdans utefter gångarna, i vilken snart
+                                gråsparvarna och bofinkarna deltogo, då de sålunda sågo
+                                sina bosättningsbekymmer till stor del undanröjda.</p>
 
-                        <p>Emellertid fortsatte köksan sitt arbete med
-                            innanfönstren, och inom några minuter hade dörren från
-                            källarsalen till verandan blivit öppnad och ut i
-                            trädgården trädde en ung herre, enkelt men fint klädd.</p>
+                            <p>Emellertid fortsatte köksan sitt arbete med
+                                innanfönstren, och inom några minuter hade dörren från
+                                källarsalen till verandan blivit öppnad och ut i
+                                trädgården trädde en ung herre, enkelt men fint klädd.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     </div>
@@ -257,7 +300,8 @@
             <div class="container-fluid">
                 <a class="navbar-brand fontcolor-white" href="#">Strindbergappen</a> <!-- Header -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
+                    style="background-color: #00b8d4;">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
@@ -270,10 +314,11 @@
                                 onclick="showPage(2);">Bilder</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fontcolor-white" href="#" onclick="showPage(3);">Verk</a>
+                            <a class="nav-link fontcolor-white" href="#" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal1">Verk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fontcolor-white" href="#" onclick="showPage(4);">Om oss</a>
+                            <a class="nav-link fontcolor-white" href="#" onclick="showPage(3);">Om oss</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -284,196 +329,239 @@
                 </div>
             </div>
         </nav>
-        <!-- page content -->
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-6"></div>
-                <div class="col-6">
-                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <figure class="figure">
-                                <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
-                                <figcaption class="figure-caption">A caption for the above image 1.</figcaption>
-                            </figure>
-                          </div>
-                          <div class="carousel-item">
-                            <figure class="figure">
-                                <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
-                                <figcaption class="figure-caption">A caption for the above image 2.</figcaption>
-                            </figure>
-                          </div>
-                          <div class="carousel-item">
-                            <figure class="figure">
-                                <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
-                                <figcaption class="figure-caption">A caption for the above image 3.</figcaption>
-                            </figure>
-                          </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
-                </div>
-                <div class="col-6"></div>
-            <div class="row">
-                <div class="col-2">
-                    <div class="col">
-                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                              <div class="carousel-item active">
-                                <figure class="figure">
-                                    <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
-                                    <figcaption class="figure-caption">A caption for the above image 1.</figcaption>
-                                </figure>
-                              </div>
-                              <div class="carousel-item">
-                                <figure class="figure">
-                                    <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
-                                    <figcaption class="figure-caption">A caption for the above image 2.</figcaption>
-                                </figure>
-                              </div>
-                              <div class="carousel-item">
-                                <figure class="figure">
-                                    <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
-                                    <figcaption class="figure-caption">A caption for the above image 3.</figcaption>
-                                </figure>
-                              </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Next</span>
-                            </button>
-                          </div>
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Ursäkta</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Denna sida är under konstruktion.
+                        TBA
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- page content -->
+        <div class="container text-center">
+            <div class="row mt-3">
+                <div class="col-lg">
+                    <div></div>
+                </div>
+                <div class="col-lg justify-content-center">
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <figure class="figure">
+                                    <img src="Media\August_Strindberg_portrait_400px.jpg"
+                                        class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">A caption for the above image 1.</figcaption>
+                                </figure>
+                            </div>
+                            <div class="carousel-item">
+                                <figure class="figure">
+                                    <img src="Media\August_Strindberg_portrait_400px.jpg"
+                                        class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">A caption for the above image 2.</figcaption>
+                                </figure>
+                            </div>
+                            <div class="carousel-item">
+                                <figure class="figure">
+                                    <img src="Media\August_Strindberg_portrait_400px.jpg"
+                                        class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">A caption for the above image 3.</figcaption>
+                                </figure>
+                            </div>
+                            <div class="carousel-item">
+                                <figure class="figure">
+                                    <img src="Media\August_Strindberg_portrait_400px.jpg"
+                                        class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">A caption for the above image 4.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg"></div>
             </div>
             <div class="row"> <!-- row-1 -->
-                <div class="col">
+                <div class="col-lg">
                     <figure class="figure">
-                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
+                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded"
+                            alt="...">
                         <figcaption class="figure-caption">A caption for the above image.</figcaption>
                     </figure>
                 </div>
-                <div class="col">
+                <div class="col-lg">
                     <figure class="figure">
-                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
+                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded"
+                            alt="...">
                         <figcaption class="figure-caption">A caption for the above image.</figcaption>
                     </figure>
                 </div>
-                <div class="col">
+                <div class="col-lg">
                     <figure class="figure">
-                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
+                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded"
+                            alt="...">
                         <figcaption class="figure-caption">A caption for the above image.</figcaption>
                     </figure>
                 </div>
             </div>
             <div class="row"> <!-- row-2 -->
-                <div class="col">
+                <div class="col-lg">
                     <figure class="figure">
-                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
+                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded"
+                            alt="...">
                         <figcaption class="figure-caption">A caption for the above image.</figcaption>
                     </figure>
                 </div>
-                <div class="col">
+                <div class="col-lg">
                     <figure class="figure">
-                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
+                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded"
+                            alt="...">
                         <figcaption class="figure-caption">A caption for the above image.</figcaption>
                     </figure>
                 </div>
-                <div class="col">
+                <div class="col-lg">
                     <figure class="figure">
-                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
+                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded"
+                            alt="...">
                         <figcaption class="figure-caption">A caption for the above image.</figcaption>
                     </figure>
                 </div>
             </div>
             <div class="row"> <!-- row-3 -->
-                <div class="col">
+                <div class="col-lg">
                     <figure class="figure">
-                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
+                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded"
+                            alt="...">
                         <figcaption class="figure-caption">A caption for the above image.</figcaption>
                     </figure>
                 </div>
-                <div class="col">
+                <div class="col-lg">
                     <figure class="figure">
-                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
+                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded"
+                            alt="...">
                         <figcaption class="figure-caption">A caption for the above image.</figcaption>
                     </figure>
                 </div>
-                <div class="col">
+                <div class="col-lg">
                     <figure class="figure">
-                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded" alt="...">
+                        <img src="Media\August_Strindberg_portrait_400px.jpg" class="figure-img img-fluid rounded"
+                            alt="...">
                         <figcaption class="figure-caption">A caption for the above image.</figcaption>
                     </figure>
                 </div>
             </div>
         </div>
     </div>
-
     <div id="page3" class="page">
         <!-- navbar -->
-        <nav class="navbar">
-            <button class="nav1 navbar-btn btn btn-primary active" type="button" onclick="showPage(1);">Go to page
-                1</button>
-            <button class="nav2 navbar-btn btn btn-primary" type="button" onclick="showPage(2);">Go to page2</button>
-            <button class="nav3 navbar-btn btn btn-primary" type="button" onclick="showPage(3);">Go to page3</button>
-        </nav>
-        <!-- page content -->
-        <h1>Example page 3</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae explicabo tempora ullam cumque, obcaecati
-            aut sed inventore excepturi, voluptatibus ratione laborum incidunt quod. Cum quis eos adipisci consequatur
-            ipsa. Sed!
-            Voluptatum voluptas sunt tenetur porro maiores veritatis, ipsam libero? Nesciunt ea quas iusto ducimus
-            suscipit eos quibusdam. Doloremque cum fugiat, tempora qui temporibus delectus. Fuga quaerat accusamus non
-            iusto delectus.
-            Esse a sit et nobis ducimus sint, porro, quod accusamus exercitationem voluptatum placeat sed. Soluta,
-            blanditiis aliquam consectetur rem aliquid itaque tempore ea corporis recusandae? Dignissimos sit expedita
-            commodi quibusdam.
-            Illo voluptates culpa assumenda recusandae explicabo ab pariatur? Temporibus qui dolorum expedita culpa
-            animi eligendi pariatur fuga dolorem ipsum, alias hic unde, nulla tenetur odio saepe enim aut ratione
-            laboriosam!</p>
-
-
-        <div class="row">
-            <div class="col">
-                <div id="carouselExampleIndicators" class="carousel slide">
-
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="Media\6770866051_fb7969c2a0_c.jpg" class="d-block img-thumbnail img-fluid"
-                                alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="Media\6769988393_0444051746_c.jpg" class="d-block img-thumbnail img-fluid"
-                                alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="Media\Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg"
-                                class="d-block img-thumbnail img-fluid" alt="...">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand fontcolor-white" href="#">Strindbergappen</a> <!-- Header -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
+                    style="background-color: #00b8d4;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link fontcolor-white" href="#" onclick="showPage(1);">Hem</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fontcolor-white" href="#" onclick="showPage(2);">Bilder</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fontcolor-white" href="#" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal2">Verk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active fontcolor-white" href="#" aria-current="page"
+                                onclick="showPage(3);">Om oss</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit"
+                            style="background-color: #9d46ff; color: white; border: white;">Search</button>
+                    </form>
                 </div>
+            </div>
+        </nav>
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Ursäkta</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Denna sida är under konstruktion.
+                        TBA
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- page content -->
+        <div class="text-center mx-auto mt-3 card w-75 shadow">
+            <h1 class="card-header text-white" style="background-color: #6200ea;">Om Strindbergappen</h1>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maxime expedita culpa? Nostrum
+                    perspiciatis perferendis dolore atque fuga inventore blanditiis! Minus mollitia dolorum nesciunt in
+                    magni
+                    necessitatibus minima porro officia.
+                    Corrupti fuga maiores aut eligendi id quasi necessitatibus. A nihil, repellendus quia dolores magnam
+                    temporibus cum molestiae debitis. Eveniet, dolor voluptates? Officiis rerum aliquid repellendus quia
+                    dolore
+                    omnis optio cum.
+                    Beatae illum est et sint hic magnam, dignissimos quos excepturi nihil harum minus deserunt odio
+                    deleniti
+                    praesentium eum adipisci fuga sequi porro, dolore cupiditate eligendi rerum distinctio reiciendis?
+                    Blanditiis, incidunt.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maxime expedita culpa? Nostrum
+                    perspiciatis perferendis dolore atque fuga inventore blanditiis! Minus mollitia dolorum nesciunt in
+                    magni
+                    necessitatibus minima porro officia.
+                    Corrupti fuga maiores aut eligendi id quasi necessitatibus. A nihil, repellendus quia dolores magnam
+                    temporibus cum molestiae debitis. Eveniet, dolor voluptates? Officiis rerum aliquid repellendus quia
+                    dolore
+                    omnis optio cum.</p>
+
+                <p>Beatae illum est et sint hic magnam, dignissimos quos excepturi nihil harum minus deserunt odio
+                    deleniti
+                    praesentium eum adipisci fuga sequi porro, dolore cupiditate eligendi rerum distinctio reiciendis?
+                    Blanditiis, incidunt.</p>
+
+                <P>Skapad av Edvin</P>
+
+                <p>Miljöbilden <a href="https://stockholmskallan.stockholm.se/post/18717" target="_blank">"Sekelskiftets
+                        Stockhokm</a>" tillhör fotografen Sjöberg, Bror Hjalmar (1859-1934), skapad 1902 - 1910. <a
+                        href="https://wiki.creativecommons.org/wiki/Best_practices_for_attribution" target="_blank">
+                        Licens</a>
+                </p>
+                <p>August Strindberg. <a
+                        href="https://upload.wikimedia.org/wikipedia/commons/8/89/August_Strindberg_by_Robert_Roesler_about_1881-2.jpg"
+                        target="_blank">Källa</a></p>
             </div>
         </div>
     </div>

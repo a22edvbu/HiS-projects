@@ -13,34 +13,101 @@
         }
         svg {
             
-            background-image: linear-gradient(to bottom right, red, yellow);
+            background-image: linear-gradient(to bottom right, rgb(119, 65, 141), rgb(255, 162, 0));
         }
 
         .Rok {
             transform: scale(0.25);
             animation-name: rokMoln;
-            animation-duration: 4000ms;
+            animation-duration: 400ms;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
         }
         @keyframes rokMoln {
             0% {
-                transform: translate(-30,-50)
+                transform: scale(0.1) translate(-400px,-550px) ;
+                opacity: 1;
             }
             100% {
-                transform: translate(-30,-50)
+                transform: scale(0.25) translate(-500px,-550px) ;
+                opacity: 0;
             }
         }
+        .VagStripes {
+            transform: scale(0.25);
+            animation-name: vagAnim;
+            animation-duration: 4000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes vagAnim {
+            0% {
+                transform: translate(0px,0px);
+            }
+            100% {
+                transform: translate(-450px,0px);
+            }
+        }
+
+        @keyframes bilAnim {
+            0% {
+                transform: translate(-300px,35px);
+            }
+            100% {
+                transform: translate(300px,35px);
+            }
+        }
+        .Bil {
+            animation-name: bilAnim;
+            animation-duration: 8000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes hjulAnim1 {
+            0% {
+                transform: translate(-50px,5px) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50px,5px) rotate(360deg);
+            }
+        }
+        .Hjul1 {
+            animation-name: hjulAnim1;
+            animation-duration: 1000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        
+        @keyframes hjulAnim2 {
+            0% {
+                transform: translate(50px,5px) rotate(0deg);
+            }
+            100% {
+                transform: translate(50px,5px) rotate(360deg);
+            }
+        }
+        .Hjul2 {
+            animation-name: hjulAnim2;
+            animation-duration: 1000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
 
     </style>
 </head>
 <body>
-    <svg height="600" width="1200" viewBox="-100 -100 200 200" style="margin-left: auto; margin-right:auto; border: 2px dashed red">
-        
-        <circle cx="190" cy="40" r="15" fill="yellow"/>
+    <svg height="600" width="1200" viewBox="-100 -100 200 200" style="margin-left: auto; margin-right:auto;">
+
+        <circle cx="190" cy="40" r="15"  style="fill:rgb(249, 235, 178);"/>
 
         <!-- Vägen -->
-        <g class="VagStripes">
+        
+        <rect X="-200" Y="50" width="1200" height="50"  style="fill:rgb(36, 36, 36);stroke-width:10;" />
+        <rect X="-200" Y="65" width="1200" height="50"  style="fill:rgb(214, 185, 121);stroke-width:10;" />
+
+        <g class="VagStripes" id="VagStripesSTP">
             <rect X="-200" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
             <rect X="-150" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
             <rect X="-100" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
@@ -49,13 +116,19 @@
             <rect X="50" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
             <rect X="100" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
             <rect X="150" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
+            <rect X="200" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
+            <rect X="250" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
+            <rect X="300" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
+            <rect X="350" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
+            <rect X="400" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
+            <rect X="450" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
+            <rect X="500" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
+            <rect X="550" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
+            <rect X="600" Y="50" width="30" height="3"  style="fill:rgb(255, 230, 0); stroke-width:10;" />
         </g>
 
-        <rect X="-200" Y="50" width="1200" height="50"  style="fill:rgb(36, 36, 36);stroke-width:10;" />
-        <rect X="-200" Y="65" width="1200" height="50"  style="fill:rgb(214, 185, 121);stroke-width:10;" />
-
         <!-- Bil -->
-        <g class="Bil">
+        <g class="Bil" id="bilSTP">
             <!-- Chassi -->
             <polygon points="-80,0 75,0 75,-25 40,-25 20,-45 -30,-45 -30,-25 -80,-25" style="fill: rgb(49, 101, 232); stroke:rgb(0, 0, 0); stroke-width: .5" />
             <polygon points="-75,-10 50,-10 55,-20 -70,-20" style="fill:lime;stroke:rgb(255, 255, 255);stroke-width:1"/>
@@ -63,18 +136,20 @@
             <polygon points="-26,-25 -0,-25 -0,-42 -26,-42" style="fill: rgb(0, 0, 0); stroke:rgb(0, 0, 0); stroke-width: .5"/>
 
             <!-- Avgasrör -->
-            <polygon points="-35,-25 -30,-25 -30,-50 -35,-50" style="fill:lime;stroke:purple;stroke-width:1"/>
+            <polygon points="-35,-25 -30,-25 -30,-50 -35,-50" style="fill:rgb(112, 112, 112);stroke:rgb(0, 0, 0);stroke-width: .5"/>
 
             <!-- Hjul -->
-            <g class="Hjul">
+            <g class="Hjul1" id="hjulSTP1">
                 <circle cx="0" cy="0" r="15" fill="black"/>
                 <circle cx="0" cy="0" r="10" fill="grey"/>
+                <polygon points="7,7 -7,7 -7,-7 7,-7" style="fill: rgb(236, 236, 236); stroke:rgb(0, 0, 0);stroke-width: .5"/>
             </g>
-            <g class="Hjul">
+            <g class="Hjul2" id="hjulSTP2">
                 <circle cx="0" cy="0" r="15" fill="black"/>
                 <circle cx="0" cy="0" r="10" fill="grey"/>
+                <polygon points="7,7 -7,7 -7,-7 7,-7" style="fill: rgb(236, 236, 236); stroke:rgb(0, 0, 0);stroke-width: .5"/>
             </g>
-            <g class="Rok">
+            <g class="Rok" id="rokSTP">
                 <a transform="translate(-120.51462,-158.65216)">
                     <path id="path2523" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.306733;stroke-opacity:1" d="m 112.3932,102.36203 a 23.012106,19.056902 0 0 0 -20.746023,10.8319 21.483957,19.955811 0 0 0 -14.94069,-5.61827 21.483957,19.955811 0 0 0 -20.58221,14.25598 17.978209,12.94431 0 0 0 -4.4974,-0.41289 17.978209,12.94431 0 0 0 -17.97823,12.94443 17.978209,12.94431 0 0 0 1.42834,5.0369 14.832022,13.303874 0 0 0 -0.25993,-0.003 14.832022,13.303874 0 0 0 -14.83217,13.30409 14.832022,13.303874 0 0 0 13.27877,13.22142 14.023003,16.360168 0 0 0 -1.05368,6.19497 14.023003,16.360168 0 0 0 12.55376,16.25947 23.136774,18.306019 0 0 0 -0.44804,3.53881 23.136774,18.306019 0 0 0 23.13657,18.30585 23.136774,18.306019 0 0 0 14.36606,-3.9703 16.526266,13.030325 0 0 0 14.4911,6.76755 16.526266,13.030325 0 0 0 7.319963,-1.35702 19.831518,16.907642 0 0 0 17.08837,8.34884 19.831518,16.907642 0 0 0 16.79897,-7.93336 21.843523,16.090496 0 0 0 15.05748,4.44624 21.843523,16.090496 0 0 0 21.53925,-13.46482 14.65224,13.213983 0 0 0 5.24826,0.88005 14.65224,13.213983 0 0 0 14.65234,-13.21366 14.65224,13.213983 0 0 0 -1.4733,-5.77329 21.663742,19.416464 0 0 0 14.23789,-18.22783 21.663742,19.416464 0 0 0 -7.96902,-15.04301 16.270279,14.292676 0 0 0 2.57555,-7.69927 16.270279,14.292676 0 0 0 -15.3417,-14.26838 17.708534,18.0681 0 0 0 0.41962,-3.88968 17.708534,18.0681 0 0 0 -17.70848,-18.06815 17.708534,18.0681 0 0 0 -10.23969,3.3383 20.225483,17.888317 0 0 0 -16.72766,-7.83312 20.225483,17.888317 0 0 0 -13.37128,4.4819 23.012106,19.056902 0 0 0 -16.02279,-5.38055 z" />
                 </a>
@@ -82,9 +157,26 @@
         </g>
         <!-- Rök -->
         
-        
-        <line x1="-20" y1="-20" x2="20" y2="20" stroke="black" stroke-dasharray="1" />
-        <line x1="20" y1="-20" x2="-20" y2="20" stroke="black" stroke-dasharray="1" />  
-</svg>
+        <!-- 
+        <line x1="-20" y1="-20" x2="20" y2="20" stroke="black" stroke-dasharray="1"/>
+        <line x1="20" y1="-20" x2="-20" y2="20" stroke="black" stroke-dasharray="1"/>   -->
+
+        <g onclick="document.getElementById('VagStripesSTP').style.animationPlayState='paused'
+                    document.getElementById('bilSTP').style.animationPlayState='paused'
+                    document.getElementById('hjulSTP1').style.animationPlayState='paused'
+                    document.getElementById('hjulSTP2').style.animationPlayState='paused'
+                    document.getElementById('rokSTP').style.animationPlayState='paused'">
+            <rect x="-70" y="55" width="60" height="40" rx="5" fill="orange" />
+            <text x="-40" y="80" font-size="15" text-anchor="middle" fill="white">Pause</text>
+        </g>
+        <g onclick="document.getElementById('VagStripesSTP').style.animationPlayState='running'
+                    document.getElementById('bilSTP').style.animationPlayState='running'
+                    document.getElementById('hjulSTP1').style.animationPlayState='running'
+                    document.getElementById('hjulSTP2').style.animationPlayState='running'
+                    document.getElementById('rokSTP').style.animationPlayState='running'">
+            <rect x="10" y="55" width="60" height="40" rx="5" fill="orange" />
+            <text x="40" y="80" font-size="15" text-anchor="middle" fill="white">Play</text>
+        </g>
+    </svg>
 </body>
 </html>

@@ -5,6 +5,7 @@
     <title>A SPA Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
     <script>
         function showPage(p) {
             pageArr = document.getElementsByClassName("page");
@@ -158,6 +159,7 @@
         #bookChapter {
             background-color: rgb(222, 215, 185);
             height: auto;
+            width: 100%;
             padding: 20px;
             font-size: 20px;
             border-radius: 20px;
@@ -257,6 +259,14 @@
                 font-size: 15px;
             }
         }
+        .ellipsisRed {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+        }
+        .ellipsisNoneRed {
+                display: none;
+        }
     </style>
 </head>
  
@@ -296,40 +306,40 @@
             <div class="Text" style="min-width: 0; min-height: 0;">
                 <div class="Stycke3 Text card" id="omText">
                     <h2>August Strindberg</h2>
-                    <p class="ellipsis"> August Strindberg föddes i Sundhetskollegiets hus på Riddarholmen i 
-                    Stockholm den 22 januari 1849. Strindberg var det tredje barnet av åtta i sin 
-                    faders första äktenskap. Efter det rivna födelsehuset har Strindberg döpt 
-                    pjäsen Brända Tomten. År 1851 flyttade familjen till Klarakvarteren och 1856 
-                    till Norrtullsgatan 14. </p>
+                    <p class="ellipsis"> Johan August Strindberg föddes i Sundhetskollegiets hus på Riddarholmen i 
+                        Stockholm den 22 januari 1849. Strindberg var det tredje barnet av åtta i sin 
+                        faders första äktenskap. Efter det rivna födelsehuset har Strindberg döpt 
+                        pjäsen Brända Tomten. År 1851 flyttade familjen till Klarakvarteren och 1856 
+                        till Norrtullsgatan 14. </p>
                     <p class="ellipsisNone"> Strindbergs far Carl Oscar Strindberg var ångbåtskommissionär och ansvarig för 
-                    godstrafiken på Mälaren och Göta kanal. Modern Eleonora Ulrika Norling var före 
-                    detta värdshusflicka, som hade arbetat på Liljeholmens värdshus. Före 
-                    giftermålet arbetade hon som hushållerska åt Carl Oscar, därav titeln 
-                    Tjänstekvinnans son, men hemmet var inte så proletärt som Strindberg ville få 
-                    det att framstå. Carl Oscar gifte sig med henne 1847. Hennes fromhet hade stark 
-                    påverkan på författaren. Strindbergs faster Lisette Strindberg var gift med 
-                    ångbåtspionjären Samuel Owen.</p>
-                    <p class="ellipsisNone"> barn var Strindberg lugn och tystlåten. Fadern var sträng och Strindberg 
-                    växte upp i ett hem som präglades av disciplin, gudfruktighet och kulturellt 
-                    intresse. Under barndomen ägnade han sig åt läsning, naturvetenskapliga studier 
-                    och blomsterodling. År 1856 började han på Klara skola. Den 30 december 1861 
-                    skrev Strindberg ett brev om vännen Flodcrantz som gick igenom isen på 
-                    Brunnsviken och drunknade. Natten mellan 19 och 20 mars 1862 avled modern och 
-                    Strindberg skrev ett brev om det till sin bror Oscar den 22 mars. Strindberg 
-                    hade ett dåligt förhållande till sin fader, vilket försämrades ytterligare 
-                    efter moderns död. Året efter gifte fadern om sig med den trettio år yngre 
-                    Emilia Charlotta Peterson som var familjens tjugotvååriga husmamsell 
-                    (hushållerska) och som Strindberg kom att avsky. I efterhand har dock bilden 
-                    av Emilia ändrats. Hon fyllde väl rollen som styvmamma framförallt för Augusts 
-                    systrar. </p>
-                    <p class="ellipsisNone"> tog studentexamen vid privatläroverket Stockholms lyceum 1867. Efter 
-                    avslutad skolgång började han på Uppsala universitet men slutade efter bara en 
-                    halv termin eftersom han vantrivdes och hade ont om pengar. Därefter försörjde 
-                    han sig en tid som folkskollärare och därefter informator samtidigt som han 
-                    studerade till läkare. Han försökte sig därefter på att bli skådespelare och 
-                    blev statist vid Dramatiska teatern, men bestämde sig 1870 för att återvända 
-                    till Uppsala. Det var under studietiden där som Strindberg påbörjade sitt 
-                    författarskap.</p>
+                        godstrafiken på Mälaren och Göta kanal. Modern Eleonora Ulrika Norling var före 
+                        detta värdshusflicka, som hade arbetat på Liljeholmens värdshus. Före 
+                        giftermålet arbetade hon som hushållerska åt Carl Oscar, därav titeln 
+                        Tjänstekvinnans son, men hemmet var inte så proletärt som Strindberg ville få 
+                        det att framstå. Carl Oscar gifte sig med henne 1847. Hennes fromhet hade stark 
+                        påverkan på författaren. Strindbergs faster Lisette Strindberg var gift med 
+                        ångbåtspionjären Samuel Owen.</p>
+                    <p class="ellipsisNone"> Som barn var Strindberg lugn och tystlåten. Fadern var sträng och Strindberg 
+                        växte upp i ett hem som präglades av disciplin, gudfruktighet och kulturellt 
+                        intresse. Under barndomen ägnade han sig åt läsning, naturvetenskapliga studier 
+                        och blomsterodling. År 1856 började han på Klara skola. Den 30 december 1861 
+                        skrev Strindberg ett brev om vännen Flodcrantz som gick igenom isen på 
+                        Brunnsviken och drunknade. Natten mellan 19 och 20 mars 1862 avled modern och 
+                        Strindberg skrev ett brev om det till sin bror Oscar den 22 mars. Strindberg 
+                        hade ett dåligt förhållande till sin fader, vilket försämrades ytterligare 
+                        efter moderns död. Året efter gifte fadern om sig med den trettio år yngre 
+                        Emilia Charlotta Peterson som var familjens tjugotvååriga husmamsell 
+                        (hushållerska) och som Strindberg kom att avsky. I efterhand har dock bilden 
+                        av Emilia ändrats. Hon fyllde väl rollen som styvmamma framförallt för Augusts 
+                        systrar. </p>
+                    <p class="ellipsisNone"> Strindberg tog studentexamen vid privatläroverket Stockholms lyceum 1867. Efter 
+                        avslutad skolgång började han på Uppsala universitet men slutade efter bara en 
+                        halv termin eftersom han vantrivdes och hade ont om pengar. Därefter försörjde 
+                        han sig en tid som folkskollärare och därefter informator samtidigt som han 
+                        studerade till läkare. Han försökte sig därefter på att bli skådespelare och 
+                        blev statist vid Dramatiska teatern, men bestämde sig 1870 för att återvända 
+                        till Uppsala. Det var under studietiden där som Strindberg påbörjade sitt 
+                        författarskap.</p>
                     <p>Texten är hämtad från Wikipedia CC BY-SA 3.0</p>
                 </div>
             </div>
@@ -347,11 +357,11 @@
 
                     <p>Stockholm i fågelperspektiv.</p>
 
-                    <p>Det var en afton i början av maj. Den lilla
+                    <p><span class="ellipsisRed">Det var en afton i början av maj. Den lilla
                     trädgården på Mosebacke hade ännu icke blivit öppnad för
                     allmänheten, och rabatterna voro ej uppgrävda;
                     snödropparna hade arbetat sig upp genom fjolårets
-                    lövsamlingar och höllo just på att sluta sin korta
+                    lövsamlingar och höllo just på att sluta sin korta</span> <span class="ellipsisNoneRed">
                     verksamhet för att lämna plats åt de ömtåligare
                     saffransblommorna, vilka tagit skydd under ett ofruktsamt
                     päronträd; syrenerna väntade på sydlig vind för att
@@ -370,9 +380,9 @@
                     bersåer och kunde mellan stickorna på en bänkfot
                     draga fram hårtappar efter hundar, som icke slagits
                     där sedan Josefinadagen i fjol. Där var ett liv och
-                    ett kiv.</p>
+                    ett kiv.</span></p>
 
-                    <p>Men solen stod över Liljeholmen och sköt hela
+                    <p class="ellipsisNoneRed">Men solen stod över Liljeholmen och sköt hela
                     kvastar av strålar mot öster; de gingo genom rökarna
                     från Bergsund, de ilade fram över Riddarfjärden,
                     klättrade upp till korset på Riddarholmskyrkan,
@@ -400,7 +410,7 @@
                     gråsparvarna och bofinkarna deltogo, då de sålunda sågo
                     sina bosättningsbekymmer till stor del undanröjda.</p>
 
-                    <p>Emellertid fortsatte köksan sitt arbete med
+                    <p class="ellipsisNoneRed">Emellertid fortsatte köksan sitt arbete med
                     innanfönstren, och inom några minuter hade dörren från
                     källarsalen till verandan blivit öppnad och ut i
                     trädgården trädde en ung herre, enkelt men fint klädd.</p>

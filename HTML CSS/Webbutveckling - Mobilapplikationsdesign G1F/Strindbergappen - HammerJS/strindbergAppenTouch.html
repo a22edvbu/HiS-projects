@@ -322,36 +322,76 @@
             white-space: initial;
         }
 
-        .ellipsisNoneBook {
-            display: none;
+        .verkDrp1TooltipAnchor {
+            border: 1px dashed #b04;
+        }
+
+        .verkDrp1Tooltip {
+            /* hide and position tooltip */
+            display: block;
+            bottom: 20px;
+            left: 0px;
+            width: 60px;
+            background-color: #ba0;
+            color: white;
+            border-radius: 5px;
+            opacity: 0;
+            overflow: hidden;
+            padding: 5px;
         }
     </style>
     <script>
         function tap(event) {
-            if (event.target.className == "noEllipsisBook") {
+            if (event.target.className == "ellipsisBook") {
                 /* use elipsis */
-                event.target.className = "ellipsisBook";
+                event.target.className = "noEllipsisBook";
             } else {
                 /* No elipsis */
-                event.target.className = "noEllipsisBook";
+                event.target.className = "ellipsisBook";
             }
         }
         function initHammer() {
+
+            // Doubletap
+
             // Get area where we listen for touch events
             var bookChapterTextTouchArea = document.getElementById("bookChapterTextElement1");
             // Set starting value for our textelement
-            bookChapterTextTouchArea.className = "noEllipsisBook";
+            bookChapterTextTouchArea.className = "ellipsisBook";
 
             // Init Hammer
             var mc = new Hammer(bookChapterTextTouchArea);
 
             // Listen for doubletap gesture
             mc.on("doubletap", function (event) { tap(event) });
+
+
+            
         }
+        function initHammer2() {
+            // Press
+
+            // Get the textelement that should "listen" to touch events
+            var element = document.getElementById("pressElement");
+
+            // Init Hammer
+            var hammertime = Hammer(element);
+
+            // Show tooltip when press is active on our html element that listens to "press"
+            hammertime.on("press", function (event) {
+                element = document.getElementById("verkDrp1Tooltip").style.opacity = "1";
+            });
+
+            // hide tooltip when releasing
+            hammertime.on("pressup", function (event) {
+                element = document.getElementById("verkDrp1Tooltip").style.opacity = "0";
+            });
+        }
+
     </script>
 </head>
 
-<body onload="showPage(0); initHammer();">
+<body onload="showPage(0); initHammer(); initHammer2();">
     <div id="page0" class="page">
         <div class="prototype-start-page">
             <button class="navbar__btn navbar__btn--primary" type="button" onclick="initPrototype();">Start
@@ -438,14 +478,26 @@
                 </div>
             </div>
             <div class="Stycke4 bookChapter">
-                <h2>Fler verk från Strindberg</h2>
+                <h2>Fler verk av Strindberg</h2>
                 <div class="verkGroup">
-                    <button class="verkBtn1 verkBtn" type="button" onclick="showPage(3);">Röda rummet</button>
+                    <button class="verkBtn1 verkDrp1 verkBtn" type="button" onclick="showPage(3);">Röda rummet</button>
                     <button class="verkBtn2 verkBtn" type="button" onclick="showPage(3);">Mäster Olof</button>
                     <button class="verkBtn3 verkBtn" type="button" onclick="showPage(3);">Hemsöborna.
                         Skärkarlsliv</button>
                     <button class="verkBtn4 verkBtn" type="button" onclick="showPage(3);">Tjänstekvinnans son</button>
                     <button class="verkBtn5 verkBtn" type="button" onclick="showPage(3);">En dåres försvarstal</button>
+                </div>
+
+                <div class="verkDrp1">
+                    <p>
+                        <span id="pressElement" class="verkDrp1TooltipAnchor">
+                            
+                            <span id="verkDrp1Tooltip" class="verkDrp1Tooltip">
+                                5 Maj 2233
+                            </span>
+                            Håll in för att se info
+                        </span>
+                    </p>
                 </div>
                 <div class="bookChapterText">
                     <p>FÖRSTA KAPITLET.</p>

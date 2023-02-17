@@ -304,6 +304,24 @@
                 width: 100vw;
                 padding: 0px;
             }
+
+            #panContainer {
+                width: 100%;
+                height: auto;
+            }
+            .panPage {
+                width: 100%;
+                height: auto;
+            }
+            .panBild img {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .panBild>figcaption {
+                position: absolute;
+                font-size: 15px;
+            }
         }
 
         .ellipsisBook {
@@ -322,22 +340,245 @@
             white-space: initial;
         }
 
-        .verkDrp1TooltipAnchor {
-            border: 1px dashed #b04;
-        }
-
         .verkDrp1Tooltip {
             /* hide and position tooltip */
             display: block;
             bottom: 20px;
             left: 0px;
-            width: 60px;
-            background-color: #ba0;
+            width: 150px;
+            background-color: rgb(187, 0, 0);
             color: white;
             border-radius: 5px;
             opacity: 0;
             overflow: hidden;
             padding: 5px;
+            text-align: center;
+            margin-left: 10px;
+        }
+
+
+        #swipe-page1 {
+            left: 0%;
+        }
+
+        .swipe-page {
+            position: absolute;
+            left: 100%;
+            top: 0%;
+            width: 100%;
+            height: 100%;
+            z-index: 500;
+        }
+
+        .clicker {
+            position: absolute;
+            left: 0px;
+            width: 100%;
+            top: 35%;
+            height: 30%;
+            z-index: 600;
+            /* border:1px dotted orange; */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .leftclicker {
+            font-size: 160px;
+        }
+
+        .rightclicker {
+            font-size: 160px;
+        }
+
+        .bildSwipe {
+            position: relative;
+        }
+
+        .bildSwipe>figcaption {
+            position: absolute;
+            padding: 2px;
+            top: -25px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            margin: 0 auto;
+        }
+
+        @keyframes inleft {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 0%;
+            }
+        }
+
+        @keyframes inright {
+            0% {
+                left: 100%;
+            }
+
+            100% {
+                left: 0%;
+            }
+        }
+
+        @keyframes outleft {
+            0% {
+                left: 0%;
+            }
+
+            100% {
+                left: -100%;
+            }
+        }
+
+        @keyframes outright {
+            0% {
+                left: 0%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        #panContainer {
+            margin-top: 30px;
+            display: flex;
+            height: 600px;
+            width: 400px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #panPage1 {
+            left: 0%;
+            display: block;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        #panDialog1 {
+            background-color: rgb(186, 225, 186);
+            text-align: center;
+            margin: 0 auto;
+            top: 10px;
+        }
+
+        #panDialog2 {
+            background-color: rgb(231, 183, 183);
+            text-align: center;
+            margin: 0 auto;
+            top: 10px;
+        }
+
+        .panPage {
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            z-index: 500;
+            display: none;
+        }
+
+        .panDialogContainer {
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .panMenuContainer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .likeButton {
+            background-color: rgb(48, 152, 50);
+            border: 2px solid #000000;
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            padding: 10px;
+            margin: 10px;
+        }
+        .dislikeButton {
+            background-color: rgb(152, 48, 48);
+            border: 2px solid #000000;
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .button {
+            padding: 10px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #800080;
+            border-radius: 5px;
+            margin: 5px;
+            white-space: nowrap;
+        }
+
+        .panDialog {
+            width: 300px;
+            max-width: 80%;
+            height: 200px;
+            max-height: 70%;
+            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+            display: none;
+            position: relative;
+            border-radius: 20px;
+        }
+
+        .panBild {
+            position: relative; 
+                
+        }
+        .panBild>figcaption {
+            position: absolute;
+            padding: 2px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            margin: 0 auto;
+        }
+        .panBild img {
+            z-index: -5000;
+            border-radius: 20px;
+        }
+        .panInstructions {
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 30px;
+            justify-content: center;
+            background-color: rgb(137, 137, 137);
+            padding: 10px;
+            color: white;
+            margin-bottom: 30px;
+            border-radius: 20px;
         }
     </style>
     <script>
@@ -365,10 +606,6 @@
             // Listen for doubletap gesture
             mc.on("doubletap", function (event) { tap(event) });
 
-
-            
-        }
-        function initHammer2() {
             // Press
 
             // Get the textelement that should "listen" to touch events
@@ -386,12 +623,86 @@
             hammertime.on("pressup", function (event) {
                 element = document.getElementById("verkDrp1Tooltip").style.opacity = "0";
             });
+
+
+            numberOfSwipePages = document.getElementsByClassName('swipe-page').length;
+            var element = document.getElementById("swipeContainer");
+            var hammertime = Hammer(element);
+            hammertime.on("swiperight", function (event) { swipe(-1) });
+            hammertime.on("swipeleft", function (event) { swipe(1) });
+
+            // Get element and connect a Hammer.js object to it
+            var element = document.getElementById("panContainer");
+            var hammertime = Hammer(element);
+ 
+            // Attach functions to each event
+            hammertime.on("panmove", function(event) { pan(event.deltaX); });    
+            hammertime.on("panend", function(event) { panend(event.deltaX); });
+        }
+
+        // Bildgalleri
+
+        var numberOfSwipePages;
+        var swipePage = 1;
+
+        function showSwipePageRight(newSwipePage) {
+            document.getElementById('swipe-page' + swipePage).style.animation = "outright 1s ease-in-out 0s 1 forwards";
+            document.getElementById('swipe-page' + newSwipePage).style.animation = "inleft 1s ease-in-out 0s 1 forwards";
+            swipePage = newSwipePage;
+        }
+        function showSwipePageLeft(newSwipePage) {
+            document.getElementById('swipe-page' + swipePage).style.animation = "outleft 1s ease-in-out 0s 1 forwards";
+            document.getElementById('swipe-page' + newSwipePage).style.animation = "inright 1s ease-in-out 0s 1 forwards";
+            swipePage = newSwipePage;
+        }
+
+        function swipe(direction) {
+            var newSwipePage = swipePage + direction;
+
+            // if we swipe beyond the first page, we go to last page instead.
+            if (newSwipePage == 0) {
+                newSwipePage = numberOfSwipePages;
+            }
+            // if we swipe beyond the last page, we go to first page instead.
+            else if (newSwipePage > numberOfSwipePages) {
+                newSwipePage = 1;
+            }
+
+            if (direction == 1) {
+                showSwipePageLeft(newSwipePage);
+            }
+            else {
+                showSwipePageRight(newSwipePage);
+            }
+        }
+        function panend(deltaX){
+            document.getElementById('panPage1').style.display="none";
+            document.getElementById('panDialog1').style.display="none";                  
+            document.getElementById('panDialog2').style.display="none";
+ 
+            if(deltaX>100){
+                document.getElementById('panDialog2').style.display="block";
+            }else if(deltaX<-100){
+                document.getElementById('panDialog1').style.display="block";                  
+            }else{
+                document.getElementById('panPage1').style.display="block";                
+                document.getElementById("panPage1").style.left="0px";
+            }
+        }
+ 
+        function pan(deltaX)
+        {
+            console.log(deltaX);
+            document.getElementById('panPage1').style.display="block";
+            document.getElementById('panDialog1').style.display="none";                  
+            document.getElementById('panDialog2').style.display="none";
+            document.getElementById('panPage1').style.left=deltaX+"px";
         }
 
     </script>
 </head>
 
-<body onload="showPage(0); initHammer(); initHammer2();">
+<body onload="showPage(0); initHammer();">
     <div id="page0" class="page">
         <div class="prototype-start-page">
             <button class="navbar__btn navbar__btn--primary" type="button" onclick="initPrototype();">Start
@@ -402,7 +713,7 @@
         <nav class="navbar">
             <button class="nav1 navbar__btn navbar__btn--primary navbar__btn--active" type="button"
                 onclick="showPage(1);">Stringbergsappen</button>
-            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Bilder på August
+            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(4);">Bilder på August
                 Strindberg</button>
             <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Betygsätt
                 Strindberg</button>
@@ -480,22 +791,22 @@
             <div class="Stycke4 bookChapter">
                 <h2>Fler verk av Strindberg</h2>
                 <div class="verkGroup">
-                    <button class="verkBtn1 verkDrp1 verkBtn" type="button" onclick="showPage(3);">Röda rummet</button>
-                    <button class="verkBtn2 verkBtn" type="button" onclick="showPage(3);">Mäster Olof</button>
-                    <button class="verkBtn3 verkBtn" type="button" onclick="showPage(3);">Hemsöborna.
+                    <button class="verkBtn1 verkDrp1 verkBtn" type="button" onclick="showPage(1);">Röda rummet</button>
+                    <button class="verkBtn2 verkBtn" type="button" onclick="showPage(5);">Mäster Olof</button>
+                    <button class="verkBtn3 verkBtn" type="button" onclick="showPage(5);">Hemsöborna.
                         Skärkarlsliv</button>
-                    <button class="verkBtn4 verkBtn" type="button" onclick="showPage(3);">Tjänstekvinnans son</button>
-                    <button class="verkBtn5 verkBtn" type="button" onclick="showPage(3);">En dåres försvarstal</button>
+                    <button class="verkBtn4 verkBtn" type="button" onclick="showPage(5);">Tjänstekvinnans son</button>
+                    <button class="verkBtn5 verkBtn" type="button" onclick="showPage(5);">En dåres försvarstal</button>
                 </div>
 
                 <div class="verkDrp1">
                     <p>
                         <span id="pressElement" class="verkDrp1TooltipAnchor">
-                            
+
                             <span id="verkDrp1Tooltip" class="verkDrp1Tooltip">
-                                5 Maj 2233
+                                Textstycket kommer från romanen <i>Röda Rummet</i> som släpptes 1879
                             </span>
-                            Håll in för att se info
+                            - Håll in mig för att läsa mer om Röda Rummet. -
                         </span>
                     </p>
                 </div>
@@ -505,64 +816,65 @@
                     <p>Stockholm i fågelperspektiv.</p>
 
                     <div class="bookChapterTextTouchArea">
-                        <p id="bookChapterTextElement1" class="ellipsisBook">Det var en afton i början av maj. Den lilla
-                            trädgården på Mosebacke hade ännu icke blivit öppnad för
-                            allmänheten, och rabatterna voro ej uppgrävda;
-                            snödropparna hade arbetat sig upp genom fjolårets
-                            lövsamlingar och höllo just på att sluta sin korta
-                            verksamhet för att lämna plats åt de ömtåligare
-                            saffransblommorna, vilka tagit skydd under ett ofruktsamt
-                            päronträd; syrenerna väntade på sydlig vind för att
-                            få gå i blom, men lindarna bjödo ännu kärleksfilter
-                            i sina obrustna knoppar åt bofinkarna, som börjat
-                            bygga sina lavklädda bon mellan stam och gren;
-                            ännu hade ingen mänskofot trampat sandgångarna
-                            sedan sista vinterns snö gått bort, och därför levdes
-                            ett obesvärat liv därinne av både djur och blommor.
-                            Gråsparvarna höllo på att samla upp skräp, som de
-                            sedan gömde under takpannorna på navigationsskolans
-                            hus; de drogos om spillror av rakethylsor från
-                            sista höstfyrverkeriet, de plockade halmen från unga
-                            träd som året förut sluppit ur skolan på Rosendal
-                            – och allting sågo de! De hittade barège-lappar i
-                            bersåer och kunde mellan stickorna på en bänkfot
-                            draga fram hårtappar efter hundar, som icke slagits
-                            där sedan Josefinadagen i fjol. Där var ett liv och
-                            ett kiv.</p>
+                        <div id="bookChapterTextElement1">
+                            <p class="ellipsisBook">Det var en afton i början av maj. Den lilla
+                                trädgården på Mosebacke hade ännu icke blivit öppnad för
+                                allmänheten, och rabatterna voro ej uppgrävda;
+                                snödropparna hade arbetat sig upp genom fjolårets
+                                lövsamlingar och höllo just på att sluta sin korta
+                                verksamhet för att lämna plats åt de ömtåligare
+                                saffransblommorna, vilka tagit skydd under ett ofruktsamt
+                                päronträd; syrenerna väntade på sydlig vind för att
+                                få gå i blom, men lindarna bjödo ännu kärleksfilter
+                                i sina obrustna knoppar åt bofinkarna, som börjat
+                                bygga sina lavklädda bon mellan stam och gren;
+                                ännu hade ingen mänskofot trampat sandgångarna
+                                sedan sista vinterns snö gått bort, och därför levdes
+                                ett obesvärat liv därinne av både djur och blommor.
+                                Gråsparvarna höllo på att samla upp skräp, som de
+                                sedan gömde under takpannorna på navigationsskolans
+                                hus; de drogos om spillror av rakethylsor från
+                                sista höstfyrverkeriet, de plockade halmen från unga
+                                träd som året förut sluppit ur skolan på Rosendal
+                                – och allting sågo de! De hittade barège-lappar i
+                                bersåer och kunde mellan stickorna på en bänkfot
+                                draga fram hårtappar efter hundar, som icke slagits
+                                där sedan Josefinadagen i fjol. Där var ett liv och
+                                ett kiv.</p>
 
-                        <p class="ellipsisNoneBook">Men solen stod över Liljeholmen och sköt hela
-                            kvastar av strålar mot öster; de gingo genom rökarna
-                            från Bergsund, de ilade fram över Riddarfjärden,
-                            klättrade upp till korset på Riddarholmskyrkan,
-                            kastade sig över till Tyskans branta tak, lekte med
-                            vimplarna på skeppsbrobåtarna, illuminerade i
-                            fönstren på stora Sjötullen, eklärerade Lidingöskogarna
-                            och tonade bort i ett rosenfärgat moln, långt, långt
-                            ut i fjärran, där havet ligger. Och därifrån kom
-                            vinden, och hon gjorde samma färd tillbaka genom
-                            Vaxholm, förbi fästningen, förbi Sjötullen, utmed
-                            Siklaön, gick in bakom Hästholmen och tittade på
-                            sommarnöjena; ut igen, fortsatte och kom in i
-                            Danviken, blev skrämd och rusade av utmed södra
-                            stranden, kände lukten av kol, tjära och trän, törnade
-                            mot Stadsgården, for uppför Mosebacke, in i
-                            trädgården och slog emot en vägg. I detsamma
-                            öppnades väggen av en piga, som just rivit bort
-                            klistringen på innanfönstren; ett förfärligt os av
-                            stekflott, ölskvättar, granris och sågspån störtade ut och
-                            fördes långt bort av vinden, som nu, medan köksan
-                            drog in den friska luften genom näsan, passade på
-                            att gripa fönstervadden, som var beströdd med
-                            paljetter och berberisbär och törnrosblad, och började
-                            en ringdans utefter gångarna, i vilken snart
-                            gråsparvarna och bofinkarna deltogo, då de sålunda sågo
-                            sina bosättningsbekymmer till stor del undanröjda.</p>
+                            <p class="ellipsisBook"> Men solen stod över Liljeholmen och sköt hela
+                                kvastar av strålar mot öster; de gingo genom rökarna
+                                från Bergsund, de ilade fram över Riddarfjärden,
+                                klättrade upp till korset på Riddarholmskyrkan,
+                                kastade sig över till Tyskans branta tak, lekte med
+                                vimplarna på skeppsbrobåtarna, illuminerade i
+                                fönstren på stora Sjötullen, eklärerade Lidingöskogarna
+                                och tonade bort i ett rosenfärgat moln, långt, långt
+                                ut i fjärran, där havet ligger. Och därifrån kom
+                                vinden, och hon gjorde samma färd tillbaka genom
+                                Vaxholm, förbi fästningen, förbi Sjötullen, utmed
+                                Siklaön, gick in bakom Hästholmen och tittade på
+                                sommarnöjena; ut igen, fortsatte och kom in i
+                                Danviken, blev skrämd och rusade av utmed södra
+                                stranden, kände lukten av kol, tjära och trän, törnade
+                                mot Stadsgården, for uppför Mosebacke, in i
+                                trädgården och slog emot en vägg. I detsamma
+                                öppnades väggen av en piga, som just rivit bort
+                                klistringen på innanfönstren; ett förfärligt os av
+                                stekflott, ölskvättar, granris och sågspån störtade ut och
+                                fördes långt bort av vinden, som nu, medan köksan
+                                drog in den friska luften genom näsan, passade på
+                                att gripa fönstervadden, som var beströdd med
+                                paljetter och berberisbär och törnrosblad, och började
+                                en ringdans utefter gångarna, i vilken snart
+                                gråsparvarna och bofinkarna deltogo, då de sålunda sågo
+                                sina bosättningsbekymmer till stor del undanröjda.</p>
 
-                        <p class="ellipsisNoneBook">Emellertid fortsatte köksan sitt arbete med
-                            innanfönstren, och inom några minuter hade dörren från
-                            källarsalen till verandan blivit öppnad och ut i
-                            trädgården trädde en ung herre, enkelt men fint klädd.</p>
-
+                            <p class="ellipsisBook"> Emellertid fortsatte köksan sitt arbete med
+                                innanfönstren, och inom några minuter hade dörren från
+                                källarsalen till verandan blivit öppnad och ut i
+                                trädgården trädde en ung herre, enkelt men fint klädd.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -572,7 +884,15 @@
     <div id="page2" class="page">
         <!-- navbar -->
         <nav class="navbar">
-            <button class="nav1 navbar__btn navbar__btn--primary" type="button" onclick="showPage(1);">Hem</button>
+            <button class="nav1 navbar__btn navbar__btn--primary" type="button" onclick="showPage(1);">
+                Stringbergsappen</button>
+            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(4);">Bilder på August
+                Strindberg</button>
+            <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Betygsätt
+                Strindberg</button>
+            <button class="nav9 navbar__btn navbar__btn--primary navbar__btn--active" type="button"
+                onclick="showPage(2);">Om
+                Strindbergsappen</button>
         </nav>
         <div class="omApp card">
             <h1>Om Strindbergappen</h1>
@@ -616,14 +936,123 @@
 
     <div id="page3" class="page">
         <nav class="navbar">
-            <button class="nav1 navbar__btn navbar__btn--primary" type="button" onclick="showPage(1);">Hem</button>
+            <button class="nav1 navbar__btn navbar__btn--primary" type="button" onclick="showPage(1);">
+                Stringbergsappen</button>
+            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(4);">Bilder på August
+                Strindberg</button>
+            <button class="nav3 navbar__btn navbar__btn--primary  navbar__btn--active" type="button"
+                onclick="showPage(3);">Betygsätt
+                Strindberg</button>
+            <button class="nav9 navbar__btn navbar__btn--primary" type="button" onclick="showPage(2);">Om
+                Strindbergsappen</button>
         </nav>
         <!-- page content -->
-        <div class="WIP card">
-            <h1> Vi beklagar</h1>
-            <h1> Denna sida är under konstruktion!</h1>
+        <div class="panInstructions card">
+            <h2>Ge din åsikt genom att dra bilden på Strindberg åt höger eller vänster.</h2>
+            <p>Dra bilden till vänster om du gillar Strindberg.</p>
+            <p>Dra bilden till höger om du ogillar Strindberg.</p>
+        </div>
+        <div id="panOuterContainer" style="position: relative; margin-left: auto; margin-right: auto;">
+            <div id="panContainer">
+                <div id="panPage1" class="panPage card">
+                    <picture class="panBild">
+                        <figcaption> August Strindberg (<a
+                                href="https://commons.wikimedia.org/wiki/File:August_Strindberg_i_sitt_arbetsrum.jpg">Wikimedia</a>
+                            | <a href="https://en.wikipedia.org/wiki/public_domain">Public Domain</a>)</figcaption>
+                        <img src="Media\Temp\Strindberg4[400px]x[600px].jpg" alt="">
+                    </picture>
+                    <div class="panMenuContainer">
+                        <div class="likeButton" onclick="panend(-200);">TOPPEN!</div>
+                        <div class="dislikeButton" onclick="panend(200);">USCH!</div>
+                    </div>
+                </div>
+                <div id="panDialog1" class="panDialog">
+                    <h1>Du gillade Strindberg!</h1>
+                    <div class="panDialogContainer">
+                        <div class="button" onclick="pan(0);">Ok</div>
+                    </div>
+                </div>
+                <div id="panDialog2" class="panDialog">
+                    <h1>Du gillade inte Strindberg!</h1>
+                    <div class="panDialogContainer">
+                        <div class="button" onclick="pan(0);">Ok</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <div id="page4" class="page">
+        <nav class="navbar">
+            <button class="nav1 navbar__btn navbar__btn--primary" type="button" onclick="showPage(1);">
+                Stringbergsappen</button>
+            <button class="nav2 navbar__btn navbar__btn--primary navbar__btn--active" type="button"
+                onclick="showPage(4);">Bilder på August
+                Strindberg</button>
+            <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Betygsätt
+                Strindberg</button>
+            <button class="nav9 navbar__btn navbar__btn--primary" type="button" onclick="showPage(2);">Om
+                Strindbergsappen</button>
+        </nav>
+        <!-- page content -->
+        <div id="swipeContainer" class="card"
+            style="border-radius: 20px; position: relative; width: 400px; height: 600px; margin: 0 auto; margin-top: 30px; overflow: hidden; touch-action: pan-y; user-select: none;box-sizing: border-box;">
+            <div id="swipeInnerContainer" style="overflow:hidden;">
+                <div id="pageclicker" class="clicker" style="border-radius: 20px;">
+                    <div class="leftclicker" onclick="swipe(-1)" style="color: rgb(255, 0, 0);"><</div>
+                            <div class="rightclicker" onclick="swipe(1)" style="color: rgb(255, 0, 0);">></div>
+                    </div>
+
+                    <div id="swipe-page1" class="swipe-page">
+                        <picture class="bildSwipe">
+                            <figcaption> August Strindberg (<a
+                                    href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Wikimedia</a>
+                                | <a href="https://en.wikipedia.org/wiki/public_domain">Public Domain</a>)</figcaption>
+                            <img src="Media\Temp\Strindberg1[400px]x[600px].jpg" alt="">
+                        </picture>
+                    </div>
+                    <div id="swipe-page2" class="swipe-page">
+                        <picture class="bildSwipe">
+                            <figcaption> August Strindberg (<a
+                                    href="https://www.flickr.com/photos/25300312@N08/6769988393">Flickr</a> | <a
+                                    href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>)</figcaption>
+                            <img src="Media\Temp\Strindberg2[400px]x[600px].jpg" alt="">
+                        </picture>
+                    </div>
+                    <div id="swipe-page3" class="swipe-page">
+                        <picture class="bildSwipe">
+                            <figcaption> August Strindberg (<a
+                                    href="https://www.flickr.com/photos/25300312@N08/6770866051">Flickr</a> | <a
+                                    href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>)</figcaption>
+                            <img src="Media\Temp\Strindberg3[400px]x[600px].jpg" alt="">
+                        </picture>
+                    </div>
+                    <div id="swipe-page4" class="swipe-page">
+                        <picture class="bildSwipe">
+                            <figcaption> August Strindberg (<a
+                                    href="https://commons.wikimedia.org/wiki/File:August_Strindberg_i_sitt_arbetsrum.jpg">Wikimedia</a>
+                                | <a href="https://en.wikipedia.org/wiki/public_domain">Public Domain</a>)</figcaption>
+                            <img src="Media\Temp\Strindberg4[400px]x[600px].jpg" alt="">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page5" class="page">
+            <nav class="navbar">
+                <button class="nav1 navbar__btn navbar__btn--primary" type="button" onclick="showPage(1);">
+                    Stringbergsappen</button>
+                <button class="nav2 navbar__btn navbar__btn--primary" type="button"
+                    onclick="showPage(4);">Bilder på August
+                    Strindberg</button>
+                <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Betygsätt
+                    Strindberg</button>
+                <button class="nav9 navbar__btn navbar__btn--primary" type="button" onclick="showPage(2);">Om
+                    Strindbergsappen</button>
+            </nav>
+            <div class="omApp">
+                Hoppsan! Denna sidan är fortfarande under konstruktion!
+            </div>
+        </div>
 </body>
 
 </html>

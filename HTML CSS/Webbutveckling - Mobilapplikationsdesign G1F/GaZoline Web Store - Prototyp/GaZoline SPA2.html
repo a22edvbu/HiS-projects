@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>A SPA Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        /* ----- Javascript for SPA - Single Page Application logic ----- */
+        // Help function that shows page with id page+p and hides all other pages
+        function showPage(p) {
+            // Step 1 - Hide all pages
+            pageArr = document.getElementsByClassName("page");
+            for (let i = 0; i < pageArr.length; i++) {
+                let page = pageArr[i];
+                page.style.display = "none";
+            }
+            // Step 2 - Show the selected page
+            document.getElementById("page" + p).style.display = "grid";
+ 
+            // Step 3 - Make all navbar buttons inactive 
+            let btnArr = document.getElementsByClassName("navbar__btn");
+            for (let i = 0; i < btnArr.length; i++) {
+                let btn = btnArr[i];
+                btn.classList.remove("navbar__btn--active");
+            }
+ 
+            // Step 4 - Make page all navbar buttons with class nav+p active
+            btnArr = document.getElementsByClassName("nav" + p);
+            for (let i = 0; i < btnArr.length; i++) {
+                let btn = btnArr[i];
+                btn.classList.add("navbar__btn--active");
+            }
+        }
+        /* -----  ----- */
+ 
+        // Init function. Here we can put code that is needed to initialize our prototype.
+        function initPrototype() {
+            // For example, when using sound or sensors this becomes important.
+            console.log("==> Prototype init started.");
+ 
+            // Show the landingpage/startpage
+            showPage(1);
+        }
+    </script>
+    <style>
+        /* 
+            CSS can and should be changed to fit your design profile.
+        */
+        .prototype-start-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(50, 50, 50, 0.5);
+            z-index: 1000;
+        }
+ 
+        .navbar {
+            padding: 16px;
+            background-color: gainsboro;
+        }
+ 
+        .navbar__btn {
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+            border: 0;
+            margin: 2px;
+            padding: 8px 5px;
+            cursor: default;
+            font-weight: 400;
+        }
+ 
+        .navbar__btn:hover {
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-color: #fff;
+            text-decoration-thickness: 5px;
+        }
+ 
+        .navbar__btn--primary {
+            background-color: #5A5;
+            color: #fff;
+        }
+ 
+        .navbar__btn--active {
+            background-color: #8F8 !important;
+            color: #000;
+        }
+
+
+        body {
+            background-color: black;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+        }
+        
+
+        @media only screen and (max-width: 900px) {
+            .container1 {
+                grid-template-areas: 
+                'header'
+                'caro'
+                'news'
+                'footer'
+                ;
+            }
+        }
+
+    </style>
+</head>
+ 
+<body onload="showPage(0);">
+    <!-- Page0 is needed for initPrototype() function. DON'T REMOVE! -->
+    <!-- Page0 is needed for initPrototype() function. DON'T REMOVE! -->
+    <div id="page0" class="page">
+        <div class="prototype-start-page">
+            <button class="navbar__btn navbar__btn--primary" type="button" onclick="initPrototype();">Start prototype</button>
+        </div>
+    </div>
+    <div id="page1" class="page">
+        <!-- navbar -->
+        <nav class="navbar">
+            <button class="nav1 navbar__btn navbar__btn--primary navbar__btn--active" type="button" onclick="showPage(1);">Go to page 1</button>
+            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(2);">Go to page2</button>
+            <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Go to page3</button>
+        </nav>
+        <!-- page content -->
+        <h1>GaZoline Energy</h1>
+        <main class="container1">
+            <div class="row11">
+                <picture>
+                    <figcaption> Future License </figcaption>
+                    <img src="media\Banner[320]x[100]-Template.jpg" alt="">
+                </picture>
+            </div>
+        </main>
+    </div>
+ 
+    <div id="page2" class="page">
+        <!-- navbar -->
+        <nav class="navbar">
+            <button class="nav1 navbar__btn navbar__btn--primary navbar__btn--active" type="button"onclick="showPage(1);">Go to page 1</button>
+            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(2);">Go to page2</button>
+            <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Go to page3</button>
+        </nav>
+        <!-- page content -->
+        <h1>Example page 2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maxime expedita culpa? Nostrum
+            perspiciatis perferendis dolore atque fuga inventore blanditiis! Minus mollitia dolorum nesciunt in magni
+            necessitatibus minima porro officia.
+            Corrupti fuga maiores aut eligendi id quasi necessitatibus. A nihil, repellendus quia dolores magnam
+            temporibus cum molestiae debitis. Eveniet, dolor voluptates? Officiis rerum aliquid repellendus quia dolore
+            omnis optio cum.
+            Beatae illum est et sint hic magnam, dignissimos quos excepturi nihil harum minus deserunt odio deleniti
+            praesentium eum adipisci fuga sequi porro, dolore cupiditate eligendi rerum distinctio reiciendis?
+            Blanditiis, incidunt.</p>
+    </div>
+ 
+    <div id="page3" class="page">
+        <!-- page content -->
+        <h1>Example page 3</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae explicabo tempora ullam cumque, obcaecati
+            aut sed inventore excepturi, voluptatibus ratione laborum incidunt quod. Cum quis eos adipisci consequatur
+            ipsa. Sed!
+            Voluptatum voluptas sunt tenetur porro maiores veritatis, ipsam libero? Nesciunt ea quas iusto ducimus
+            suscipit eos quibusdam. Doloremque cum fugiat, tempora qui temporibus delectus. Fuga quaerat accusamus non
+            iusto delectus.
+            Esse a sit et nobis ducimus sint, porro, quod accusamus exercitationem voluptatum placeat sed. Soluta,
+            blanditiis aliquam consectetur rem aliquid itaque tempore ea corporis recusandae? Dignissimos sit expedita
+            commodi quibusdam.
+            Illo voluptates culpa assumenda recusandae explicabo ab pariatur? Temporibus qui dolorum expedita culpa
+            animi eligendi pariatur fuga dolorem ipsum, alias hic unde, nulla tenetur odio saepe enim aut ratione
+            laboriosam!</p>
+        <!-- navbar -->
+        <nav class="navbar">
+            <button class="nav1 navbar__btn navbar__btn--primary navbar__btn--active" type="button" onclick="showPage(1);">Go to page 1</button>
+            <button class="nav2 navbar__btn navbar__btn--primary" type="button" onclick="showPage(2);">Go to page2</button>
+            <button class="nav3 navbar__btn navbar__btn--primary" type="button" onclick="showPage(3);">Go to page3</button>
+        </nav>
+    </div>
+</body>
+ 
+</html>

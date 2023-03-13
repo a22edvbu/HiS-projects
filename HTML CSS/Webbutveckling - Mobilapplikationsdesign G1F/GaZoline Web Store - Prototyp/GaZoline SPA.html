@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>GaZoline Web Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+    <script src="https://raw.githack.com/HGustavs/Shaker.js/master/shaker.js"></script>
+    <script>
+        /* ----- Javascript for SPA - Single Page Application logic ----- */
+        // Help function that shows page with id page+p and hides all other pages
+        function showPage(p) {
+            // Step 1 - Hide all pages
+            pageArr = document.getElementsByClassName("page");
+            for (let i = 0; i < pageArr.length; i++) {
+                let page = pageArr[i];
+                page.style.display = "none";
+            }
+            // Step 2 - Show the selected page
+            document.getElementById("page" + p).style.display = "block";
+
+            // Step 3 - Make all navbar buttons inactive 
+            let btnArr = document.getElementsByClassName("navbar-btn");
+            for (let i = 0; i < btnArr.length; i++) {
+                let btn = btnArr[i];
+                btn.classList.remove("active");
+            }
+
+            // Step 4 - Make page all navbar buttons with class nav+p active
+            btnArr = document.getElementsByClassName("nav" + p);
+            for (let i = 0; i < btnArr.length; i++) {
+                let btn = btnArr[i];
+                btn.classList.add("active");
+            }
+        }
+        /* -----  ----- */
+
+        // Init function. Here we can put code that is needed to initialize our prototype.
+        function initPrototype() {
+            // For example, when using sound or sensors this becomes important.
+            console.log("==> Prototype init started.");
+
+            // Show the landingpage/startpage
+            showPage(1);
+        }
+    </script>
+    <style>
+        /* 
+            CSS can and should be changed to fit your design profile.
+        */
+        .prototype-start-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(50, 50, 50, 0.5);
+            z-index: 1000;
+        }
+
+        body {
+            background-color: rgb(15, 15, 15);
+            color: white;
+        }
+
+        * {
+            max-width: 100vw;
+        }
+    </style>
+</head>
+
+<body onload="showPage(0);">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <div id="page0" class="page">
+        <div class="prototype-start-page">
+            <button class="btn btn-success" type="button" onclick="initPrototype();">Start prototype</button>
+        </div>
+    </div>
+    <div id="page1" class="page">
+        <!-- navbar -->
+        <!-- <nav class="navbar">
+            <button class="nav1 navbar-btn btn btn-primary active" type="button" onclick="showPage(1);">Go to page
+                1</button>
+            <button class="nav2 navbar-btn btn btn-primary" type="button" onclick="showPage(2);">Go to page2</button>
+            <button class="nav3 navbar-btn btn btn-primary" type="button" onclick="showPage(3);">Go to page3</button>
+        </nav> -->
+        <!-- page content -->
+
+        <header>
+            <div class="container-fluid text-center w-100">
+                <div class="row gy-3">
+                    <nav class="navbar navbar-expand-lg border-bottom" style="background-color: rgb(15, 15, 15);">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarText">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" onclick="showPage(1);" aria-current="page" href="#"
+                                            style="color:white;">Hem</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" onclick="showPage(2);" href="#"
+                                            style="color:white;">Kampanjer</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" onclick="showPage(3);" href="#"
+                                            style="color:white;">Shop</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="row g-3 border-bottom">
+            <img src="media\Banner[320]x[100]-Template.jpg" class="img-fluid p-0" alt="GaZoline Energy INC">
+        </div>
+        <div class="row g-3 m-3">
+            <h2 class="text-center">Nyheter</h2>
+            <!-- <div class="accordion bs-warning-bg-subtle" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      OBS! Angående blyskandalen
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        GaZoline Energy INC förnekar det nya fyndet av höga tungmetallmängder i varje avsvalkande burk av GaZoline Energy. Enda sedan 2022 har GaZoline Energy erbjudit folk runt om i världen en utsöckt läsk som även ger mycket energi. Vi skulle aldrig snåla på våra fabrikers tillverkningsmetoder eller arbetare.
+                    </div>
+                  </div>
+                </div>
+            </div>   -->
+            <div class="card">
+                <div class="card-body text-center bs-info-bg-subtle border" style="color:black;">
+                    OBS! Angående tungmetallskandalen
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gazModal">
+                        Läs mer >
+                    </button>
+                    <div class="modal fade" id="gazModal" tabindex="-1" aria-labelledby="gazModallLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="gazModalLabel">Angående tungmetallskandalen:</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>På grund av den pågående tungmetallskandalen kan leveranser ta längre tid än
+                                        förväntat. Vi beklagar för detta.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg">
+                <div class="card border-dark-subtle" style="background-color: rgb(15, 15, 15);">
+                    <img src="media\Article[400]x[400]-template.jpg" class="card-img-top img-fluid w-100" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Läs mer ></a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg">
+                <div class="card border-dark-subtle" style="background-color: rgb(15, 15, 15);">
+                    <img src="media\Article[300]x[300]-template.jpg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Läs mer ></a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg">
+                <div class="card border-dark-subtle" style="background-color: rgb(15, 15, 15);">
+                    <img src="media\Article[200]x[200]-template.jpg" class="card-img-top img-fluid w-100" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Läs mer ></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Kontakt</p>
+            <p>Kontakt</p>
+            <p>Kontakt</p>
+        </footer>
+    </div>
+
+    <div id="page2" class="page">
+        <!-- navbar -->
+        <header>
+            <div class="container-fluid text-center w-100">
+                <div class="row gy-3">
+                    <nav class="navbar navbar-expand-lg border-bottom" style="background-color: rgb(15, 15, 15);">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarText">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" onclick="showPage(1);" aria-current="page" href="#"
+                                            style="color:white;">Hem</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" onclick="showPage(2);" href="#"
+                                            style="color:white;">Kampanjer</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" onclick="showPage(3);" href="#"
+                                            style="color:white;">Shop</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- page content -->
+        <div class="container-fluid text-center" style="color:black;">
+            <div class="row justify-content-center">
+                <div class="col-lg justify-content-center">
+                    <div class="card border-dark-subtle" style="background-color: rgb(15, 15, 15);">
+                        <img src="media\Article[200]x[200]-template.jpg" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of  
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Läs mer ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg justify-content-center">
+                    <div class="card border-dark-subtle" style="background-color: rgb(15, 15, 15);">
+                        <img src="media\Article[200]x[200]-template.jpg" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Läs mer ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg justify-content-center">
+                    <div class="card border-dark-subtle" style="background-color: rgb(15, 15, 15);">
+                        <img src="media\Article[200]x[200]-template.jpg" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Läs mer ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg justify-content-center">
+                    <div class="card border-dark-subtle" style="background-color: rgb(15, 15, 15);">
+                        <img src="media\Article[200]x[200]-template.jpg" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Läs mer ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg justify-content-center">
+                    <div class="card border-dark-subtle" style="background-color: rgb(15, 15, 15);">
+                        <img src="media\Article[200]x[200]-template.jpg" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Läs mer ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg justify-content-center">
+                    <div class="card border-dark-subtle" style="background-color: rgb(15, 15, 15);">
+                        <img src="media\Article[200]x[200]-template.jpg" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Läs mer ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg justify-content-center">
+                    <div class="card border-dark-subtle" style="background-color: rgb(15, 15, 15);">
+                        <img src="media\Article[200]x[200]-template.jpg" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Läs mer ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg justify-content-center">
+                    <div class="card border-dark-subtle" style="background-color: rgb(15, 15, 15);">
+                        <img src="media\Article[200]x[200]-template.jpg" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Läs mer ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Kontakt</p>
+            <p>Kontakt</p>
+            <p>Kontakt</p>
+        </footer>
+    </div>
+
+    <div id="page3" class="page">
+        <!-- navbar -->
+        <nav class="navbar">
+            <button class="nav1 navbar-btn btn btn-primary active" type="button" onclick="showPage(1);">Go to page
+                1</button>
+            <button class="nav2 navbar-btn btn btn-primary" type="button" onclick="showPage(2);">Go to page2</button>
+            <button class="nav3 navbar-btn btn btn-primary" type="button" onclick="showPage(3);">Go to page3</button>
+        </nav>
+        <!-- page content -->
+        <h1>Example page 3</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae explicabo tempora ullam cumque, obcaecati
+            aut sed inventore excepturi, voluptatibus ratione laborum incidunt quod. Cum quis eos adipisci consequatur
+            ipsa. Sed!
+            Voluptatum voluptas sunt tenetur porro maiores veritatis, ipsam libero? Nesciunt ea quas iusto ducimus
+            suscipit eos quibusdam. Doloremque cum fugiat, tempora qui temporibus delectus. Fuga quaerat accusamus non
+            iusto delectus.
+            Esse a sit et nobis ducimus sint, porro, quod accusamus exercitationem voluptatum placeat sed. Soluta,
+            blanditiis aliquam consectetur rem aliquid itaque tempore ea corporis recusandae? Dignissimos sit expedita
+            commodi quibusdam.
+            Illo voluptates culpa assumenda recusandae explicabo ab pariatur? Temporibus qui dolorum expedita culpa
+            animi eligendi pariatur fuga dolorem ipsum, alias hic unde, nulla tenetur odio saepe enim aut ratione
+            laboriosam!</p>
+    </div>
+</body>
+
+</html>
